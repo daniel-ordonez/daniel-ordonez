@@ -2,9 +2,10 @@
 
 I'm a developer, sometimes product designer, based in Guatemala.
 
-- 📫 How to reach me:
-daniel-ordonez.com
-@roaderful
+# 📫 How to reach me:
+
+- daniel-ordonez.com
+- @roaderful
 
 <!--
 **daniel-ordonez/daniel-ordonez** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
