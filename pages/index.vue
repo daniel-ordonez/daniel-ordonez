@@ -1,11 +1,13 @@
 <template>
   <main id="landing" class="layout">
     <div id="profile-picture">
-
+      <shapes-bg></shapes-bg>
       <pattern-bg></pattern-bg>
       <color-shapes></color-shapes>
-      <div class="avatar-container">
-        <avatar/>
+      <div id="avatar">
+        <div class="avatar-container">
+          <avatar/>
+        </div>
         <svg xmlns="http://www.w3.org/2000/svg" class="avatar-hand waving" viewBox="0 0 127.6 132.7">
           <path fill="#f2e0c4" d="M8.8 49c5.1 1.2 7.1 6.5 7.3 7.1.7 1 1.4 2.1 2.1 3.4 1.8 3.2 2.9 6.2 3.5 8.8 0 .2.2.5.4.9.1.2.3.3.4.3.7 0 1.3-2.9 1.9-8.6l6.3-52.8c.6-4.9 5.1-8.5 10-7.9 4.9.6 8.5 5.1 7.9 10L43 57.4c0 .1.5 1.5 1.9 1.9 1.3.4 2.3-.4 2.4-.5C53.6 43.1 59.9 27.5 66.2 12c1.9-4.6 7.1-6.8 11.7-5 4.6 1.9 6.8 7.1 5 11.7L64.5 64.2s.1 1.1 1 1.6c.8.4 1.8.2 2.4-.5 7.8-13.9 15.7-27.8 23.5-41.7 2.4-4.3 7.9-5.9 12.3-3.4 4.3 2.4 5.9 7.9 3.4 12.3L83.4 74.4l30-21.4c4-2.9 9.7-1.9 12.6 2.1 2.9 4 1.9 9.7-2.1 12.6l-26 18.4-10.5 32.7c-3.4 10.5-14.6 16.3-25.2 12.9l-40-12.8c-.9-.3-6.7-2-9.3-7.9-.8-1.8-.7-4.2-.9-9 0-1 0-1.6-.1-5.5 0-2-.1-3.6-.1-4.7C11.3 85 9.7 80 8.4 76.6c-2.3-5.9-5.9-14-7-16.8-.5-1.4-1-3-1-3-.2-.6-.3-1-.3-1.4-.3-1.6.2-3.6 1.2-4.8 2.2-2.8 7.1-1.7 7.5-1.6zm72.8 30.2z"/>
           <path fill="#e3a791" d="M48 104.2c.1 0 .3.1.5.1 1.1.1 2.1-.7 2.2-1.8.2-2.6.4-11.6-6.3-19.3-5.9-6.8-13.5-8.5-16.5-8.9-1.1-.1-2.1.6-2.2 1.7-.1 1.1.6 2.1 1.7 2.2 2.6.3 9 1.7 14 7.5 5.6 6.5 5.5 14.2 5.3 16.3-.2 1.1.4 1.9 1.3 2.2z"/>
@@ -20,7 +22,7 @@
         I make digital products
       </div>
       <p>
-        Learn + Enjoy + Design + Make + Love + Repeat
+        Learn + Enjoy + Design + Make + Repeat ❤️
       </p>
     </div>
     <div class="featured-posts layout">
@@ -30,11 +32,13 @@
 </template>
 
 <script>
+import ShapesBg from '~/components/ShapesBg'
 import PatternBg from '~/components/PatternBg'
 import ColorShapes from '~/components/ColorShapes'
 import Avatar from '~/components/Avatar'
 export default {
   components: {
+    ShapesBg,
     PatternBg,
     ColorShapes,
     Avatar
@@ -58,33 +62,50 @@ export default {
   position: relative;
   grid-column: 1/-1;
 }
-#pattern-bg, #color-shapes {
+#pattern-bg, #color-shapes, #shapes-bg {
   position: absolute;
   width: 400px;
   height: 400px;
 }
-#color-shapes {
+#pattern-bg {
+  animation: outfocus .6s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  animation-delay: .2s;
+  animation-fill-mode: both;
+}
+#color-shapes, #shapes-bg {
   transform-origin: center;
-  animation: pop-appear .6s;
+  animation: pop-appear;
+  animation-duration: .8s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   animation-delay: .2s;
   animation-fill-mode: backwards;
 }
-.avatar-container {
-  width: 240px;
-  height: 240px;
+#shapes-bg {
+  width: 500px;
+  height: 500px;
+  animation-duration: 1.2s;
+  filter: blur(.5px);
+}
+#avatar {
   position: relative;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
   border-radius: 4px;
   background: white;
-  animation: fade-in .4s;
-  animation-timing-function: ease-in-out;
-  animation-delay: .4s;
-  animation-fill-mode: backwards;
+}
+.avatar-container {
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
 }
 .avatar {
   width: 240px;
   height: 240px;
+  animation: fade-in;
+  animation-duration: .4s;
+  animation-timing-function: ease-out;
+  animation-delay: .6s;
+  animation-fill-mode: both;
 }
 .avatar-hand {
   width: 70px;
@@ -146,6 +167,18 @@ svg>*{
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes outfocus {
+  from {
+    filter: blur(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    filter: blur(1px);
+    transform: scale(.8);
+    opacity: .5;
   }
 }
 
