@@ -1,6 +1,8 @@
 ### Hi there 👋
 
-I'm a developer, sometimes product designer, based in Guatemala.
+**I make digital products**
+
+Learn + Enjoy + Design + Make + Love + Repeat
 
 # 📫 How to reach me:
 
