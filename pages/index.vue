@@ -68,8 +68,6 @@ export default {
   animation: pop-appear .6s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   animation-delay: .2s;
-  width: calc(100% + 2rem);
-  height: calc(100% + 2rem);
   animation-fill-mode: backwards;
 }
 .avatar-container {
