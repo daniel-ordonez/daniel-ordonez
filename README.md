@@ -1,23 +1,20 @@
-### Hi there 👋
+# daniel-ordonez
 
-I'm a developer, sometimes product designer, based in Guatemala.
+## Build Setup
 
-# 📫 How to reach me:
+```bash
+# install dependencies
+$ yarn install
 
-- daniel-ordonez.com
-- @roaderful
+# serve with hot reload at localhost:3000
+$ yarn dev
 
-<!--
-**daniel-ordonez/daniel-ordonez** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# build for production and launch server
+$ yarn build
+$ yarn start
 
-Here are some ideas to get you started:
+# generate static project
+$ yarn generate
+```
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
