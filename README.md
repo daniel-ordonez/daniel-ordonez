@@ -1,25 +1,11 @@
-### Hi there 👋
+Hi there 👋
 
-**I make digital products**
+# I'm Daniel
 
-Learn + Enjoy + Design + Make + Love + Repeat
+I make digital products
 
-# 📫 How to reach me:
+I want this to be my motto: Learn + Enjoy + Design + Make + Repeat ❤️
 
+## 📫 How to reach me:
 - daniel-ordonez.com
 - @roaderful
-
-<!--
-**daniel-ordonez/daniel-ordonez** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
