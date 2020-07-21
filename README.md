@@ -1,20 +1,11 @@
-# daniel-ordonez
+Hi there 👋
 
-## Build Setup
+# I'm Daniel
 
-```bash
-# install dependencies
-$ yarn install
+I make digital products
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+I want this to be my motto: Learn + Enjoy + Design + Make + Repeat ❤️
 
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## 📫 How to reach me:
+- daniel-ordonez.com
+- @roaderful
