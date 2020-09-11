@@ -32,4 +32,25 @@ html {
   margin: 0;
 }
 
+.a--transparent {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+h2 {
+  margin-top: 1.618rem;
+  margin-bottom: .618rem;
+}
+p {
+  margin-bottom: .809rem;
+  line-height: 1.6;
+}
+blockquote {
+  margin: 1.6rem 0;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
 </style>
