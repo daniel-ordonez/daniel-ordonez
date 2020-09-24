@@ -2,21 +2,21 @@
   <main id="landing">
     <div id="greeting">
       <h1 class="t--display">
-           Yo!<br>I'm Daniel
+           Hola!<br>Soy Daniel
       </h1>
       <div class="t--headline">
-        I make digital stuff
+        Hago "cosas" digitales
       </div>
       <p>
-        Learn + Enjoy + Design + Make + Repeat ❤️
+        Aprende + Disfruta + Diseña + Haz + Repite ❤️
       </p>
     </div>
     <div class="flex justify-content--center">
-      <nuxt-link to="es/" class="btn">Ver en español</nuxt-link>
+      <nuxt-link to="/" class="btn">Read in english</nuxt-link>
     </div>
     <div id="featured-posts" class="layout" :class="{'showcase': posts.length >= 7}">
       <div class="post--mini" v-for="(post, index) in posts" :key="`post--${index}`">
-        <nuxt-link :to="`blog/${post.slug}`" class="a--transparent">
+        <nuxt-link :to="`${tail}${post.slug}`" class="a--transparent">
           <h2>{{post.title}}</h2>
           <p>{{post.description}}</p>
         </nuxt-link>
@@ -37,6 +37,7 @@ import PatternBg from '~/components/PatternBg'
 import ColorShapes from '~/components/ColorShapes'
 import Avatar from '~/components/Avatar'
 export default {
+  name: 'HomeEs',
   components: {
     ShapesBg,
     PatternBg,
@@ -48,10 +49,17 @@ export default {
     posts: []
   }),
   async created () {
-    this.posts = await this.$content('articles').only(['title', 'description', 'tags', 'slug']).where({published: true}).limit(7).sortBy('date', 'desc').fetch()
+    this.posts = await this.$content('es/articles').only(['title', 'description', 'tags', 'slug']).where({published: true}).limit(7).sortBy('date', 'desc').fetch()
+  },
+  computed: {
+    tail (head) {
+      let route = this.$route.fullPath
+      if (route.charAt(route.length - 1) !== '/') return '/es/'
+      else return '/'
+    }
   },
   async asyncData (ctx) {
-    let page = await ctx.$content('about').fetch()
+    let page = await ctx.$content('es/about').fetch()
     return {page, ready: true}
   }
 }
