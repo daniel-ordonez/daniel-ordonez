@@ -5,7 +5,7 @@
            Hola!<br>Soy Daniel
       </h1>
       <div class="t--headline">
-        Hago "cosas" digitales
+        Hago cosas para el mundo digital
       </div>
       <p>
         Aprende + Disfruta + Diseña + Haz + Repite ❤️

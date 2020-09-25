@@ -1,34 +1,30 @@
-## Sobre mi
+## Sobre mí
 
-Soy desarrollador web, diseño productos digitales, un entusiasta del diseño visual, y alguien que vive aprendiendo continuamente, de Guatemala nacido en el 95.
+Desarrollador web, entusiasta del diseño de productos y del diseño visual, y aprendiz de por vida; de Guatemala, nacido en el '95.
 
-Mis amigos me dicen Dani (puedes llamarme así si quieres)
+Mis amigos me llaman Dani (así que tú también puedes si quieres)
 
-Me gusta crear cosas.
+### Me gusta "crear" cosas.
 
-Déjame explicar. 
+Mayormente hago código y diseño web, pero la idea (en sí) de crear algo es lo que me atrae.
 
-Cuando tienes un problema a resolver y un objetivo claro, algunas relgas, y un entendimiento de qué puedes hacer, basicamente *tienes un juego*.
+Por ejemplo, cuando tienes un problema que resolver con un objetivo claro, un conjunto de reglas y una buena comprensión de lo que puedes hacer; entonces, lo que tienes es básicamente un juego.
 
-Existe un proceso de exploración, reunir información, encontrar retos, constuir habilidad y conocimineto, diseñar un plan, y probar, probar, probar.
+Habrá un proceso de exploración, recopilación de información, búsqueda de desafíos, desarrollo de habilidades y conocimientos, diseño de un plan y varios intentos (prueba, prueba, prueba).
 
-Ganas, pierdes, creces, e intentas nuevamente.
+A veces ganas, a veces pierdes, creces y vuelves a intentarlo.
 
-Cuando aprendes a disfrutar los pasos y te gusta el proceso, eventualmente te enamoras de hacer.
+Cuando obtiene la esencia del proceso y comienza a disfrutar de los pasos, se convierte en algo que desea hacer siempre.
 
-## Un pensamiento
+### Un pensamiento
+Me gusta verme a mí mismo como un soñador, un idealista romántico que ve hacia un mundo en el mañana que es mucho mejor que el de hoy.
 
-Solo soy otro humano con el privilegio de poner mis pensamientos en linea.
+El mundo podría ser un verdadero desastre en este momento, aunque lo ha sido durante bastante tiempo (desde el día 1) y seguramente lo será mañana.
 
-Me gusta verme como un soñador, un idealista romántico que ve hacia un mundo mañana, que es mucho mejor de lo que es hoy.
+Pero si todos se esfuerzan por mejorar, incluso un poco todos los días, y mañana lo hace mejor que hoy; puede que llegue el día en que no haya desorden afuera.
 
-Aunque soy consiente de que el mundo es un desorden justo ahora, y lo ha sido por mucho tiempo, y probablemente siga siendo mañana.
+Con eso en mente, se me ocurrió este ideal:
 
-Si cada uno de nosotros se esfuerza por mejorar, incluso un poco cada día, y hace hoy mejor que mañana; puede que llegue el día cuando no haya más problemas afuera.
+> Vive aprendiendo y divirtiéndote, diseña para mejorar, cambiar las cosas, hacer hoy mejor que ayer y compartir tu amor.
 
-Así fue como se me ocurrió este ideal:
-
-> Vive siempre aprendiendo, disfruta vivir, diseña para mejorar las cosas, crea cambios, haz hoy mejor que mañana, comparte el amor.
-
-Resumido como:
-Aprende + Disfruta + Diseña + Crea + Repite ❤️
+Resumido como: Aprender + Disfrutar + Diseñar + Crear + Repetir ❤️

@@ -15,21 +15,20 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Daniel Ordoñez',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
     ]
   },
   /*
   ** Global CSS
   */
   css: [
-    '~/static/stylesheet.css'
+    '~/static/style/stylesheet.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -65,5 +64,22 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+  icon: {
+    fileName: 'icon.png'
+  },
+  pwa: {
+    manifest: {
+      name: 'Daniel Ordoñez',
+      short_name: 'dõ app',
+      lang: 'en',
+      description: "Yo! I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams on a better tomorrow."
+    },
+    meta: {
+      name: 'Daniel Ordoñez',
+      author: 'Daniel Ordoñez',
+      description: "Welcome to my webapp! I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams on a better tomorrow.",
+      ogHost: 'daniel-ordonez.com'
+    }
   }
 }
