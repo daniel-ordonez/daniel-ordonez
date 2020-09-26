@@ -5,52 +5,35 @@
 </template>
 
 <style>
-html {
-  font-family:
-    'Montserrat',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+.layout--mono {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 480px;
+  justify-content: center;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+.t--display {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.t--headline {
+  font-size: 2rem;
+  font-weight: 500;
 }
 
-.a--transparent {
-  color: inherit;
-  font-size: inherit;
-  font-family: inherit;
-  text-decoration: none;
-  cursor: pointer;
+@media screen and (max-width: 512px){
+  .layout--mono {
+    grid-template-columns: calc(100vw - 2rem);
+  }
 }
-h2 {
-  margin-top: 1.618rem;
-  margin-bottom: .618rem;
-}
-p {
-  margin-bottom: .809rem;
-  line-height: 1.6;
-}
-blockquote {
-  margin: 1.6rem 0;
-  font-style: italic;
-  font-size: 1.25rem;
-  line-height: 1.6;
+@media screen and (max-width: 704px){
+  .t--display {
+    font-size: 3rem;
+  }
+  .t--headline {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
 }
 </style>

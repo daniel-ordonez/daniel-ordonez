@@ -21,7 +21,9 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/icon.png' },
+      { hid: 'hreflang-es', rel: 'alternate', href: 'https://daniel-ordonez.com/es/', hreflang: 'es' },
+      { hid: 'hreflang-en', rel: 'alternate', href: 'https://daniel-ordonez.com/', hreflang: 'en' }
     ]
   },
   /*
@@ -78,7 +80,7 @@ export default {
     meta: {
       name: 'Daniel Ordoñez',
       author: 'Daniel Ordoñez',
-      description: "Welcome to my webapp! I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams on a better tomorrow.",
+      description: "I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams on a better tomorrow.",
       ogHost: 'daniel-ordonez.com'
     }
   }

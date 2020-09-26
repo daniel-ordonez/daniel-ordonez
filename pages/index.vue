@@ -4,11 +4,11 @@
       <h1 class="t--display">
            Yo!<br>I'm Daniel
       </h1>
-      <div class="t--headline">
+      <h2 class="t--headline">
         I make digital stuff
-      </div>
+      </h2>
       <p>
-        Learn + Enjoy + Design + Make + Repeat ❤️
+        Learn + Enjoy + Design + Create + Repeat ❤️
       </p>
     </div>
     <div class="flex justify-content--center">
@@ -26,37 +26,50 @@
       </div>
     </div>
     <div id="about-me" class="layout--mono">
-      <nuxt-content :document="page"></nuxt-content>
+      <h2>About me</h2>
+      <p>Web developer, product design and visual design enthusiast, and live-long learner; from Guatemala, born in '95.</p>
+      <p>My friends call me Dani (so you too can if you want)</p>
+      <h3>I like crafting stuff.</h3>
+      <p>I mostly code, but the idea (itself) of creating something is what appeals to me.</p>
+      <p>Like, when you have a problem to solve with a clear objective, some set of rules, and a good understanding of what you can do; then, what you got is basically a game.</p>
+      <p>There’ll be a process of exploration, gathering information, finding challenges, building up skills and knowledge, design a plan and try, try, try.</p>
+      <p>Sometimes you win, sometimes you lose, you grow and try again.</p>
+      <p >When you get the gist of the process and start enjoying the steps, it becomes something you want to do everytime.</p>
+      <h3>Piece of mind</h3>
+      <p>I like to see myself as a dreamer, some romantic idealist who sees towards a world tomorrow that’s far better than today.</p>
+      <p>The world might be a real mess right now, though it has been for quite a while (since day 1) and it most surely will be one tomorrow.</p>
+      <p>But if everyone strive to get better, even a little every day, and does tomorrow better than today; it might come the day when there’s no mess outside.</p>
+      <p>With that in mind, I came up with this ideal:</p>
+      <blockquote>
+        <mark>Live learning and ajoying, design to improve, change things, make today better than yesterday and share your love.</mark>
+      </blockquote>
+        <p>Summarized as:<br>
+        Learn+Enjoy+Design+Create+Repeat ❤️
+      </p>
     </div>
   </main>
 </template>
 
 <script>
-import ShapesBg from '~/components/ShapesBg'
-import PatternBg from '~/components/PatternBg'
-import ColorShapes from '~/components/ColorShapes'
-import Avatar from '~/components/Avatar'
 export default {
-  components: {
-    ShapesBg,
-    PatternBg,
-    ColorShapes,
-    Avatar
+  name: 'HomePage',
+  head: {
+    link: [
+      { rel: 'canonical', hid: 'canonical', href: 'https://daniel-ordonez.com/' }
+    ]
   },
   data: () => ({
     ready: false,
     posts: []
   }),
-  async created () {
-    this.posts = await this.$content('articles').only(['title', 'description', 'tags', 'slug']).where({published: true}).limit(7).sortBy('date', 'desc').fetch()
-  },
-  async asyncData (ctx) {
-    let page = await ctx.$content('about').fetch()
-    return {page, ready: true}
+  created () {
+    this.$content('articles').only(['title', 'description', 'tags', 'slug']).where({published: true}).limit(7).sortBy('date', 'desc').fetch()
+    .then(posts => {
+      this.posts = posts
+    })
   }
 }
 </script>
-
 <style>
 #landing {
   display: flex;
@@ -70,99 +83,11 @@ export default {
   flex-grow: 1;
 }
 #about-me {
-  background: #FDFDFD;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), #FDFDFD);
   padding: 1rem;
 }
-
-.layout {
-  display: grid;
-  column-gap: 16px;
-  row-gap: 16px;
-  justify-content: center;
-}
-.layout--mono {
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-columns: 480px;
-  justify-content: center;
-}
-
-.post--mini {
-  grid-column: 1/-1;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 4px 16px 6px rgba(0, 0, 0, 0.02);
-  padding: 1rem;
-}
-
-.t--display {
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 1;
-}
-.t--headline {
-  font-size: 2rem;
-  font-weight: 500;
-}
-svg>*{
-  user-select: none;
-  pointer-events: none;
-}
-
-
-
 @media screen and (max-width: 704px){
-  .layout {
-    grid-template-columns: repeat(4, calc(25% - 12px));
-    margin: 0 16px;
-  }
-  .layout--mono {
-    grid-template-columns: 1fr;
-  }
   #landing {
     grid-auto-flow: row;
   }
-  .t--display {
-    font-size: 3rem;
-  }
-  .t--headline {
-    font-size: 1.5rem;
-    line-height: 1.6;
-  }
 }
-@media screen and (min-width: 704px){
-  .layout {
-    grid-template-columns: repeat(4, 138px);
-  }
-}
-@media screen and (min-width: 1036px){
-  .layout {
-    grid-template-columns: repeat(12, 69px);
-  }
-}
-@media screen and (min-width: 1672px){
-  .layout {
-    grid-template-columns: repeat(12, 122px);
-  }
-  .showcase>div:nth-child(1) {
-    grid-column: 1/9;
-    grid-row: 1 / span 2;
-  }
-  .showcase>div:nth-child(2),
-  .showcase>div:nth-child(3) {
-    grid-column: 1 / span 4;
-    grid-row: 3 / span 2;
-  }
-  .showcase>div:nth-child(3) {
-    grid-column-start: 5;
-  }
-  .showcase>div:nth-child(4),
-  .showcase>div:nth-child(5),
-  .showcase>div:nth-child(6),
-  .showcase>div:nth-child(7) {
-    grid-column: 9/-1;
-  }
-}
-
 </style>
