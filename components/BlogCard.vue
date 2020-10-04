@@ -20,7 +20,7 @@ export default {
     },
     baseUrl: {
       type: String,
-      default: ''
+      default: '/'
     }
   }
 }
