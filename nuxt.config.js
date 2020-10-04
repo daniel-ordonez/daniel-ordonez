@@ -12,6 +12,7 @@ export default {
   target: 'static',
   generate: {
     fallback: true,
+    /*
     async routes () {
       const { $content } = require('@nuxt/content')
       const files = await $content({ deep: true }).where({published: true}).only(['path']).fetch()
@@ -20,6 +21,7 @@ export default {
         return file.path
       })
     }
+    */
   },
   /*
   ** Headers of the page
