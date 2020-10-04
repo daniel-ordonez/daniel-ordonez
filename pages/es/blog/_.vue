@@ -11,7 +11,6 @@
   </div>
 </template>
 
-
 <script>
 export default {
   layout: 'blog',
@@ -28,7 +27,7 @@ export default {
         { hid: 'twitter:description', name: 'twitter:description', content: this.article.description }
       ],
       link: [
-        { rel: 'canonical', hid: 'canonical', href: `https://daniel-ordonez.com/blog/${this.article.slug}` }
+        { rel: 'canonical', hid: 'canonical', href: `https://daniel-ordonez.com/es/blog/${this.article.slug}` }
       ]
     }
   },
@@ -37,7 +36,7 @@ export default {
   }),
   async asyncData ({ $content, route, error }) {
     let post = route.path.split('/').pop()
-    const article = await $content(`articles/${post}`).fetch()
+    const article = await $content(`es/articles/${post}`).fetch()
     if (!article) {
       return error({ statusCode: 404, message: 'Article not found' })
     }

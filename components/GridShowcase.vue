@@ -1,22 +1,34 @@
 <template>
   <div class="grid--showcase">
-
+    <slot/>
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'GridShowcase',
+  props: {
+    posts: {
+      type: Array,
+      default: () => []
+    }
+  },
+  computed: {
+    lang () {
+      return this.$route.name.slice(0, 2) === 'es' ? 'es' : ''
+    },
+    tail () {
+      let slash = this.slash
+      let lang = this.lang
+      return lang && '/'+lang+'/'
+    }
+  }
 }
 </script>
 
 <style>
-.post--mini {
-  grid-column: 1/-1;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 4px 16px 6px rgba(0, 0, 0, 0.02);
-  padding: 1rem;
+.grid--showcase .blog-card {
+  grid-column: 1 / -1;
 }
 @media screen and (min-width: 1672px){
   .grid--showcase {

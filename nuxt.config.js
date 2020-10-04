@@ -61,6 +61,14 @@ export default {
   ** See https://content.nuxtjs.org/configuration
   */
   content: {},
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        const stats = require('reading-time')(document.text)
+        document.readingTime = stats
+      }
+    }
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

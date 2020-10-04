@@ -24,16 +24,37 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
+header {padding: 1rem;}
+h1 {
+  font-size: 48px;
+  line-height: 52px;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  font-size: 32px;
+  line-height: 48px;
+  margin-bottom: 1rem;
+}
+.t--h3 {font-size: 24px; line-height: 24px;}
+h3 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 18px;
+  line-height: 27px;
+}
 p {
   margin-bottom: .809em;
   line-height: 1.6;
 }
 blockquote {
   margin: 1.6rem 0;
+  padding-left: 1rem;
   font-style: italic;
   font-size: 1.25rem;
   line-height: 1.6;
+  opacity: .8;
 }
 svg>*{
   user-select: none;
@@ -59,33 +80,44 @@ svg>*{
 
 /* LAYOUT */
 .flex {display: flex;}
+.flex--col {flex-direction: column;}
 .flex-wrap {flex-wrap: wrap;}
 .stack--row {display: grid;grid-auto-flow: row;}
 .stack--row.min-content {grid-auto-rows: min-content;}
 .stack--col {display: grid;grid-auto-flow: column;}
 .stack--col.min-content {grid-auto-columns: min-content;}
-.gap--sm {gap: var(--spacing--sm);}
-.gap--md {gap: var(--spacing--md);}
-.gap--lg {gap: var(--spacing--lg);}
+.gap--sm {gap: .5rem;}
+.gap--md {gap: 1rem;}
+.gap--lg {gap: 2rem;}
 .align-items--center {align-items: center;}
 .justify-content--center {justify-content: center;}
 .justify-content--start {justify-content: flex-start;}
 .justify-content--end {justify-content: flex-end;}
+.justify-content--space-between {justify-content: space-between;}
 
-.container {display:  grid;justify-content: center;}
-/* MEDIA TABLET */
-@media screen and (max-width: 704px){
-  .layout {grid-template-columns: repeat(4, calc(25% - 12px));margin: 0 16px;}
-  .container {grid-template-columns: calc(100% - 24px);}
+
+.container {width: 100%;display: grid; grid-template-columns: var(--lane-w, 720px); justify-content: center;}
+
+@media screen and (max-width: 752px) {
+  .container {grid-template-columns: calc(100vw - 2rem);}
 }
-/* MEDIA LATOP */
-@media screen and (min-width: 704px){
-  .layout {grid-template-columns: repeat(4, 138px);}
-  .container {grid-template-columns: 600px;}
+.container--blog {
+  --lane-w: 680px;
 }
-/* MEDIA DESKTOP */
-@media screen and (min-width: 1036px){
-  .container {
-    grid-template-columns: 1004px;
-  }
+.container--blog p,
+.container--blog li{
+  font-size: 18px;
+  line-height: 30px;
+}
+.container--blog p {
+  margin-top: 18px;
+}
+.container--blog ul,
+.container--blog ol {margin-bottom: 1em;}
+.container--blog blockquote>p {
+  margin: 30px 0;
+  padding-left: 1rem;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
 }
