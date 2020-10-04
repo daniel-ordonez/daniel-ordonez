@@ -19,7 +19,7 @@ export default {
     posts: []
   }),
   beforeMount () {
-    this.$content('es/articles').only(['title', 'description', 'tags', 'slug', 'readingTime']).where({published: true}).sortBy('date', 'desc').fetch()
+    this.$content('es/blog').only(['title', 'description', 'tags', 'slug', 'readingTime']).where({published: true}).sortBy('date', 'desc').fetch()
     .then(posts => {
       this.posts = posts
     })

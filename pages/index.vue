@@ -49,7 +49,7 @@ export default {
     projects: []
   }),
   created () {
-    this.$content('articles').only(['title', 'description', 'tags', 'slug']).where({published: true}).limit(7).sortBy('date', 'desc').fetch()
+    this.$content('blog').only(['title', 'description', 'tags', 'slug']).where({published: true}).limit(7).sortBy('date', 'desc').fetch()
     .then(posts => {
       this.posts = posts
     })

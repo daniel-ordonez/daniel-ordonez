@@ -7,7 +7,6 @@
       <blog-card v-for="(post, index) in posts"
         :key="`post-${index}`"
         :post="post"
-        baseUrl="/es/"
       />
     </grid-showcase>
   </div>
@@ -19,7 +18,7 @@ export default {
     posts: []
   }),
   beforeMount () {
-    this.$content('articles').only(['title', 'description', 'tags', 'slug', 'readingTime']).where({published: true}).sortBy('date', 'desc').fetch()
+    this.$content('blog').only(['title', 'description', 'tags', 'slug', 'readingTime']).where({published: true}).sortBy('date', 'desc').fetch()
     .then(posts => {
       this.posts = posts
     })
