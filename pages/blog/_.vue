@@ -46,7 +46,7 @@ export default {
     }
   },
   mounted () {
-    const el = this.$el.querySelector('.nuxt-content-container')
+    const el = this.$el.querySelector('.nuxt-content-container') || this.$el.querySelector('.nuxt-content')
     const onScroll = () => {
       let rect = el.getBoundingClientRect()
       let v = document.documentElement.clientHeight
