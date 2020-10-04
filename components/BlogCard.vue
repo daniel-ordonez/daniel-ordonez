@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-card">
+  <div class="card blog-card">
     <nuxt-link :to="`${baseUrl}blog/${post.slug}`" class="a--transparent">
       <h3 class="post__title">{{post.title}}</h3>
       <p class="post__excerpt">{{post.description}}</p>
@@ -33,9 +33,6 @@ export default {
 }
 
 .blog-card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 4px 16px 6px rgba(0, 0, 0, 0.02);
   padding: 1rem;
 }
 </style>

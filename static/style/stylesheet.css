@@ -77,7 +77,11 @@ svg>*{
   border: 1px solid #0d0d0d;
   padding: .5em 1em;
 }
-
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 0px 8px 4px rgba(0, 0, 0, 0.02);
+}
 /* LAYOUT */
 .flex {display: flex;}
 .flex--col {flex-direction: column;}

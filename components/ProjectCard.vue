@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card flex gap--md">
+  <div class="card project-card flex gap--md">
     <img class="project__thumbnail" :src="project.thumbnail" alt="App icon">
     <a class="a--transparent" target="_blank" :href="project.github">
       <h3 class="project__title">{{project.title}}</h3>
@@ -22,7 +22,6 @@ export default {
 
 <style>
 .project-card {
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 0px 8px 4px rgba(0, 0, 0, 0.02);
   padding: 1rem;
 }
 .project__thumbnail {
