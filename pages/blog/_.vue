@@ -37,7 +37,7 @@ export default {
   }),
   async asyncData ({ $content, route, error }) {
     let post = route.path.split('/').pop()
-    const article = await $content(`articles/${post}`).fetch()
+    const article = await $content(`blog/${post}`).fetch()
     if (!article) {
       return error({ statusCode: 404, message: 'Article not found' })
     }
