@@ -1,5 +1,5 @@
 ---
-title: Actualiza tu idea del marketing
+title: La esencia del marketing hoy
 description: 'Por qué hacemos marketing, cómo ha cambiado, qué es branding y por qué es tan importante en la actualidad.'
 locale: es_ES
 keywords: 'concepto de marketing, breve historia del marketing, el proceso del marketing, que es branding, definicion de marketing, porque es importante el branding, marketing para personas, que es una marca carismatica'
@@ -9,8 +9,9 @@ tags: [marketing]
 image: 'https://res.cloudinary.com/road/image/upload/v1601933876/daniel-ordonez.com/blog/value-trust-dog.png'
 published: true
 ---
+**TL;DR** El marketing aparece como respuesta a la necesidad de diferenciarse, pero con tantas opciones similares en el mercado, las estrategias genéricas no son suficientes, hay que integrar un toque personal y humano; las marcas carismáticas saben construir confianza en una relación de valor volviéndose irremplazables para el consumidor.
 
-El concepto de marketing es uno muy amplio. 
+## El concepto de marketing es uno muy amplio. 
 
 Aunque algunas personas mantienen la impresión de que solo cubre publicidad y ventas, en realidad el marketing es más como una sombrilla que cubre una variedad de prácticas, herramientas, y teorías.
 
@@ -29,8 +30,6 @@ El marketing es algo que ocurre entre personas, y a menudo involucra una dinámi
 Cuando cambia la forma en que nos comunicamos, ya sea por algo cultural o una nueva tecnología (por ejemplo, pasamos de usar teléfonos conectados a la pared a tener videollamadas por internet), toda la dinámica de interacción se ajusta a estos cambios.
 
 > Las formas en que interactuamos se ajustan a los cambios en la cultura y las nuevas tecnologías
-
-Espero que con esa analogía tengamos claro que el marketing es algo que cambia y ase ajusta a los tiempos actuales.
 
 ## Sí, el marketing es necesario ¿por qué?
 
@@ -231,4 +230,9 @@ No basta convertir al consumidor en cliente con una promesa atractiva, es necesa
 
 ### Pensamiento final
 
-Considerando todo lo anterior, y después de leer este artículo, espero que puedas ver a tu negocio y pensar ¿qué prácticas de marketing debería cambiar? ¿qué nuevas prácticas, que aún no estoy usando debería incluir en mi estrategia?
+Después de leer este artículo espero que puedas ver a tu negocio y pensar 
+
+¿qué prácticas de marketing debería cambiar? 
+¿qué nuevas prácticas que aún no estoy usando debería incluir en mi estrategia?
+
+Con el objetivo de entregar valor a tu consumidor y empezar a generar una relación de confianza.

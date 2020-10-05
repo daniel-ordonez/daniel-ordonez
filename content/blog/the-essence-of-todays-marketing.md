@@ -10,7 +10,9 @@ image: 'https://res.cloudinary.com/road/image/upload/v1601933876/daniel-ordonez.
 imageAlt: 'A dog thinking on value and trust'
 published: true
 ---
-The concept of marketing is quite broad.
+**TL;DR** Marketing happens as a direct response to the need for differentiation but with so many similar options on the market today, generic marketing strategies are not enough, you have to integrate a more personal and human touch; charismatic brands that know how to build trust in a relationship of value become irreplaceable for the consumer.
+
+## The concept of marketing is quite broad.
 
 Although some people maintain the impression that it only covers advertising and sales, in reality, marketing is more like an umbrella covering a variety of practices, tools, and theories.
 

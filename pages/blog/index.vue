@@ -4,9 +4,9 @@
       Blog
     </h1>
     <grid-showcase>
-      <blog-card v-for="(post, index) in posts"
+      <blog-card v-for="(article, index) in posts"
         :key="`post-${index}`"
-        :post="post"
+        :article="article"
       />
     </grid-showcase>
   </div>
@@ -18,7 +18,7 @@ export default {
     posts: []
   }),
   beforeMount () {
-    this.$content('blog').only(['title', 'description', 'tags', 'slug', 'readingTime']).where({published: true}).sortBy('date', 'desc').fetch()
+    this.$content('blog').only(['title', 'description', 'tags', 'slug', 'readingTime', 'image', 'imageAlt']).where({published: true}).sortBy('date', 'desc').fetch()
     .then(posts => {
       this.posts = posts
     })

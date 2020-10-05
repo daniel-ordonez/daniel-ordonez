@@ -17,20 +17,10 @@
     <blockquote>
       <mark>Live learning and ajoying, design to improve, change things, make today better than yesterday and share your love.</mark>
     </blockquote>
-      <p>Summarized as:<br>Learn+Enjoy+Design+Create+Repeat ❤️
-    </p>
+    <p>Summarized as:<br>Learn + Enjoy + Design + Create + Repeat ❤️</p>
+    <p>It may sound like a beauty contest speech, but I already said I'm a dreamer and an idealist</p>
+    <p>I'm not looking for perfect at all, but if there's something that's not good now, I think it can improve and become good, and then great, and then awesome.</p>
+    <p>I believe that can be achieved with the above steps.</p>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'AboutMe'
-}
-</script>
-
-<style>
-#about-me {
-  width: 100%;
-  max-width: 600px;
-}
-</style>
