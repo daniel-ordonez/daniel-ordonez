@@ -1,0 +1,20 @@
+.container--blog {
+  --lane-w: 680px;
+}
+.container--blog p,
+.container--blog li{
+  font-size: 18px;
+  line-height: 30px;
+}
+.container--blog p {
+  margin-top: 18px;
+}
+.container--blog ul,
+.container--blog ol {margin-bottom: 1em;}
+.container--blog blockquote>p {
+  margin: 30px 0;
+  padding-left: 1rem;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: bold;
+}

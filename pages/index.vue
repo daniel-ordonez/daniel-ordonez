@@ -10,10 +10,22 @@
         <section>
           <h2>Projects</h2>
           <div class="stack--row gap--md" >
-            <project-card v-for="(project, index) in projects"
-              :key="`project-${index}`"
-              :project="project"
-            />
+            <template v-if="projects">
+              <project-card v-for="(project, index) in projects"
+                :key="`project-${index}`"
+                :project="project"
+              />
+            </template>
+            <template v-else>
+              <div class="card project-card flex gap--md" v-for="(_, index) in Array(1)" :key="`project-${index}`">
+                <div class="project__thumbnail skeleton">
+                </div>
+                <div style="width: 100%;">
+                  <h3 class="project__title skeleton">empty</h3>
+                  <p class="project__description skeleton">empty</p>
+                </div>
+              </div>
+            </template>
           </div>
         </section>
         <section>
@@ -21,10 +33,19 @@
             <h2>Blog</h2>
           </nuxt-link>
           <div class="stack--row gap--md">
-            <blog-card v-for="(post, index) in posts"
-            :key="`post-${index}`"
-            :post="post"
-            />
+            <template v-if="posts">
+              <blog-card v-for="(post, index) in posts"
+              :key="`post-${index}`"
+              :post="post"
+              />
+            </template>
+            <template v-else>
+                <div class="card blog-card" v-for="(_, index) in Array(1)" :key="`post-${index}`">
+                  <h3 class="post__title skeleton">empty</h3>
+                  <p class="post__excerpt skeleton">empty</p>
+                  <p class="post__excerpt skeleton">empty</p>
+                </div>
+            </template>
           </div>
         </section>
       </div>
@@ -36,32 +57,14 @@
 </template>
 
 <script>
+import home from '~/assets/classes/home'
 export default {
   name: 'HomePage',
-  head: {
-    link: [
-      { rel: 'canonical', hid: 'canonical', href: 'https://daniel-ordonez.com/' }
-    ]
-  },
-  data: () => ({
-    ready: false,
-    posts: [],
-    projects: []
-  }),
-  created () {
-    this.$content('blog').only(['title', 'description', 'tags', 'slug']).where({published: true}).limit(7).sortBy('date', 'desc').fetch()
-    .then(posts => {
-      this.posts = posts
-    })
-    this.$content('projects').only(['title', 'thumbnail', 'description', 'tags', 'url', 'github']).where({published: true}).limit(7).sortBy('date', 'desc').fetch()
-    .then(projects => {
-      this.projects = projects
-    })
-  }
+  extends: home
 }
 </script>
 
 <style>
-@import url(~/assets/style/index.css);
+@import url(~/assets/style/home.css);
 </style>
 

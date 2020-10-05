@@ -92,7 +92,7 @@ export default {
   pwa: {
     manifest: {
       name: 'Daniel Ordoñez',
-      short_name: 'dõ app',
+      short_name: 'd~o app',
       lang: 'en',
       description: "Yo! I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams on a better tomorrow."
     },

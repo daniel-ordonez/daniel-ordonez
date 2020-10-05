@@ -1,8 +1,10 @@
 <template>
   <div class="container container--blog">
     <h1>{{article.title}}</h1>
-    <div align="right">
-      {{article.readingTime.text}}
+    <div class="flex">
+      <span>{{article.author}}</span>
+      <span>{{article.date}}</span>
+      <span>{{article.readingTime.text}}</span>
     </div>
     <nuxt-content :document="article"/>
     <div class="scroll-progress" :style="`--progress: ${progress}%`">
@@ -15,12 +17,9 @@
 import blogpost from '~/assets/classes/blogpost'
 export default {
   extends: blogpost,
-  name: 'BlogPostEs',
-  async asyncData ({ $content, route, params, error }) {
-    let post = params.pathMatch.replace('/','')
-    const article = await $content(`es/blog/${post}`).fetch()
-    if (!article) return error({ statusCode: 404, message: 'Article not found' })
-    else return {article}
-  }
+  name: 'BlogPostEs'
 }
 </script>
+<style>
+@import url(~/assets/style/blog.css);
+</style>

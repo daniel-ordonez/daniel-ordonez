@@ -99,29 +99,12 @@ svg>*{
 .justify-content--end {justify-content: flex-end;}
 .justify-content--space-between {justify-content: space-between;}
 
-
 .container {width: 100%;display: grid; grid-template-columns: var(--lane-w, 720px); justify-content: center;}
 
 @media screen and (max-width: 752px) {
   .container {grid-template-columns: calc(100vw - 2rem);}
 }
-.container--blog {
-  --lane-w: 680px;
-}
-.container--blog p,
-.container--blog li{
-  font-size: 18px;
-  line-height: 30px;
-}
-.container--blog p {
-  margin-top: 18px;
-}
-.container--blog ul,
-.container--blog ol {margin-bottom: 1em;}
-.container--blog blockquote>p {
-  margin: 30px 0;
-  padding-left: 1rem;
-  font-style: italic;
-  font-size: 20px;
-  font-weight: bold;
+.skeleton {
+  background: #f0f0f0;
+  color: transparent;
 }

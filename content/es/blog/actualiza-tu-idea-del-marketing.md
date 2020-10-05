@@ -1,10 +1,11 @@
 ---
 title: Actualiza tu idea del marketing
-description: 'Parece que el marketing nos ha acompañado desde el inicio del comercio hace miles de años, y su evolución a seguido grandes cambios en la cultura y la tecnología.'
-lang: 'es'
-canonical: https://daniel-ordonez.com/es/actualiza-tu-idea-del-marketing
-tags: [marketing]
+description: 'Por qué hacemos marketing, cómo ha cambiado, qué es branding y por qué es tan importante en la actualidad.'
+keywords: 'concepto de marketing, breve historia del marketing, el proceso del marketing, que es branding, definicion de marketing, porque es importante el branding, marketing para personas, que es una marca carismatica'
 date: '2020-10-01'
+author: 'Daniel Ordoñez'
+tags: [marketing]
+image: ''
 published: true
 ---
 
@@ -33,6 +34,7 @@ Espero que con esa analogía tengamos claro que el marketing es algo que cambia 
 Es importante considerar la verdadera causa de por qué hacemos algo y tener siempre en mente el objetivo que buscamos alcanzar.
 
 Muchas personas piensan que el marketing es solo hacer publicidad, 
+
 > “Si le digo a todos que vendo X y que lo quieren, lo van a comprar.”
 
 Esta percepción (equivocada) es demasiado superficial, y no considera otros factores importantes, como la complejidad de la mente humana para tomar decisiones, y el papel de las interacciones en todo el proceso.
@@ -131,7 +133,7 @@ Toda esta data y los modelos que se han generado a partir de ella, han permitido
 
 Así que ahora podemos generar contenido para una audiencia muy específica (de nicho) y que aún sea encontrado y consumido por las personas en internet.
 
-## Brand
+## Branding
 
 Es un sentimiento (a gut feeling) que se genera en los consumidores hacia una pieza de contenido (logo, producto, servicio, nombre, sonido, color etc.) relacionado con un individuo u organización.
 

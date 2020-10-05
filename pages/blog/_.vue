@@ -19,3 +19,7 @@ export default {
   name: 'BlogPost'
 }
 </script>
+
+<style>
+@import url(~/assets/style/blog.css);
+</style>
