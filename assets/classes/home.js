@@ -10,14 +10,16 @@ export default {
   }),
   mounted () {
     let baseURL = this.baseURL
-    this.$content(`${baseURL}blog`).only(['title', 'description', 'tags', 'slug']).where({published: true}).limit(3).sortBy('date', 'desc').fetch()
+    this.$content(`${baseURL}blog`).only(['title', 'description', 'tags', 'slug', 'image', 'imageAlt']).where({published: true}).limit(3).sortBy('date', 'desc').fetch()
     .then(posts => {
       this.posts = posts
     })
+    /*
     this.$content(`projects`).only(['title', 'thumbnail', 'description', 'tags', 'url', 'github']).where({published: true}).limit(3).sortBy('date', 'desc').fetch()
     .then(projects => {
       this.projects = projects
     })
+    */
   },
   computed: {
     lang () {

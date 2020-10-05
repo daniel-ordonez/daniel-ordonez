@@ -1,11 +1,14 @@
 <template>
   <div class="card blog-card">
-    <nuxt-link :to="`${baseUrl}blog/${post.slug}`" class="a--transparent">
-      <h3 class="post__title">{{post.title}}</h3>
-      <p class="post__excerpt">{{post.description}}</p>
+    <nuxt-link :to="`${baseUrl}blog/${article.slug}`" class="a--transparent">
+      <img :src="article.image" :alt="article.imageAlt">
+      <div class="card__body">
+        <h3 class="article__title">{{article.title}}</h3>
+        <p class="article__excerpt">{{article.description}}</p>
+      </div>
     </nuxt-link>
     <div v-show="false">
-      <span v-for="(tag, tag_index) in post.tags" :key="`tag--${tag_index}`">{{tag}}</span>
+      <span v-for="(tag, tag_index) in article.tags" :key="`tag--${tag_index}`">{{tag}}</span>
     </div>
   </div>
 </template>
@@ -14,7 +17,7 @@
 export default {
   name: 'BlogCard',
   props: {
-    post: {
+    article: {
       type: Object,
       default: () => ({})
     },
@@ -27,12 +30,8 @@ export default {
 </script>
 
 <style>
-.post__title {
+.article__title {
   line-height: 1;
   margin-bottom: 1rem;
-}
-
-.blog-card {
-  padding: 1rem;
 }
 </style>

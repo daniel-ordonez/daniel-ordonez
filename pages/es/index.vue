@@ -7,7 +7,7 @@
     </section>
     <div class="container--main">
       <div class="stack--row min-content gap--lg">
-        <section>
+        <section v-if="false">
           <h2>Proyectos</h2>
           <div class="stack--row gap--md">
             <template v-if="projects">
@@ -36,7 +36,7 @@
             <template v-if="posts">
               <blog-card v-for="(post, index) in posts"
               :key="`post-${index}`"
-              :post="post"
+              :article="post"
               baseUrl="/es/"
               />
             </template>

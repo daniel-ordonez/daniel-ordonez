@@ -35,7 +35,7 @@ h2 {
   line-height: 48px;
   margin-bottom: 1rem;
 }
-.t--h3 {font-size: 24px; line-height: 24px;}
+
 h3 {
   font-size: 24px;
   line-height: 36px;
@@ -60,7 +60,10 @@ svg>*{
   user-select: none;
   pointer-events: none;
 }
-
+img {
+  width: 100%;
+  object-fit: cover;
+}
 .a--transparent {
   color: inherit;
   font-size: inherit;
@@ -81,6 +84,10 @@ svg>*{
   background: white;
   border-radius: 8px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.16), 0 0px 8px 4px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+.card__body {
+  padding: 1rem;
 }
 /* LAYOUT */
 .flex {display: flex;}
@@ -108,3 +115,7 @@ svg>*{
   background: #f0f0f0;
   color: transparent;
 }
+
+.t--h3 {font-size: 24px; line-height: 24px;}
+.t--capitalize {text-transform: capitalize;}
+.t--overtext {font-size: 12px;margin-top: 1rem;}

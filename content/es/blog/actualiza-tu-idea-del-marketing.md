@@ -1,25 +1,28 @@
 ---
 title: Actualiza tu idea del marketing
 description: 'Por qué hacemos marketing, cómo ha cambiado, qué es branding y por qué es tan importante en la actualidad.'
+locale: es_ES
 keywords: 'concepto de marketing, breve historia del marketing, el proceso del marketing, que es branding, definicion de marketing, porque es importante el branding, marketing para personas, que es una marca carismatica'
 date: '2020-10-01'
 author: 'Daniel Ordoñez'
 tags: [marketing]
-image: ''
+image: 'https://res.cloudinary.com/road/image/upload/v1601933876/daniel-ordonez.com/blog/value-trust-dog.png'
 published: true
 ---
 
-El concepto de marketing es uno muy amplio, y aunque algunas personas mantienen la impresión de que solo cubre publicidad y ventas, en realidad el marketing es más como una sombrilla que cubre una variedad de prácticas, herramientas, y teorías.
+El concepto de marketing es uno muy amplio. 
+
+Aunque algunas personas mantienen la impresión de que solo cubre publicidad y ventas, en realidad el marketing es más como una sombrilla que cubre una variedad de prácticas, herramientas, y teorías.
 
 > Parece que el marketing nos ha acompañado desde el inicio del comercio hace miles de años, y su evolución ha seguido grandes cambios en la cultura y la tecnología.
 
-Lo cierto es, que siempre está cambiando, y a lo largo del tiempo han surgido muchas formas de verlo para su estudio y práctica.
+Lo cierto es que el marketing siempre está cambiando, y a lo largo del tiempo han surgido muchas formas de verlo para su estudio y práctica.
 
-Para entender mejor cómo cambia el marketing, podemos compararlo con el lenguaje.
+Para entender mejor cómo cambia el marketing podemos compararlo con el lenguaje.
 
-Con el tiempo nuevas palabras y estilos se agregan a nuestro vocabulario, mientras otras dejan de usarse, algunas palabras pasan a considerarse inapropiadas, y a veces tomamos palabras prestadas y hacemos mezclas. 
+Con el tiempo nuevas palabras y estilos de habla se agregan a nuestro vocabulario mientras otras dejan de usarse, algunas palabras pasan a considerarse inapropiadas, y a veces tomamos prestadas y hacemos mezclas con otras palabras. 
 
-Al final, es una actividad social y lo que queremos es transmitir una idea para conseguir algo.
+Al final, es una actividad social donde queremos transmitir una idea para conseguir algo.
 
 El marketing es algo que ocurre entre personas, y a menudo involucra una dinámica de intercambio (le prometes algo al consumidor, y recibes algo a cambio)
 
