@@ -2,7 +2,7 @@
   <div id="blog">
     <header class="flex align-items--center gap--sm">
       <home-btn></home-btn>
-      <nuxt-link :to="`${lang}blog/`" class="a--transparent">
+      <nuxt-link :to="`/${baseURL}blog/`" class="a--transparent">
         <strong class="t--h3">
           /blog
         </strong>
@@ -34,8 +34,9 @@ export default {
   computed: {
     lang () {
       let path = this.$route.path.split('/')
-      return path.length > 1 && path[1] === 'es' ? '/es/' : '/'
-    }
+      return path.length > 1 && path[1].length === 2 ? path[1] : false
+    },
+    baseURL () { return this.lang ? `${this.lang}/` : ''}
   }
 }
 </script>

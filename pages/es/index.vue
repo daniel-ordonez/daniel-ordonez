@@ -29,7 +29,7 @@
           </div>
         </section>
         <section>
-          <nuxt-link :to="`${baseURL}blog/`" class="a--transparent">
+          <nuxt-link :to="`/${baseURL}blog/`" class="a--transparent">
             <h2>Blog</h2>
           </nuxt-link>
           <div class="stack--row gap--md">
@@ -67,16 +67,6 @@ export default {
     link: [
       { rel: 'canonical', hid: 'canonical', href: 'https://daniel-ordonez.com/es/' }
     ]
-  },
-  data: () => ({
-    lang: '/es/'
-  }),
-  computed: {
-    baseURL () {
-      let path = this.$route.path
-      let slash = path.charAt(path.length - 1) === '/'
-      return slash ? '' : 'es/'
-    }
   }
 }
 </script>
