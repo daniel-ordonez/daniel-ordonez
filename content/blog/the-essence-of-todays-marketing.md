@@ -10,7 +10,7 @@ image: 'https://res.cloudinary.com/road/image/upload/v1601933876/daniel-ordonez.
 imageAlt: 'A dog thinking on value and trust'
 published: true
 ---
-**TL;DR** Marketing happens as a direct response to the need for differentiation but with so many similar options on the market today, generic marketing strategies are not enough, you have to integrate a more personal and human touch; charismatic brands that know how to build trust in a relationship of value become irreplaceable for the consumer.
+**TL;DR** Marketing happens as a direct response to the need for differentiation but with so many similar options on the market today, generic marketing strategies are not enough, you have to integrate a more personal and human touch; charismatic brands that know how to build trust in a relationship of value with the consumers become irreplaceable for them.
 
 ## The concept of marketing is quite broad.
 

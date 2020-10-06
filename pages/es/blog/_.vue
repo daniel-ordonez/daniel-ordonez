@@ -30,5 +30,5 @@ export default {
 }
 </script>
 <style>
-@import url(~/assets/style/blog.css);
+@import url(~/assets/style/blogpost.css);
 </style>

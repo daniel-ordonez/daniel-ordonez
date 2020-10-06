@@ -1,10 +1,10 @@
 <template>
   <div id="about-me">
     <h2>About me</h2>
-    <p>Web developer, product design and visual design enthusiast, and live-long learner; from Guatemala, born in '95.</p>
+    <p>I'm a web developer, product design and visual design enthusiast, and life-long learner; from Guatemala, born in '95.</p>
     <p>My friends call me Dani (so you too can if you want)</p>
-    <h3>I like crafting stuff.</h3>
-    <p>I mostly code, but the idea (itself) of creating something is what appeals to me.</p>
+    <h3>Why I do like to make stuff?</h3>
+    <p>I mostly code, but the idea of creating something is really appeals to me.</p>
     <p>Like, when you have a problem to solve with a clear objective, some set of rules, and a good understanding of what you can do; then, what you got is basically a game.</p>
     <p>There’ll be a process of exploration, gathering information, finding challenges, building up skills and knowledge, design a plan and try, try, try.</p>
     <p>Sometimes you win, sometimes you lose, and when you try again you learn.</p>
@@ -15,7 +15,7 @@
     <p>But if everyone strive to get better, even a little every day, and does tomorrow better than today; it might come the day when there’s no mess outside.</p>
     <p>With that in mind, I came up with this ideal:</p>
     <blockquote>
-      <mark>Live learning and ajoying, design to improve, change things, make today better than yesterday and share your love.</mark>
+      <mark>Live learning and enjoying, design to improve, change things, make today better than yesterday and share your love.</mark>
     </blockquote>
     <p>Summarized as:<br>Learn + Enjoy + Design + Create + Repeat ❤️</p>
     <p>It may sound like a beauty contest speech, but I already said I'm a dreamer and an idealist</p>
