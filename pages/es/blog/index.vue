@@ -7,7 +7,7 @@
       <blog-card v-for="(article, index) in posts"
         :key="`post-${index}`"
         :article="article"
-        baseUrl="/es/"
+        baseURL="es/"
       />
     </grid-showcase>
   </div>

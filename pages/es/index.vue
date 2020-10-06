@@ -28,27 +28,7 @@
             </template>
           </div>
         </section>
-        <section>
-          <nuxt-link :to="`/${baseURL}blog/`" class="a--transparent">
-            <h2>Blog</h2>
-          </nuxt-link>
-          <div class="stack--row gap--md">
-            <template v-if="posts">
-              <blog-card v-for="(post, index) in posts"
-              :key="`post-${index}`"
-              :article="post"
-              baseUrl="/es/"
-              />
-            </template>
-            <template v-else>
-                <div class="card blog-card" v-for="(_, index) in Array(1)" :key="`post-${index}`">
-                  <h3 class="post__title skeleton">empty</h3>
-                  <p class="post__excerpt skeleton">empty</p>
-                  <p class="post__excerpt skeleton">empty</p>
-                </div>
-            </template>
-          </div>
-        </section>
+        <top-articles :baseURL="baseURL" :posts="posts"></top-articles>
       </div>
       <about-me-es/>
     </div>

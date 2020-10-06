@@ -1,6 +1,6 @@
 <template>
   <div class="card blog-card">
-    <nuxt-link :to="`${baseUrl}blog/${article.slug}`" class="a--transparent">
+    <nuxt-link :to="`/${baseURL}blog/${article.slug}`" class="a--transparent">
       <img :src="article.image" :alt="article.imageAlt">
       <div class="card__body">
         <h3 class="article__title">{{article.title}}</h3>
@@ -21,9 +21,9 @@ export default {
       type: Object,
       default: () => ({})
     },
-    baseUrl: {
+    baseURL: {
       type: String,
-      default: '/'
+      default: ''
     }
   }
 }
