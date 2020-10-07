@@ -1,30 +1,49 @@
+const routes = async () => {
+  const { $content } = require('@nuxt/content')
+  let files = await $content({ deep: true }).where({published: true}).fetch()
+  return files.map(file => {
+    console.log(file.path)
+    return file.path
+  })
+}
+
+const constructFeedItem = (post, hostname) => {
+  const url = `${hostname}/${post.path}`;
+  return {
+    title: post.title,
+    id: url,
+    link: url,
+    description: post.description,
+    content: post.description
+  }
+}
+
+const createFeed = async (feed, args) => {
+  const [ext] = args;
+  const hostname = process.NODE_ENV === 'production' ? 'https://daniel-ordonez.com' : 'http://localhost:3000';
+  feed.options = {
+    title: "Daniel Ordoñez",
+    description: "Yo! I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams with a lot of stuff.",
+    link: `${hostname}/feed.${ext}`
+  }
+  const { $content } = require('@nuxt/content')
+  let files = await $content({ deep: true }).where({published: true}).fetch()
+  for (const post of files) {
+    const feedItem = await constructFeedItem(post, hostname);
+    feed.addItem(feedItem);
+  }
+  return feed;
+}
+
+
 
 export default {
-  /*
-  ** Nuxt rendering mode
-  ** See https://nuxtjs.org/api/configuration-mode
-  */
   mode: 'spa',
-  /*
-  ** Nuxt target
-  ** See https://nuxtjs.org/api/configuration-target
-  */
   target: 'static',
   generate: {
     fallback: true,
-    async routes () {
-      const { $content } = require('@nuxt/content')
-      const files = await $content({ deep: true }).where({published: true}).only(['path']).fetch()
-      return files.map(file => {
-        console.log(file.path)
-        return file.path
-      })
-    }
+    routes
   },
-  /*
-  ** Headers of the page
-  ** See https://nuxtjs.org/api/configuration-head
-  */
   head: {
     title: 'Daniel Ordoñez',
     meta: [
@@ -37,41 +56,42 @@ export default {
       { hid: 'hreflang-en', rel: 'alternate', href: 'https://daniel-ordonez.com/', hreflang: 'en' }
     ]
   },
-  /*
-  ** Global CSS
-  */
   css: [
     '~/static/style/stylesheet.css'
   ],
-  /*
-  ** Plugins to load before mounting the App
-  ** https://nuxtjs.org/guide/plugins
-  */
   plugins: [
   ],
-  /*
-  ** Auto import components
-  ** See https://nuxtjs.org/api/configuration-components
-  */
   components: true,
-  /*
-  ** Nuxt.js dev-modules
-  */
   buildModules: [
   ],
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    '@nuxtjs/feed',
+    '@nuxtjs/sitemap'
   ],
-  /*
-  ** Content module configuration
-  ** See https://content.nuxtjs.org/configuration
-  */
   content: {},
+  sitemap: {
+    hostname: 'https://daniel-ordonez.com',
+    gzip: true,
+    routes
+  },
+  feed: [
+    {
+      path: '/feed.xml',
+      create: createFeed,
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+      data: [ 'xml' ]
+    },
+    {
+      path: '/feed.json',
+      create: createFeed,
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+      data: [ 'json' ]
+    },
+  ],
   hooks: {
     'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
@@ -94,12 +114,12 @@ export default {
       name: 'Daniel Ordoñez',
       short_name: 'd~o app',
       lang: 'en',
-      description: "Yo! I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams on a better tomorrow."
+      description: "Yo! I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams with a lot of stuff."
     },
     meta: {
       name: 'Daniel Ordoñez',
       author: 'Daniel Ordoñez',
-      description: "I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams on a better tomorrow.",
+      description: "I'm Daniel, a developer and design enthusiast who likes making digital stuff and day dreams with a lot of stuff.",
       ogHost: 'daniel-ordonez.com'
     }
   }

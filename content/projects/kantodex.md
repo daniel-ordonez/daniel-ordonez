@@ -6,5 +6,5 @@ url: 'https://kanto-dex.netlify.app/'
 github: 'https://github.com/daniel-ordonez/pokedex'
 tags: [pwa]
 date: '2020-10-02'
-published: true
+published: false
 ---
