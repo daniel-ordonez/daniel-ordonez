@@ -40,19 +40,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.scroll-progress {
-  height: .5rem;
-  position: sticky;
-  bottom: 0;
-  background: hsla(0, 0%, 95%, 1);
-}
-.scroll-progress__bar {
-  height: 100%;
-  width: var(--progress, 0%);
-  background: #4caf50;
-  transition: width ease-in .2s;
-  will-change: width;
-}
-</style>

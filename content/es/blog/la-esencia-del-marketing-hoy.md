@@ -6,8 +6,9 @@ keywords: 'concepto de marketing, breve historia del marketing, el proceso del m
 date: '2020-10-01'
 author: 'Daniel Ordoñez'
 tags: [marketing]
-image: 'https://res.cloudinary.com/road/image/upload/v1601933876/daniel-ordonez.com/blog/value-trust-dog.png'
+image: 'https://res.cloudinary.com/road/image/upload/v1602702728/daniel-ordonez.com/blog/value-trust-dog.png'
 published: true
+sources: {"data":[{"author":"Wikipedia","name":"History of marketing","link":"https://en.wikipedia.org/wiki/History_of_marketing"},{"author":"The Futur","name":"What Is Branding? 4 Minute Crash Course.","link":"https://youtu.be/sO4te2QNsHY"},{"author":"The Futur","name":"IDENTITY DESIGN: BRANDING","link":"https://youtu.be/pR7tMnKghDs"},{"author":"Behind the Brand","name":"Seth Godin - Everything You (probably) DON'T Know about Marketing","link":"https://youtu.be/BPK_qzeH_yk"}]}
 ---
 **TL;DR** El marketing aparece como respuesta a la necesidad de diferenciarse, pero con tantas opciones similares en el mercado, las estrategias genéricas no son suficientes, hay que integrar un toque personal y humano; las marcas carismáticas saben construir confianza en una relación de valor volviéndose irremplazables para el consumidor.
 
@@ -236,3 +237,4 @@ Después de leer este artículo espero que puedas ver a tu negocio y pensar
 ¿qué nuevas prácticas que aún no estoy usando debería incluir en mi estrategia?
 
 Con el objetivo de entregar valor a tu consumidor y empezar a generar una relación de confianza.
+

@@ -1,5 +1,6 @@
+const readingTime = require('reading-time')
 export default {
-  layout: 'blog',
+  layout: 'blogpost',
   head() {
     return {
       title: this.article.title,
@@ -23,6 +24,7 @@ export default {
     }
   },
   data: () => ({
+    readingTime: null,
     lang: false,
     progress: 0
   }),
@@ -35,16 +37,33 @@ export default {
     else return {article, lang}
   },
   mounted () {
-    const el = this.$el.querySelector('.nuxt-content-container') || this.$el.querySelector('.nuxt-content')
-    const onScroll = () => {
-      let rect = el.getBoundingClientRect()
-      let v = document.documentElement.clientHeight
-      let s = document.documentElement.scrollTop
-      let t = s + rect.top
-      let h = el.scrollHeight
-      let p = Math.floor(((s + v) / (h + t))* 100)
-      this.progress = p
+    this.setProgressBar()
+    this.injectReadingTime()
+  },
+  methods: {
+    injectReadingTime () {
+      const el = this.$el.querySelector('.nuxt-content-container') || this.$el.querySelector('.nuxt-content')
+      if (el) {
+        const stats = readingTime(el.textContent)
+        this.readingTime = stats
+      }
+    },
+    setProgressBar () {
+      const el = this.$el.querySelector('.nuxt-content-container') || this.$el.querySelector('.nuxt-content')
+      const onScroll = () => {
+        if (this.progress < 100) {
+          let rect = el.getBoundingClientRect()
+          let v = document.documentElement.clientHeight
+          let s = document.documentElement.scrollTop
+          let t = s + rect.top
+          let h = el.scrollHeight
+          let p = Math.floor(((s + v) / (h + t))* 100)
+          this.progress = p
+        } else {
+          window.onscroll = null
+        }
+      }
+      window.onscroll = onScroll
     }
-    window.onscroll = onScroll
   }
 }

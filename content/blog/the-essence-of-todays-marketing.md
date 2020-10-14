@@ -1,206 +1,200 @@
 ---
 title: The essence of today's marketing
-description: 'Why do we do marketing? How has it changed? What is branding and why it is so important right now?'
+description: 'What is branding and why it is so important right now? Why did we start doing marketing and how it changed to what we do now?'
 locale: en_US
 keywords: 'the concept of marketing, brief history of marketing, the marketing process, what is branding, definition of marketing, why is branding important, marketing for people, what is a charismatic brand'
 date: '2020-10-02'
 author: 'Daniel Ordoñez'
 tags: [marketing]
-image: 'https://res.cloudinary.com/road/image/upload/v1601933876/daniel-ordonez.com/blog/value-trust-dog.png'
+image: 'https://res.cloudinary.com/road/image/upload/v1602702728/daniel-ordonez.com/blog/value-trust-dog.png'
 imageAlt: 'A dog thinking on value and trust'
 published: true
+sources: {"data":[{"author":"Wikipedia","name":"History of marketing","link":"https://en.wikipedia.org/wiki/History_of_marketing"},{"author":"The Futur","name":"What Is Branding? 4 Minute Crash Course.","link":"https://youtu.be/sO4te2QNsHY"},{"author":"The Futur","name":"IDENTITY DESIGN: BRANDING","link":"https://youtu.be/pR7tMnKghDs"},{"author":"Behind the Brand","name":"Seth Godin - Everything You (probably) DON'T Know about Marketing","link":"https://youtu.be/BPK_qzeH_yk"},{"author":"Marty Neumeier","name":"The Brand Gap: How to Bridge the Distance Between Business Strategy and Design","link":"https://www.amazon.com/Brand-Gap-Distance-Business-Strategy/dp/0321348109"}]}
 ---
-**TL;DR** Marketing happens as a direct response to the need for differentiation but with so many similar options on the market today, generic marketing strategies are not enough, you have to integrate a more personal and human touch; charismatic brands that know how to build trust in a relationship of value with the consumers become irreplaceable for them.
+My intention with this article is to give a sense of why so many people (and businesses) are looking to "build a brand" and link that to what I see is the "essence" of today's marketing.
+
+Hopefully, this changes the way you look at marketing, whether as a consumer, to examine your relationship with the brands you consume; or as an entrepreneur, to examine your marketing objectives.
+
+**_TL;DR_**
+
+-   The term marketing refers to a combination of tools and strategies used in combination to achieve some business objectives, these tools have changed over the years shaping the idea of what we see as marketing.
+-   Though the tools and practices may change, the objective remains, that is, to be the consumer’s choice.
+-   Many marketing practices have been popularized over the centuries, some are the result of changes in society while others leverage technological development.
+-   Being the choice of the consumer once is not enough, modern marketing requires developing a deeper relationship with the consumers so that they choose us every time.
+-   Brands who exhibiting a personality and values people can relate with, get to build trust and worth more by what they promise to their consumers.
 
 ## The concept of marketing is quite broad.
 
-Although some people maintain the impression that it only covers advertising and sales, in reality, marketing is more like an umbrella covering a variety of practices, tools, and theories.
+![Marketing is broad](https://media.giphy.com/media/1Bdckl4Ve6b7B6xWcL/giphy.gif)
 
-> It seems that marketing has been with us since the beginning of commerce thousands of years ago, and its evolution has followed great changes in culture and technology.
+Although some people maintain the impression that marketing refers only to advertising for the sake of having sales, in reality, the term marketing is an umbrella that covers a variety of tools, theories, and practices (including advertising).
 
-The truth is that marketing is always changing, and over time many ways of looking at it have emerged, both for its study and practice.
+The tools and techniques used in marketing tend to change and evolve, as result, the way we look at marketing had also changed, both for its study and practice.
 
-To better understand how marketing changes, we can compare it to language.
+> It seems that marketing has been with us since the beginning of commerce thousands of years ago, and its evolution has followed major changes in culture and technology.
 
-Over time, new words and styles of speaking are added into our vocabulary while others are no longer used, some words become inappropriate, and sometimes we borrow, mix and match words from other places.
+Just think about how technology has changed the way people interact with each other. In the last years, many have turned to the internet for most of their needs and activities.
 
-In the end, it's a social activity in which we want to convey an idea to achieve something..
-
-Marketing is something that happens between people and it often involves an exchange dynamic (you promise something to the consumer, and receive something in return).
-
-When the way we communicate changes, be it to some cultural or technology change (for example, we went from using phones attached to the wall to having video calls over the Internet), the interaction has to adjust for these changes.
-
-> The ways we interact adjust to changes in culture and new technologies
-
-I hope that with that analogy we are clear on that _marketing is something that changes and adjusts to the current times_.
+It’s like the Internet has become the biggest market ever, and naturally, that has made **digital marketing** the defacto face of marketing in practice, though there's still plenty beneath the surface.
 
 ## Yes, marketing is necessary. But why?
 
-
-It is important to consider the root cause of why we do something and always keep in mind the goal we seek to achieve.
-
-Many people think that marketing is just advertising,
-
-> If I tell everyone that I sell X and that they want it, they're gonna buy it for sure.
-
-This (wrong) perception is too superficial and doesn't consider other important factors, such as the complexity of the human mind when making decisions, and the role of interactions in the whole process.
-
-This type of fixed mindset is what keeps many businesses repeating the same practices from when they first started 30, 40, or 60 years ago.
-
-If we understand the real reason why it was done in a certain way, and why it worked (or not), we can adapt our marketing strategy to the current (or future) context to ensure that it continues to work.
-
-So why do we do marketing?
-
-From the moment that consumers had an alternative to our product, there's a need to prove our offer is worth more so they chose us.
-
-Therefore, we could say that marketing is _something that has been done for the sake of differentiation_ since the beginning of competition in commerce.
-
-And the reason for wanting to differentiate ourselves is _so the consumer can notice us and choose us over their alternatives_.
-
-This definition may still come a bit short, but at least it focuses on what's important, not on a sale or a product, but **a person who has to make a decision**.
+![But Why Tho?](https://media.giphy.com/media/dxP9spF3YLDi03H8f1/giphy.gif)
 
 
-## A brief history of marketing
+I said before that some people have a narrow conception of marketing, and that’s understandable since ads are mostly designed to be noticeable.
 
-It is important to distinguish that the current idea of a brand (or branding) is understood as an abstract concept and not as the (literal) brand or physical signage of a product through stamps or impressions.
+But if saying **_"you should buy my product"_** was enough for the customer to make a purchase decision, the same ancient practices from the past would still work, and the concept of marketing would’ve never developed.
 
-The latter practice is one of the oldest in marketing, evidenced by labels and packaging dating as far back as 35 CE.
+The problem with this perception is that it’s too superficial and doesn’t consider the complex interactions and decisions involved in the process of marketing and sales.
 
-Early marketing efforts already included differentiation techniques with claims of quality, catchy phrases, and logos.
+> It is important to consider the root cause of why we are doing something and always keep in mind those goals, so even if the tools change, the desired result won't.
 
-The need to differentiate and attract consumers is not new by any means, but the way to do it has changed and evolved.
+### So why do we do marketing?
 
-In the Middle Ages, there was a great distinction between the rich and the poor, as a result, merchants created special spaces in their stores reserved to serve the rich and noble while serving the rest from a window to the street.
+From the moment that consumers had an alternative to our product, there’s a necessity to prove to them our offer is worth more and they should choose us.
 
-In the seventeenth and eighteenth centuries, large towns and cities were established, as a result, strategies were developed to sell to the masses, such as sending catalogs by mail, or giving products to celebrities to attract consumers.
+This demand for differentiation becomes more important as the competition grows, with many similar offerings in the market a small treat of feature can make the difference between passing completely unnoticed or becoming the most popular choice.
 
-In the nineteenth and twentieth centuries, the middle class and mass production appeared, competition between companies grew and the need for new strategies to ensure a competitive advantage grew.
+Therefore, we could say that marketing is something that has been done since the beginning of competition in commerce _for the sake of differentiation_.
 
-Around this time, the idea of ​​using demographics to segment consumers based on certain aspects of the population, such as their occupation, social status, education, and language, was popularized.
+To have a chance of being the consumer choice, first, we need to have a place in their minds, there we compete with other brands that are being considered as well by the consumer, and that’s when **branding** makes the difference.
 
-As a result of the demand for people with specialized knowledge, the first marketing courses were created in universities, and from its study, new ways to look at and practicing it were established (marketing orientations).
+Marketing achieves this through a process of **communicating and delivering**.
 
-### Some popular marketing orientations:
+Communication enables a brand to know what the consumer wants and lets the consumers know what offers exist that can satisfy their needs or desires.
 
-**Production-oriented marketing**: the company focuses on producing more to reduce unit cost; to attract consumers who prefer a more affordable product.
+When the consumer tries a product, the brand has a chance to prove its worth by delivering the expected result to the consumer.
 
-**Sales-oriented marketing**: the company focuses on sales techniques and the customer-seller relationship to attract the consumers looking for a "better deal."
-
-**Product-oriented marketing**: the company seeks to have a unique product differentiated by aspects of quality, such as design, performance, or the technology involved; to attract the consumers seeking a certain status or quality standard.
-
-**Market-oriented marketing**: in a competitive market, the company seeks to better understand the needs of consumers and generate products that meet specific needs or desires, resulting in a greater diversity of products in the market.
-
-And so, little by little a more general definition of marketing was developed, which can be summarized as
-
-Explore, create, and deliver value to profitably meet the needs of a target market.*
-
-This modern definition of marketing is very good to summarize _the marketing process_, where a company explores the needs it can satisfy and offers a value proposition, i.e. a product or service, in exchange for profits.
+This definition doesn’t cover the whole essence of marketing, but at least, it focuses on what’s important, not a sale or a product, but **a person who has to make a decision**.
 
 ### The Marketing Process
 
-The goal is to be the consumer's choice over other alternatives, this means that our value proposition must be more attractive, and not only the first time, but it must remain in the customer's mind as the best option always.
+![People choose what you like more](https://media.giphy.com/media/3orif1jPCyJw3VmDqo/giphy.gif)
 
-To achieve this, our value proposition must deliver value. Not only that, it must be "superior" to the competition's (at least in the eyes of the consumer). This is called **delighting** the consumer.
+For a brand to be the consumer's choice, it has to give them something they want and something the alternatives can't.
 
-The first steps of the marketing process focus on getting a proposal that can provide this superior value, and start by choosing a market segment, since the more specific it is, the easier it will be to identify its needs.
+The value of a product for the consumer is the result of the satisfaction they received based on how much it cost them and the expectations they had at the moment of purchase.
 
-The more specific your target market is, the easier it will be to identify its needs.
+When a product not only delivers on the expectations but surpasses it, then, the consumer feels **delighted** and is more likely to consume that product again.
 
-With a good understanding of the needs and wants of the market, you can design a value proposition (product or service) that alleviates this need or satisfies that desire.
+> Delighting a customer means delivering value that far exceeds their expectations.
 
-The last part of the process involves profitability; to generate a steady stream of income that allows companies to make a profit from the business.
+The first steps of the _marketing process_ focus on getting a proposal that can provide this superior value.
 
-With the idea of _marketing management_, which involves the measurement of indicators and results; they soon realized that acquiring a new customer can be very expensive; Therefore, it is important to retain customers, and achieve loyalty by creating a close relationship with them.
+It starts by choosing a market segment, the more specific the segment the easier to identify what it wants.
 
-In the long term, close relationships with customers generate a higher return for multiple reasons: customers tend to buy in greater quantity and frequency, and are more likely to refer others, helping to expand the customer base.
+With a good understanding of the market, you can design a value proposition (product or service) that fits the needs and desires of people, and that they are willing to pay to alleviate.
 
-At this point, we already have a good idea of ​​what we mean by marketing.
+The last part of the process involves profitability and that involves the business model.
 
-Create strategies to provide superior value and achieve a close relationship with the consumer.
+Soon, businesses realized that acquiring a new customer can be very expensive, and therefore, it's important to retain customers and gain loyalty by creating a close relationship with them.
+
+> The marketing process is about creating strategies that provide superior value and produce a close relationship with the consumer.
+  
+In the long term, this kind of relationship generates a higher return for businesses:
+
+-   customers tend to buy more frequently and in greater quantity,
+-   they also become more likely to refer the brand, helping to expand the customer base.
 
 ## Marketing to people, not populations
 
-It only remains to define one more concept, which will help us understand why branding is more important now than ever, and that concept is **psychography**.
+![Marketing to people](https://media.giphy.com/media/3orife0VaGDMkyyEhO/giphy.gif)
+ 
+There's an important concept that helps understand why branding is more important now than ever, and that is **psychography**.
 
-The study of human behavior according to their attitudes, aspirations, and other psychological criteria.
+> Psychography is the study of human behavior according to their attitudes, aspirations, and other psychological criteria.
 
-Looking back at everything we've seen so far, we know that marketing in practice requires interaction with consumers, but until a few years ago, that interaction was quite one-sided.
+Marketing in practice requires interaction with the consumers, but not too far ago, those interactions were pretty much one-sided.
 
-And is that you cannot respond to the screen when you see an ad on TV or in the cinema.
+Marketing campaigns had to be done based on population (demographics) in hopes of reaching the largest-possible audience sharing the same interests.
 
-Campaigns (marketing) had to be done based on population (demographics) hoping to reach the largest possible audience that shares the same interests.
+Now, we're living in the internet era, and physical limits are no longer a real barrier to communication.
 
-Entering the era of the internet and global connection, physical limits are no longer a real barrier to communication.
+Thanks to advertising giants such as Google, and later Facebook, it became possible to measure (with ease) people's interactions with the content of a campaign.
 
-Now a piece of content can be shared and consumed anywhere in the world.
+There are many ways to measure a "response" from the audience at a piece of content: through clicks, reactions, watch time, shares, and endless other metrics.
 
-Thanks to advertising giants such as Google, and later Facebook, it became possible (with ease) to measure people's interactions with the content of a campaign in different formats; through clicks, reactions, watch time, shares, and endless other metrics.
+So, now we know the reaction of the audience, making the process a two-way interaction with feedback in realtime.
 
-All this data and the models that have been generated from it, have allowed us to better understand people's behavior and tastes; and it has led to the trend of generating personalized content, not based on populations that share a physical space, but individuals who share similar likes and ideas.
+All this data (and the models generated from it) has allowed us to understand better people's behavior.
 
-So now we can generate content for a very specific audience (niche) and still be found and consumed by people on the internet.
+Resulting in the trend of personalized content, not based on demographics, but on individuals who share similar likes and ideas.
 
-## Brand
+Therefore, instead of shooting aimlessly at a group, we can target specific individuals (niches), knowing the sort of content they're more likely to consume.
 
-It is a feeling (a gut feeling) that is generated in consumers towards a piece of content (logo, product, service, name, melody, color, etc.) related to an individual or organization.
+## What do we call a Brand?
+
+![Tegrity](https://media.giphy.com/media/XEV1AkrlVspDKc7X7X/giphy.gif)
+
+It is a gut feeling generated in consumers towards a piece of content (logo, product, service, name, melody, color, etc.) related to an individual or organization.
 
 In other words, it is **a RESULT**.
 
 The impression that remains on the consumer's mind after some experience with the product, service, or company.
 
-It is something that is created in the consumer; therefore, its interpretation depends on the consumer and is not a single one (each person creates a different image).
+It's something that the consumer develops; therefore, its interpretation depends on the consumer, and each person can have a different one.
 
-Branding is in everything, from the people to the product experience, the packaging, the message, the website, and the graphics, even the physical stores.
+Branding is in everything, from the people to the product, the website, the packaging, and even the physical stores.
 
-It is like a reputation, and as such, we cannot control it in its entirety, but we can influence it to keep it close to the desired point.
+It is like a reputation, and as such, we cannot control it, but we can influence it to keep it close to the desired point.
 
 > You cannot control the process, but you can influence it. - Marty Neumeier. The Brand Gap.
-
+  
 ## Why is branding so important
 
-We now know that people consume based on their beliefs and desires; In addition to how easy it has become to create, share and consume content online, we find ourselves in a scenario flooded with offers and in constant change:
+![So many possibilities](https://media.giphy.com/media/giEftvZuPAiZQBphEI/giphy.gif)
 
--   People have too many options and too little time
--   Many offers are similar in quality and features
--   We tend to base purchasing decisions on trust
+> A problem most new brands and entrepreneurs have to face today is a flooded market with many offers similar in quality and features.
 
-The key here is trust in the brand, and how do we develop it?
+People now have too many options and too little time; there's no chance to objectively assess each and make numbers, so most purchasing decisions tend to base on trust.
 
 In his book Then Brand Gap, Marty Neumeier introduces us to trust as:
 
 > Trust = Reliability + Delight
 
-We already cover the **delight** part in the marketing process, it is about meeting consumer expectations on our value proposition, and going further.
+Delight is about meeting consumer expectations with our offer and going further delivering value.
 
-Reliability is a bit more complicated because it is something that must be cultivated in people and can be different for each person.
+Where a single product can delight the consumer, the base of reliability is consistency. The brand has to deliver predictable results on all its offerings.
 
-Companies are constantly making promises to their audience, and not just with their product or service's value proposition, but also with what they say, with their values and their mission statement, and with every social media post.
+Companies are making promises to their audience all the time, with their products and the expectations they form on people.
 
-When one of these promises captures a person's attention, and they deliver, trust can begin to develop; on the other hand, when companies (or people) don't, they not only miss out on this opportunity to connect with their audience but may even kill the relationship completely, looking not worthy of trust any more.
+Not only that, but a brand also creates expectations with everything it says, like its values, its mission statement, and with every piece of content it puts out.
+
+These kinds of expectations can be powerful when they connect directly with people's feels and beliefs. That's because they can relate and feel like part of something.
+
+When a brand promise captures a person's attention, and then brand delivers, trust can begin to develop.
+
+"Branding is like a reputation" if your brand does well, your brand will improve over time. Conversely, if your brand doesn't deliver on its promises, it can build a bad reputation if not remedied soon.
 
 > The value of a brand comes from a promise that creates expectations in its audience.
 
 ### Why do some choose a brand over another?
+![Apple or Android?](https://media.giphy.com/media/kCVIL0CLNWv2E/giphy.gif)
 
-It's not a secret that Apple devices (computers, tablets, or smartphones) tend to be more expensive than other alternatives on the market.
+It is not a secret that Apple devices (computers, tablets, or smartphones) tend to be more expensive than most brands on the market.
 
-This price difference has even been called the “Apple tax”, an extra you must pay to be part of the Apple ecosystem.
+This price difference even has a name, the Apple tax; an extra you must pay to be part of the Apple ecosystem.
 
 > This is the value of a brand, what people are willing to pay for a promise
 
-What does Apple promise?
+**What does Apple promise?**
 
-"A unique experience, with a premium, safe product, that uses quality components, high technology, sleek design, and a whole ecosystem with exclusive apps and people who think like me".
+A unique experience with a premium product; that uses quality components, high technology, and security, has a sleek design, and a whole ecosystem with exclusive apps designed by people who think like me.
 
-These are just some ideas that came to my mind (the brand presence that Apple has in me), other people will have their own, and are is these promises that make us think "**it's worth it**" every time and, "**there's no other brand that gives me the same as they do**".
+These are just some ideas that came to my mind (the Apple branding in my head); you may have your own.
 
-That last sentence conveys the idea that beyond trust, consumers prefer a **charismatic brand.**
+These promises are what make us think it's worth it every time, and there's no other brand that gives me the same.
+
+That last sentence conveys the idea of a charismatic brand, the next step beyond trust.
 
 > A charismatic brand is any product, service, or organization for which people believe there is no substitute.
 
 ### What makes a charismatic brand different?
 
-Neumeier notes that there is a big gap in the strategy of companies, this gap separates the strategic thinkers of creative thinkers.
+![Coke branding](https://media.giphy.com/media/j0LfZjJmu5qZIxb7oj/giphy.gif)
+
+Neumeier noted that there's a big gap in the strategy of companies that separates the strategic thinkers from creative thinkers.
 
 One side sees the analytical, logical, linear, numerical, and verbal.
 
@@ -208,28 +202,33 @@ The other side is concerned with the intuitive, emotional, spatial, visual, and 
 
 When both parties work together, they can create a charismatic brand.
 
-The best example I can think of is _Coca Cola_.
+A great example of a charismatic brand is _Coca-Cola_.
 
-Coco cola does not (only) sell carbonated water in its ads, they offer good times, the joy of sharing, relaxing with friends, and feelings so deep and abstract as love or Christmas.
+Coco-Cola does not (only) sell carbonated water in its ads; it also offers good times, the joy of sharing and relaxing with friends, and other feelings so deep and abstract as love or Christmas.
 
-The analytical side can create an attractive value proposition through product, price, and other aspects of _the marketing mix_ that can be controlled, but no business has control over the consumer feels.
+The analytical side can create an attractive value proposition through product, price, and other aspects of _the marketing mix_ that are in control of the brand.
 
-This is how traditional marketing strategies (targeting demographics) have long worked.
+That's how traditional marketing strategies (targeting demographics) have long worked.
 
-But now companies need to appeal to the feels and emotions of the consumer (directed at psychographics) so they can create a deep connection with the brand.
+Now, with a psychographic approach, brands make more personal promises that appeal to the feels and emotions of the people.
 
-## Conclusion
+> Brands today need both: a corporate strategy that works and an appealing human side.
 
-The purpose of marketing is a very simple one, to differentiate yourself, to attract the attention of an audience so that they prefer to consume your offer.
+  
 
-It is natural as time passes that there will be more and more options for the consumer, so we must try harder to win their preference.
+## Conclusions
 
-Previously, a marketing campaign was targeted at a population hoping to capture the largest group of people in a demographic.
+  
+The purpose of marketing is to be noticed, to attract, and to be preferred by the consumer.
 
-Now, the need to create a relationship with the consumer on a personal level has led to more personalized marketing, directed to people according to their tastes, believes, and behavior.
+It is natural as time passes that there will be more and more options in the market for the consumers to choose from; that's why businesses need marketing.
 
-Charismatic brands achieve great success because they know how to combine the strategies of the company with the creative and emotional side of a brand.
+Marketing campaigns used to be loosely targeted at populations hoping to capture the largest group of people in a demographic. Now technology enables us to reach many specific groups with a more personalized approach.
 
-It is not enough to turn the consumer into a customer using an attractive promise, it is necessary to delight them with a result that constantly and without fail exceeds their expectations so that they develop confidence in the brand.
+Data has told us that psychography works, which explains why brands are looking to create relationships with the consumer on a personal level, with strategies that target specific beliefs and behaviors.
 
-Having the consumers' trust gives a great advantage over the competition, but it's not easy work, and once obtained it has to be cherished and treated with respect.
+Charismatic brands can achieve such success because they know how to combine the strategies of the company with the creative and emotional side of a brand.
+
+It is not enough to get the consumer into buying your products; you have to delight with results that exceed their expectations.
+
+Having the consumers' trust gives any brand an advantage over the competition, but getting there is not easy work, and once obtained, that trust has to be cherished and treated with respect.

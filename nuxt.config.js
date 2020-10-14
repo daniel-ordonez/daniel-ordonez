@@ -93,12 +93,6 @@ export default {
     },
   ],
   hooks: {
-    'content:file:beforeInsert': (document) => {
-      if (document.extension === '.md') {
-        const stats = require('reading-time')(document.text)
-        document.readingTime = stats
-      }
-    }
   },
   /*
   ** Build configuration
