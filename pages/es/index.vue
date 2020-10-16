@@ -5,6 +5,9 @@
       <h2 class="t--headline">Hago cosas digitales</h2>
       <p>Aprende + Disfruta + Diseña + Crea + Repite ❤️</p>
     </section>
+    <section>
+      <social-icons></social-icons>
+    </section>
     <div class="container--main">
       <div class="stack--row min-content gap--lg">
         <section v-if="false">
