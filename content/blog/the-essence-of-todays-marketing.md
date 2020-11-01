@@ -97,7 +97,7 @@ In the long term, this kind of relationship generates a higher return for busine
 -   customers tend to buy more frequently and in greater quantity,
 -   they also become more likely to refer the brand, helping to expand the customer base.
 
-## Marketing to people, not populations
+## Marketing at people, not demographics
 
 ![Marketing to people](https://media.giphy.com/media/3orife0VaGDMkyyEhO/giphy.gif)
  
