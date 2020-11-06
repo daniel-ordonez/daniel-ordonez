@@ -1,7 +1,7 @@
 <template>
-  <div class="social-icons flex justify-content--center gap--sm">
+  <div class="flex justify-content--center gap--sm">
     <a v-for="(item, index) in list" :key="`item-${index}`" class="transparent" :href="item.url" target="_blank" rel="noopener noreferrer">
-      <img :src="`/social-icons/${item.icon}.svg`" :alt="item.name">
+      <img style="width: 24px" :src="`/social-icons/${item.icon}.svg`" :alt="item.name">
     </a>
   </div>
 </template>
@@ -24,9 +24,3 @@ export default {
   })
 }
 </script>
-
-<style>
-.social-icons img {
-  width: 24px;
-}
-</style>

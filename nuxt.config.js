@@ -38,7 +38,6 @@ const createFeed = async (feed, args) => {
 
 
 export default {
-  mode: 'spa',
   target: 'static',
   generate: {
     fallback: true,

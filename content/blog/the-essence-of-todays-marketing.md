@@ -1,15 +1,17 @@
 ---
 title: The essence of today's marketing
-description: 'What is branding and why it is so important right now? Why did we start doing marketing and how it changed to what we do now?'
+description: 'What is branding and why it is so important right now?'
 locale: en_US
 keywords: 'the concept of marketing, brief history of marketing, the marketing process, what is branding, definition of marketing, why is branding important, marketing for people, what is a charismatic brand'
 date: '2020-10-02'
 author: 'Daniel Ordoñez'
 tags: [marketing]
+thumbnail: 'https://res.cloudinary.com/road/image/upload/w_400/v1602702728/daniel-ordonez.com/blog/value-trust-dog.png'
 image: 'https://res.cloudinary.com/road/image/upload/v1602702728/daniel-ordonez.com/blog/value-trust-dog.png'
 imageAlt: 'A dog thinking on value and trust'
 published: true
 sources: {"data":[{"author":"Wikipedia","name":"History of marketing","link":"https://en.wikipedia.org/wiki/History_of_marketing"},{"author":"The Futur","name":"What Is Branding? 4 Minute Crash Course.","link":"https://youtu.be/sO4te2QNsHY"},{"author":"The Futur","name":"IDENTITY DESIGN: BRANDING","link":"https://youtu.be/pR7tMnKghDs"},{"author":"Behind the Brand","name":"Seth Godin - Everything You (probably) DON'T Know about Marketing","link":"https://youtu.be/BPK_qzeH_yk"},{"author":"Marty Neumeier","name":"The Brand Gap: How to Bridge the Distance Between Business Strategy and Design","link":"https://www.amazon.com/Brand-Gap-Distance-Business-Strategy/dp/0321348109"}]}
+featured: true
 ---
 My intention with this article is to give a sense of why so many people (and businesses) are looking to "build a brand" and link that to what I see is the "essence" of today's marketing.
 

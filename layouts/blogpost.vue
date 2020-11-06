@@ -2,7 +2,7 @@
   <div id="blog">
     <header class="flex align-items--center gap--sm">
       <home-btn></home-btn>
-      <nuxt-link :to="`/${baseURL}blog/`" class="a--transparent">
+      <nuxt-link :to="`/${baseURL}blog/`" class="transparent">
         <strong class="t--h3">
           /blog
         </strong>

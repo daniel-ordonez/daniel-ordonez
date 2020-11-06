@@ -53,7 +53,3 @@ export default {
   }
 }
 </script>
-
-<style>
-@import url(~/assets/style/home.css);
-</style>

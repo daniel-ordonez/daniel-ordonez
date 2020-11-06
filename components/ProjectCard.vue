@@ -1,7 +1,7 @@
 <template>
   <div class="card project-card flex gap--md">
     <img class="project__thumbnail" :src="project.thumbnail" alt="App icon">
-    <a class="a--transparent" target="_blank" :href="project.github">
+    <a class="transparent" target="_blank" :href="project.github">
       <h3 class="project__title">{{project.title}}</h3>
       <p class="project__description">{{project.description}}</p>
     </a>

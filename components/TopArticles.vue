@@ -1,6 +1,6 @@
 <template>
   <section>
-    <nuxt-link :to="`/${baseURL}blog/`" class="a--transparent">
+    <nuxt-link :to="`/${baseURL}blog/`" class="transparent">
       <h2>Blog</h2>
     </nuxt-link>
     <div class="stack--row gap--md">

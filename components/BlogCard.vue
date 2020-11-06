@@ -1,7 +1,7 @@
 <template>
   <div class="card blog-card">
-    <nuxt-link :to="`/${baseURL}blog/${article.slug}`" class="a--transparent">
-      <img :src="article.image" :alt="article.imageAlt">
+    <nuxt-link :to="`/${baseURL}blog/${article.slug}`" class="transparent">
+      <img v-if="article.image" :src="article.image" :alt="article.imageAlt">
       <div class="card__body">
         <h3 class="article__title">{{article.title}}</h3>
         <p class="article__excerpt">{{article.description}}</p>
