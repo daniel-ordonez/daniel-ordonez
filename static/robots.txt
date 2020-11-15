@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: *.xml$
 Disallow: *.json$
+Disallow: /es/*
