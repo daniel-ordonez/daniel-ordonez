@@ -1,14 +1,18 @@
 <template>
-  <section class="display--contents">
-    <nuxt-link :to="`/${baseURL}blog/`" class="transparent col--all">
+  <section class="flex flex--col mb--lg">
+    <nuxt-link :to="`/${baseURL}blog/`" class="transparent col--all mr--auto">
       <h2>Blog</h2>
     </nuxt-link>
-    <featured-post-card 
-      v-for="(post, index) in posts" 
-      :key="`post--${index}`" 
-      :post="post"
-      class="col--4" 
-    />
+    <div class="subgrid row-gap--sm">
+      <template v-for="(post, index) in posts">
+        <div class="card md--4" :key="`post--${index}`">
+          <div class="card__content">
+            <div c class="mb--sm"><strong>{{ post.title }}</strong></div>
+            <div>{{ post.description }}</div>
+          </div>
+        </div>
+      </template>
+    </div>
   </section>
 </template>
 

@@ -1,0 +1,110 @@
+// FLEX & GRID
+.flex {
+  display: flex;
+}
+.flex--wrap {
+  flex-wrap: wrap;
+}
+.flex--col {
+  flex-direction: column;
+}
+@each $size in $sizes {
+  .gap--#{$size} {
+    gap: spacing($size);
+  }
+  .row-gap--#{$size} {
+    gap: spacing($size);
+  }
+  .col-gap--#{$size} {
+    gap: spacing($size);
+  }
+}
+.align-items--start {
+  align-items: start;
+}
+.align-items--center {
+  align-items: center;
+}
+.align-items--end {
+  align-items: end;
+}
+.justify-content--start {
+  justify-content: flex-start;
+}
+.justify-content--center {
+  justify-content: center;
+}
+.justify-content--end {
+  justify-content: flex-end;
+}
+.justify-content--space-between {
+  justify-content: space-between;
+}
+// DISPLAY
+.display--contents {
+  display: contents;
+}
+.hidden {
+  display: none;
+}
+// MARGIN & PADDING
+@each $k_space, $v_space in $spaces {
+  @each $k_dir, $v_dir in $directions {
+    @each $size in $sizes {
+      #{$k_space}#{$k_dir}--#{$size} {
+        #{$v_space}-#{$v_dir}: spacing($size);
+      }
+    }
+    #{$k_space}#{$k_dir}--0 {
+      #{$v_space}-#{$v_dir}: 0;
+    }
+    #{$k_space}#{$k_dir}--auto {
+      #{$v_space}-#{$v_dir}: auto;
+    }
+  }
+  @each $val in $extravalues {
+    #{$k_space}v--#{$val} {
+      #{$v_space}-top: #{$val};
+      #{$v_space}-bottom: #{$val};
+    }
+    #{$k_space}h--#{$val} {
+      #{$v_space}-left: #{$val};
+      #{$v_space}-right: #{$val};
+    }
+  }
+  @each $size in $sizes {
+    #{$k_space}a--#{$size} {
+      #{$v_space}-top: spacing($size);
+      #{$v_space}-bottom: spacing($size);
+      #{$v_space}-left: spacing($size);
+      #{$v_space}-right: spacing($size);
+    }
+    #{$k_space}v--#{$size} {
+      #{$v_space}-top: spacing($size);
+      #{$v_space}-bottom: spacing($size);
+    }
+    #{$k_space}h--#{$size} {
+      #{$v_space}-left: spacing($size);
+      #{$v_space}-right: spacing($size);
+    }
+  }
+}
+// ANCHOR
+@mixin transparent_anchor {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
+a {
+  &.transparent {
+    @include transparent_anchor();
+  }
+  &:hover,
+  &:active,
+  &:visited {
+    &.transparent {
+      @include transparent_anchor();
+    }
+  }
+}

@@ -56,7 +56,7 @@ export default {
     ]
   },
   css: [
-    '~/static/style/stylesheet.css'
+    '~/static/style/main.css'
   ],
   plugins: [
   ],

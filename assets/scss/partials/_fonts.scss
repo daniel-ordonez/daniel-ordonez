@@ -1,0 +1,57 @@
+/* H tags */
+h1,
+.t--h1 {
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 700;
+}
+h1,
+.t--h1--margin {
+  margin-top: calc(2 * var(--spacing--lg));
+  margin-bottom: var(--spacing--lg);
+}
+
+h2,
+.t--h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+h2,
+.t--h2--margin {
+  margin-top: calc(2 * var(--spacing--md));
+  margin-bottom: var(--spacing--md);
+}
+
+h3,
+.t--h3 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+h3,
+.t--h3--margin {
+  margin-top: calc(2 * var(--spacing--sm));
+  margin-bottom: var(--spacing--sm);
+}
+h4 {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+// Other sizes
+.t--display {
+  font-size: 48px;
+  line-height: 46px;
+}
+// Text
+.bold {
+  font-weight: bold;
+}
+strong {
+  font-size: 16px;
+  font-weight: bold;
+}
+.capitalize {
+  text-transform: capitalize;
+}

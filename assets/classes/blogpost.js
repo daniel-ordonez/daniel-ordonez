@@ -42,14 +42,14 @@ export default {
   },
   methods: {
     injectReadingTime () {
-      const el = this.$el.querySelector('.nuxt-content-container') || this.$el.querySelector('.nuxt-content')
+      const el = this.$el.querySelector('article')
       if (el) {
         const stats = readingTime(el.textContent)
         this.readingTime = stats
       }
     },
     setProgressBar () {
-      const el = this.$el.querySelector('.nuxt-content-container') || this.$el.querySelector('.nuxt-content')
+      const el = this.$el.querySelector('article')
       const onScroll = () => {
         if (this.progress < 100) {
           let rect = el.getBoundingClientRect()

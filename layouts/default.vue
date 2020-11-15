@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <header>
+    <header class="pa--sm">
       <div class="flex justify-content--space-between align-items--center">
         <home-btn></home-btn>
+        <!--
         <nuxt-link v-if="['index', 'es'].includes(routeName)" :to="esp  ? '/' : '/es/'" class="transparent">
           <svg viewBox="0 0 24 24" height="16" width="16">
             <path d="M0 0h24v24H0z" fill="none"/>
@@ -10,6 +11,7 @@
           </svg>
           {{esp ? 'English' : 'Español'}}
         </nuxt-link>
+        -->
       </div>
     </header>
     <Nuxt />

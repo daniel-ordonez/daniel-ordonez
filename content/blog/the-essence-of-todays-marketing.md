@@ -1,29 +1,61 @@
 ---
 title: The essence of today's marketing
-description: 'What is branding and why it is so important right now?'
+description: What is branding and why it's so important right now?
 locale: en_US
-keywords: 'the concept of marketing, brief history of marketing, the marketing process, what is branding, definition of marketing, why is branding important, marketing for people, what is a charismatic brand'
-date: '2020-10-02'
-author: 'Daniel Ordoñez'
+keywords: "the concept of marketing, brief history of marketing, the marketing process, what is branding, definition of marketing, why is branding important, marketing for people, what is a charismatic brand"
+date: "2020-10-02"
+author: "Daniel Ordoñez"
 tags: [marketing]
-thumbnail: 'https://res.cloudinary.com/road/image/upload/w_400/v1602702728/daniel-ordonez.com/blog/value-trust-dog.png'
-image: 'https://res.cloudinary.com/road/image/upload/v1602702728/daniel-ordonez.com/blog/value-trust-dog.png'
-imageAlt: 'A dog thinking on value and trust'
+thumbnail: "https://res.cloudinary.com/road/image/upload/w_400/v1602702728/daniel-ordonez.com/blog/value-trust-dog.png"
+image: "https://res.cloudinary.com/road/image/upload/v1602702728/daniel-ordonez.com/blog/value-trust-dog.png"
+imageAlt: "A dog thinking on value and trust"
+imageBgColor: "#0145fe"
 published: true
-sources: {"data":[{"author":"Wikipedia","name":"History of marketing","link":"https://en.wikipedia.org/wiki/History_of_marketing"},{"author":"The Futur","name":"What Is Branding? 4 Minute Crash Course.","link":"https://youtu.be/sO4te2QNsHY"},{"author":"The Futur","name":"IDENTITY DESIGN: BRANDING","link":"https://youtu.be/pR7tMnKghDs"},{"author":"Behind the Brand","name":"Seth Godin - Everything You (probably) DON'T Know about Marketing","link":"https://youtu.be/BPK_qzeH_yk"},{"author":"Marty Neumeier","name":"The Brand Gap: How to Bridge the Distance Between Business Strategy and Design","link":"https://www.amazon.com/Brand-Gap-Distance-Business-Strategy/dp/0321348109"}]}
+sources:
+  {
+    "data":
+      [
+        {
+          "author": "Wikipedia",
+          "name": "History of marketing",
+          "link": "https://en.wikipedia.org/wiki/History_of_marketing",
+        },
+        {
+          "author": "The Futur",
+          "name": "What Is Branding? 4 Minute Crash Course.",
+          "link": "https://youtu.be/sO4te2QNsHY",
+        },
+        {
+          "author": "The Futur",
+          "name": "IDENTITY DESIGN: BRANDING",
+          "link": "https://youtu.be/pR7tMnKghDs",
+        },
+        {
+          "author": "Behind the Brand",
+          "name": "Seth Godin - Everything You (probably) DON'T Know about Marketing",
+          "link": "https://youtu.be/BPK_qzeH_yk",
+        },
+        {
+          "author": "Marty Neumeier",
+          "name": "The Brand Gap: How to Bridge the Distance Between Business Strategy and Design",
+          "link": "https://www.amazon.com/Brand-Gap-Distance-Business-Strategy/dp/0321348109",
+        },
+      ],
+  }
 featured: true
 ---
+
 My intention with this article is to give a sense of why so many people (and businesses) are looking to "build a brand" and link that to what I see is the "essence" of today's marketing.
 
 Hopefully, this changes the way you look at marketing, whether as a consumer, to examine your relationship with the brands you consume; or as an entrepreneur, to examine your marketing objectives.
 
 **_TL;DR_**
 
--   The term marketing refers to a combination of tools and strategies used in combination to achieve some business objectives, these tools have changed over the years shaping the idea of what we see as marketing.
--   Though the tools and practices may change, the objective remains, that is, to be the consumer’s choice.
--   Many marketing practices have been popularized over the centuries, some are the result of changes in society while others leverage technological development.
--   Being the choice of the consumer once is not enough, modern marketing requires developing a deeper relationship with the consumers so that they choose us every time.
--   Brands who exhibiting a personality and values people can relate with, get to build trust and worth more by what they promise to their consumers.
+- The term marketing refers to a combination of tools and strategies used in combination to achieve some business objectives, these tools have changed over the years shaping the idea of what we see as marketing.
+- Though the tools and practices may change, the objective remains, that is, to be the consumer’s choice.
+- Many marketing practices have been popularized over the centuries, some are the result of changes in society while others leverage technological development.
+- Being the choice of the consumer once is not enough, modern marketing requires developing a deeper relationship with the consumers so that they choose us every time.
+- Brands who exhibiting a personality and values people can relate with, get to build trust and worth more by what they promise to their consumers.
 
 ## The concept of marketing is quite broad.
 
@@ -42,7 +74,6 @@ It’s like the Internet has become the biggest market ever, and naturally, that
 ## Yes, marketing is necessary. But why?
 
 ![But Why Tho?](https://media.giphy.com/media/dxP9spF3YLDi03H8f1/giphy.gif)
-
 
 I said before that some people have a narrow conception of marketing, and that’s understandable since ads are mostly designed to be noticeable.
 
@@ -93,16 +124,16 @@ The last part of the process involves profitability and that involves the busine
 Soon, businesses realized that acquiring a new customer can be very expensive, and therefore, it's important to retain customers and gain loyalty by creating a close relationship with them.
 
 > The marketing process is about creating strategies that provide superior value and produce a close relationship with the consumer.
-  
+
 In the long term, this kind of relationship generates a higher return for businesses:
 
--   customers tend to buy more frequently and in greater quantity,
--   they also become more likely to refer the brand, helping to expand the customer base.
+- customers tend to buy more frequently and in greater quantity,
+- they also become more likely to refer the brand, helping to expand the customer base.
 
 ## Marketing at people, not demographics
 
 ![Marketing to people](https://media.giphy.com/media/3orife0VaGDMkyyEhO/giphy.gif)
- 
+
 There's an important concept that helps understand why branding is more important now than ever, and that is **psychography**.
 
 > Psychography is the study of human behavior according to their attitudes, aspirations, and other psychological criteria.
@@ -142,7 +173,7 @@ Branding is in everything, from the people to the product, the website, the pack
 It is like a reputation, and as such, we cannot control it, but we can influence it to keep it close to the desired point.
 
 > You cannot control the process, but you can influence it. - Marty Neumeier. The Brand Gap.
-  
+
 ## Why is branding so important
 
 ![So many possibilities](https://media.giphy.com/media/giEftvZuPAiZQBphEI/giphy.gif)
@@ -172,6 +203,7 @@ When a brand promise captures a person's attention, and then brand delivers, tru
 > The value of a brand comes from a promise that creates expectations in its audience.
 
 ### Why do some choose a brand over another?
+
 ![Apple or Android?](https://media.giphy.com/media/kCVIL0CLNWv2E/giphy.gif)
 
 It is not a secret that Apple devices (computers, tablets, or smartphones) tend to be more expensive than most brands on the market.
@@ -216,11 +248,8 @@ Now, with a psychographic approach, brands make more personal promises that appe
 
 > Brands today need both: a corporate strategy that works and an appealing human side.
 
-  
-
 ## Conclusions
 
-  
 The purpose of marketing is to be noticed, to attract, and to be preferred by the consumer.
 
 It is natural as time passes that there will be more and more options in the market for the consumers to choose from; that's why businesses need marketing.

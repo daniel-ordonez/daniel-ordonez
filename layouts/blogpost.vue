@@ -1,13 +1,12 @@
 <template>
   <div id="blog">
-    <header class="flex align-items--center gap--sm">
+    <header class="flex align-items--start gap--sm pa--sm">
       <home-btn></home-btn>
       <nuxt-link :to="`/${baseURL}blog/`" class="transparent">
-        <strong class="t--h3">
+        <strong class="t--h2">
           /blog
         </strong>
       </nuxt-link>
-      <span></span>
     </header>
     <Nuxt />
   </div>

@@ -2,13 +2,35 @@
 title: What is solipsism?
 description: How can you know anything's real outside of your mind?
 locale: en_US
-keywords: 'What is Solipsism?'
-date: '2020-11-01'
-author: 'Daniel Ordoñez'
+keywords: "What is Solipsism?"
+date: "2020-11-01"
+author: "Daniel Ordoñez"
 tags: [philosophy]
 published: true
-sources: {"data":[{"author":"fyp-philosphy","name":"Solipsism","link":"https://fyp-philosophy.tumblr.com/post/125171080624/solipsism-src"},{"author":"MindThatEGO","name":"Self-Enquiry Isn’t Selfish","link":"https://www.mindthatego.com/self-enquiry-solipsism-oneness/"},{"author":"IDEASINHAT","name":"Why Solipsism is OK","link":"https://ideasinhat.com/2020/05/13/why-solipsism-is-ok/"}]}
+sources:
+  {
+    "data":
+      [
+        {
+          "author": "fyp-philosphy",
+          "name": "Solipsism",
+          "link": "https://fyp-philosophy.tumblr.com/post/125171080624/solipsism-src",
+        },
+        {
+          "author": "MindThatEGO",
+          "name": "Self-Enquiry Isn’t Selfish",
+          "link": "https://www.mindthatego.com/self-enquiry-solipsism-oneness/",
+        },
+        {
+          "author": "IDEASINHAT",
+          "name": "Why Solipsism is OK",
+          "link": "https://ideasinhat.com/2020/05/13/why-solipsism-is-ok/",
+        },
+      ],
+  }
+featured: true
 ---
+
 Philosophy is something I like but never actually dive-into too much, so many terms are new to me; this time I want to write about Solipsism.
 
 I can't tell the first time I encounter this term but it sure caught my attention.
