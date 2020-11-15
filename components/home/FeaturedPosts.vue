@@ -4,12 +4,16 @@
       <h2>Blog</h2>
     </nuxt-link>
     <div class="subgrid row-gap--sm">
-      <template v-for="(post, index) in posts">
+      <template v-for="(article, index) in posts">
         <div class="card md--4" :key="`post--${index}`">
-          <div class="card__content">
-            <div c class="mb--sm"><strong>{{ post.title }}</strong></div>
-            <div>{{ post.description }}</div>
-          </div>
+          <a class="transparent" :href="`/blog/${article.slug}`">
+            <div class="card__content">
+              <div c class="mb--sm">
+                <strong>{{ article.title }}</strong>
+              </div>
+              <div>{{ article.description }}</div>
+            </div>
+          </a>
         </div>
       </template>
     </div>
@@ -17,9 +21,9 @@
 </template>
 
 <script>
-import langURL from '~/mixins/langURL'
+import langURL from "~/mixins/langURL";
 export default {
-  name: 'FeaturedPosts',
+  name: "FeaturedPosts",
   mixins: [langURL],
   props: {
     feature: {
@@ -32,18 +36,19 @@ export default {
     ready: false,
   }),
   async mounted() {
-    const baseURL = this.baseURL
-    this.$content(`${ baseURL }blog`).only(['title', 'description', 'slug'])
-    .where({ published: true, featured: true })
-    .limit(3)
-    .sortBy('date', 'desc')
-    .fetch()
-    .then(posts => {
-      this.posts = posts
-    })
-    .finally(() => {
-      this.ready = true
-    })
+    const baseURL = this.baseURL;
+    this.$content(`${baseURL}blog`)
+      .only(["title", "description", "slug"])
+      .where({ published: true, featured: true })
+      .limit(3)
+      .sortBy("date", "desc")
+      .fetch()
+      .then((posts) => {
+        this.posts = posts;
+      })
+      .finally(() => {
+        this.ready = true;
+      });
   },
-}
+};
 </script>
