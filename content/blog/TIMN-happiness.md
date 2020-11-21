@@ -21,21 +21,22 @@ sources:
 featured: true
 ---
 
-In this series, I write about the articles from some newsletters that caught my attention the most.
+> In this series, I write about the articles from some newsletters that caught my attention the most.
+
 Today's is an article from the blog of B.BIAS written by Alessandra Elise that explores Happiness definition and measurement from a behavioral economics perspective.
 
 Happiness economics examines the relation between satisfaction and economic issues.
 
 So, according to happiness economics, there are factors of wealth that could determine happiness or life satisfaction.
 
-Ther author explores three methods to measure well-being:
+The author explores three methods to measure well-being:
 
-1. The economic's: using Gross Domestic Product as an index.
+1. The economic: using Gross Domestic Product as an index.
 2. The sociological one: based on the Human Development Index.
 3. The psychological: to ask people directly how happy they think they are (self-assessment).
    Of course, the first one is inherently flawed; an index such as GDP is too shallow and broad for measuring happiness.
 
-The second one is better for measuring the well-being of a population, but it's not a happiness measurement per se.
+The second one is better for measuring the well-being of a population, but it's not a measurement of happiness.
 
 The last one makes sense; if you want to know how happy is someone, then ask!
 
