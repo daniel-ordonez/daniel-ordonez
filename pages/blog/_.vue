@@ -49,7 +49,7 @@ export default {
   filters: {
     date(obj) {
       let [year, month, day] = obj.split("-");
-      return format(new Date(year, month, day), "MMM yyyy");
+      return format(new Date(year, month - 1, day), "MMM yyyy");
     },
   },
 };

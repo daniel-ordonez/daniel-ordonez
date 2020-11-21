@@ -2,6 +2,12 @@
   //colors
   --c--light: 240, 240, 240;
   --c--dark: 0, 0, 0;
+  --c--highlight-yellow: 253, 255, 50;
+  --c--highlight-green: 171, 255, 50;
+  --c--highlight-pink: 255, 81, 157;
+  --c--highlight-cyan: 81, 244, 255;
+  //opacity
+  --tags--opacity: 0.6;
   //shadows
   --card--shadow: 0 0 2px rgba(var(--shadow-color, var(--c--dark)), 0.16),
     0 0px 8px 4px rgba(var(--shadow-color, var(--c--dark)), 0.02);
@@ -56,4 +62,25 @@ p,
 li {
   font-size: var(--font--size);
   line-height: var(--line-height, 1.6);
+}
+a {
+  &:hover {
+    cursor: pointer;
+  }
+}
+.tags {
+  a {
+    padding: 4px 8px;
+    color: var(--text-color, rgb(var(--c--dark)));
+    background-color: rgba(var(--c--highlight-yellow), var(--tags--opacity));
+  }
+  $highlights: "yellow", "green", "pink", "cyan";
+  @each $color in $highlights {
+    .tag--#{$color} {
+      background-color: rgba(
+        var(--c--highlight-#{$color}),
+        var(--tags--opacity)
+      );
+    }
+  }
 }

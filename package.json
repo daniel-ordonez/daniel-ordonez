@@ -1,6 +1,6 @@
 {
   "name": "daniel-ordonez",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "scripts": {
     "dev": "nuxt --port 2015",

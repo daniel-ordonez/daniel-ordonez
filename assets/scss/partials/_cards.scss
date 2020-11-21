@@ -3,9 +3,9 @@
   border-radius: var(--card--border-radius, 8px);
   box-shadow: var(--card--shadow);
   overflow: hidden;
-}
-.card__content {
-  padding: spacing("md");
+  .card__content {
+    padding: spacing("md");
+  }
 }
 .card__thumbnail {
   width: 100%;

@@ -5,13 +5,26 @@
     </nuxt-link>
     <div class="subgrid row-gap--sm">
       <template v-for="(article, index) in posts">
-        <div class="card md--4" :key="`post--${index}`">
+        <div
+          class="card flex flex--col col-gap--sm md--4"
+          :key="`post--${index}`"
+        >
           <a class="transparent" :href="`/blog/${article.slug}`">
-            <div class="card__content">
+            <div class="card__content pb--0">
               <div c class="mb--sm">
                 <strong>{{ article.title }}</strong>
               </div>
               <div>{{ article.description }}</div>
+            </div>
+            <div v-if="article.tags" class="flex ph--md pb--sm tags gap--sm">
+              <a
+                v-for="(tag, tagIndex) in article.tags"
+                :key="`tag--${tagIndex}`"
+                :href="`tags/${tag}`"
+                :class="`tag--${getValueOfStr(tag)}`"
+              >
+                {{ tag }}
+              </a>
             </div>
           </a>
         </div>
@@ -22,33 +35,15 @@
 
 <script>
 import langURL from "~/mixins/langURL";
+import blogCards from "~/mixins/blogCards";
 export default {
   name: "FeaturedPosts",
-  mixins: [langURL],
+  mixins: [langURL, blogCards],
   props: {
-    feature: {
-      type: Number,
-      default: 3,
+    posts: {
+      type: Array,
+      default: () => [],
     },
-  },
-  data: () => ({
-    posts: [],
-    ready: false,
-  }),
-  async mounted() {
-    const baseURL = this.baseURL;
-    this.$content(`${baseURL}blog`)
-      .only(["title", "description", "slug"])
-      .where({ published: true, featured: true })
-      .limit(3)
-      .sortBy("date", "desc")
-      .fetch()
-      .then((posts) => {
-        this.posts = posts;
-      })
-      .finally(() => {
-        this.ready = true;
-      });
   },
 };
 </script>
