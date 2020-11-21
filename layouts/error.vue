@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex--col">
+  <div class="flex flex--col align-items--center">
     <template v-if="error.statusCode === 404">
       <figure>
         <svg class="error-state" viewBox="0 0 180 180">
@@ -47,7 +47,7 @@
           </g>
           <path fill="none" d="M0 0h180v180H0z" />
         </svg>
-        <figcaption v-if="lang === 'es'" align="center">
+        <figcaption v-if="lang === 'es'" class="flex justify-content--center">
           Contenido no encontrado
         </figcaption>
         <figcaption v-else align="center">Content not found</figcaption>

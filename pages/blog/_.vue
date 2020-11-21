@@ -8,7 +8,9 @@
       >
         <img :src="article.image" :alt="article.imageAlt" />
       </figure>
-      <div class="flex justify-content--center t--overtext gap--sm">
+      <div
+        class="span--all pa--sm flex justify-content--center gap--sm t--overtext"
+      >
         <span class="t--capitalize">{{ article.date | date }}</span>
         <template v-if="readingTime">
           <span>-</span>
