@@ -49,7 +49,7 @@ export default {
   mounted() {
     const el = this.$el;
     const height = el.scrollHeight;
-    const pixelsPerRow = 60;
+    const pixelsPerRow = 10;
     const rows = Math.ceil(height / pixelsPerRow);
     el.style.gridRowEnd = `span ${rows}`;
   },

@@ -5,6 +5,9 @@ locale: en_US
 keywords: "what is a nerd, what is a geek, difference between nerd and geek, meaning of geek, meaning of nerd"
 date: "2020-11-23"
 author: "Daniel Ordoñez"
+image: https://res.cloudinary.com/road/image/upload/v1607019205/daniel-ordonez.com/blog/trooper.png
+imageAlt: "StormTrooper helmet"
+imageBgColor: "#ffffff"
 tags: [culture]
 published: true
 sources:
@@ -51,7 +54,7 @@ Now, it's easy to just Google what's the difference between the two. Still, many
 
 ## So, what's the difference
 
-I must say that doing in-depth research is not one of my strengths. 
+I must say that doing in-depth research is not one of my strengths.
 
 Basically, I Google and take the first —at least 3— convincing sources that say different things about the same topic. Then, maybe watch a video and see how my perspective or understanding has changed, and here are the results.
 
@@ -60,29 +63,33 @@ Basically, I Google and take the first —at least 3— convincing sources that 
 ## Nerd
 
 ### Pros:
-* Smart, and
-* Usually a nice person.
+
+- Smart, and
+- Usually a nice person.
 
 ### Cons:
-* Lacks social life,
-* Very shy,
-* Very few friends,
-* Don't talk much,
-* Doesn't expects to be talked to much,
-* Doesn't have the social skills to go out mad make friends,and
-* Cares what other think of them.
+
+- Lacks social life,
+- Very shy,
+- Very few friends,
+- Don't talk much,
+- Doesn't expects to be talked to much,
+- Doesn't have the social skills to go out mad make friends,and
+- Cares what other think of them.
 
 ## Geek
 
 ### Pros:
-* Has a social life (surrounding a hobby/passion),
-* Is passionate, and
-* More outgoing than a nerd.
+
+- Has a social life (surrounding a hobby/passion),
+- Is passionate, and
+- More outgoing than a nerd.
 
 ### Cons:
-* May be too passionate,
-* Only befriend with others that share the same passion, and
-* Only care about their passions.
+
+- May be too passionate,
+- Only befriend with others that share the same passion, and
+- Only care about their passions.
 
 ## Conclusion
 
@@ -90,11 +97,10 @@ To feed more on my confirmation bias —jk— both nerd and geek are two sides o
 
 The nerd is the face of knowledge, while the geek is the face of a more hands-on approach.
 
-That's why geeks are often seen as the cool ones because they are very passionate, and that often results in skill.  
+That's why geeks are often seen as the cool ones because they are very passionate, and that often results in skill.
 
-I'm not looking to start a social-justice debate about the wrongs of labeling people. 
+I'm not looking to start a social-justice debate about the wrongs of labeling people.
 
 I shared many of the "cons" listed for nerd, and there were times that it ended up in uncomfortable social situations. Now, I try to do more things to overcome those traits.
 
 <div class="flex justify-content--center mt--lg t--display">🤓</div>
-
