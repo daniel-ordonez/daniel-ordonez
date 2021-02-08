@@ -90,7 +90,7 @@ export default {
         ],
       },
       {
-        name: "Code 4 fun",
+        name: "Games & apps",
         items: [
           {
             href: "https://roaderful.itch.io/",
@@ -105,6 +105,19 @@ export default {
             alt: "Kanto Dex screenshot",
             title: "Kanto Dex",
             name: "Kanto Dex PWA",
+          },
+        ],
+      },
+      {
+        name: "Apparel",
+        items: [
+          {
+            href:
+              "https://teechip.com/campaigns/-/-/stores/raccoon-doggo/tanuki-youth-tshirt?retailProductCode=50F7F2E016E0E6-100BDB77F5C6-GS0-TC17-BLK",
+            src: "/images/teechip.png",
+            alt: "Teechip t-shirt with racoon ilustration",
+            title: "Teechio",
+            name: "Tanuki tshirt",
           },
         ],
       },
