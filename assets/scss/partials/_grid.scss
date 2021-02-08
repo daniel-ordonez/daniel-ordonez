@@ -5,6 +5,12 @@
   --content--w: calc(
     (var(--col--n) * var(--col--w)) + ((var(--col--n, 1) - 1) * var(--col--g))
   );
+  &.gap--md {
+    --col--g: var(--spacing--md);
+  }
+  &.gap--lg {
+    --col--g: var(--spacing--lg);
+  }
   justify-content: center;
   max-width: 100vw;
   overflow-x: hidden;
