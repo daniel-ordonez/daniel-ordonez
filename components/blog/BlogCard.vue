@@ -47,11 +47,20 @@ export default {
     },
   },
   mounted() {
-    const el = this.$el;
-    const height = el.scrollHeight;
-    const pixelsPerRow = 10;
-    const rows = Math.ceil(height / pixelsPerRow);
-    el.style.gridRowEnd = `span ${rows}`;
+    this.updateSize();
+  },
+  updated() {
+    this.updateSize();
+  },
+  methods: {
+    updateSize() {
+      console.log("updated");
+      const el = this.$el;
+      const height = el.scrollHeight;
+      const pixelsPerRow = 10;
+      const rows = Math.ceil(height / pixelsPerRow);
+      el.style.gridRowEnd = `span ${rows}`;
+    },
   },
 };
 </script>
