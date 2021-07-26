@@ -41,7 +41,6 @@
   </div>
 </template>
 
-
 <script>
 import { format } from "date-fns";
 import blogpost from "~/assets/classes/blogpost";
@@ -52,11 +51,11 @@ export default {
     date(obj) {
       let [year, month, day] = obj.split("-");
       return format(new Date(year, month - 1, day), "MMM yyyy");
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style>
-@import url(~/assets/style/blogpost.css);
+@import url(~/assets/css/blogpost.css);
 </style>

@@ -8,6 +8,9 @@
 .flex--col {
   flex-direction: column;
 }
+.grid {
+  display: grid;
+}
 @each $size in $sizes {
   .gap--#{$size} {
     gap: spacing($size);
@@ -18,6 +21,9 @@
   .col-gap--#{$size} {
     gap: spacing($size);
   }
+}
+.place-items--center {
+  place-items: center;
 }
 .align-items--start {
   align-items: start;

@@ -1,5 +1,11 @@
 :root {
   //colors
+  --theme-light--base-color--rgb: 23, 25, 29;
+  --theme-light--base-bg--rbg: 255, 255, 255;
+
+  --theme-dark--base-color--rgb: 255, 255, 255;
+  --theme-dark--base-bg--rbg: 30, 32, 36;
+
   --c--light: 240, 240, 240;
   --c--dark: 0, 0, 0;
   --c--highlight-yellow: 253, 255, 50;
@@ -86,4 +92,26 @@ a {
 }
 img {
   max-width: 100%;
+}
+svg {
+  fill: currentColor;
+  pointer-events: none;
+  user-select: none;
+}
+@media (prefers-color-scheme: light) {
+  body {
+    --base-bg: rgb(var(--theme-light--base-bg--rbg));
+    --base-color: rgb(var(--theme-light--base-color--rgb));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --base-bg: rgb(var(--theme-dark--base-bg--rbg));
+    --base-color: rgb(var(--theme-dark--base-color--rgb));
+  }
+}
+body {
+  background-color: var(--base-bg);
+  color: var(--base-color);
 }

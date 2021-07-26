@@ -1,3 +1,7 @@
+:root {
+  --rbg--progress: 76, 175, 80;
+}
+
 @media screen and (min-width: 360px) {
   article {
     --font--size: 16px;
@@ -55,7 +59,7 @@ article {
 .scroll-progress__bar {
   height: 100%;
   width: var(--progress, 0%);
-  background: #4caf50;
+  background: rgb(var(--rbg--progress));
   transition: width ease-in 0.2s;
   will-change: width;
 }
