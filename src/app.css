@@ -1,0 +1,129 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --c-text--light: black;
+  --c-text--dark: white;
+  --rgb-accent: 245, 0, 0;
+
+  --rgb-white: 255, 255, 255;
+  --rgb-gray-1: 217, 217, 217;
+  --rgb-gray-2: 148, 148, 148;
+
+  --c-bg: rgb(var(--rgb-gray-1));
+  --c-text: rgb(var(--c-text--light));
+
+  --app-size: min(1280px, 100vw);
+
+
+
+  color-scheme: light dark;
+  color: var(--c-text);
+  background-color: var(--c-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+body {
+  --shape-size: calc(var(--app-size) * .5);
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before, body::after {
+  position: absolute;
+  content: "";
+  width: var(--shape-size);
+  height: var(--shape-size);
+  border-radius: 50%;
+  transform-origin: center center;
+}
+body::before{
+  --x0: calc((100vw - var(--app-size))/2);
+  background-color: rgba(var(--rgb-gray-2), 0.6);
+  top: calc(100% - (var(--shape-size) * .6));
+  left: calc(var(--x0) );
+}
+body::after{
+  z-index: -1;
+  background-color: rgba(var(--rgb-white),0.4);
+  bottom: calc(100% - (var(--shape-size) * .67));
+  right: calc(var(--shape-size) * -.3);
+  mix-blend-mode: lighten;
+  mix-blend-mode: plus-lighter;
+}
+img {
+  user-select: none;
+}
+button {
+  border: none;
+  appearance: none;
+  outline: none;
+}
+#app {
+  z-index: 2;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100vw;
+  background-color: rgba(var(--rgb-white),0.2);
+  backdrop-filter: blur(30px);
+  display: flex;
+  justify-content: center;
+}
+.text--vertical{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+.text--mono {
+  font-family: 'Share Tech Mono', monospace;
+}
+.text--dark {
+  color: var(--c-text--dark);
+}
+@media (prefers-color-scheme: light) {
+
+}
+
+
+.slide-in-left {
+  animation: slide-in-left 900ms ease-in-out;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+}
+.slide-in-down {
+  animation: slide-in-down 900ms ease-in-out;
+  animation-fill-mode: both;
+}
+.slide-in-down+.slide-in-down{
+  animation-delay: 100ms;
+}
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-down {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
