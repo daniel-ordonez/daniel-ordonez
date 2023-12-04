@@ -120,11 +120,12 @@
 
 <style>
   main {
+    --min-h: 720px;
     --s-colgap: 20px;
     --s-rowgap: 20px;
     --s-col4: 300px;
-    height: 100vh;
-    height: 100dvh;
+    height: max(100vh, var(--min-h));
+    height: max(100dvh, var(--min-h));
     display: grid;
     grid-template-columns: 0 repeat(3, 1fr) 0;
     grid-template-rows: 0 repeat(6, 1fr) 0;
@@ -133,6 +134,7 @@
     max-width: 1280px;
     width: 100vw;
     transition: all 600ms ease-in-out;
+    z-index: 1;
   }
 
   #portrait {

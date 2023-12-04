@@ -38,8 +38,25 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   position: relative;
+  overflow: hidden;
 }
-
+body::before,
+body:after {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  content: "";
+}
+body::before {
+  z-index: -1;
+  background: linear-gradient(45deg, rgba(var(--rgb-gray-2), 0.6), rgba(var(--rgb-white), 0.6));
+}
+body::after {
+  background-color: rgba(var(--rgb-white),0.2);
+  backdrop-filter: blur(30px);
+}
 img {
   user-select: none;
 }
@@ -49,50 +66,11 @@ button {
   outline: none;
 }
 
-#bg {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-#bg>div {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  overflow: hidden;
-}
-#bg>div::before,
-#bg>div::after {
-  position: absolute;
-  content: "";
-  width: var(--shape-size);
-  height: var(--shape-size);
-  border-radius: 50%;
-  transform-origin: center center;
-}
-#bg>div::before {
-  --x0: calc((100vw - var(--app-size)) / 2);
-  background-color: rgba(var(--rgb-gray-2), 0.6);
-  top: calc(100% - (var(--shape-size) * 0.6));
-  left: calc(var(--x0));
-}
-#bg>div::after {
-  z-index: -1;
-  background-color: rgba(var(--rgb-white), 0.4);
-  bottom: calc(100% - (var(--shape-size) * 0.67));
-  right: calc(var(--shape-size) * -0.3);
-  mix-blend-mode: lighten;
-  mix-blend-mode: plus-lighter;
-}
 #app {
   z-index: 2;
   min-height: 100vh;
   min-height: 100svh;
   width: 100vw;
-  background-color: rgba(var(--rgb-white),0.2);
-  backdrop-filter: blur(30px);
   display: flex;
   justify-content: center;
 }
