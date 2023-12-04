@@ -232,6 +232,9 @@
     #display-dev > svg {
       max-height: 200px;
     }
+    #name-jp > svg {
+      filter: blur(8px);
+    }
   }
   @media (max-width: 768px) {
     main {
@@ -256,6 +259,9 @@
     #display-design > svg,
     #display-dev > svg {
       max-height: 100px;
+    }
+    #name-jp > svg {
+      filter: blur(6px);
     }
   }
   @keyframes fade-in--social {
