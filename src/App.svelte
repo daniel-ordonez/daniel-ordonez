@@ -48,14 +48,12 @@
     const onAnimationEnd = ({ target }) => {
       target.removeEventListener("animationend", onAnimationEnd);
       contact.style.width = `${w * (social.length + 1)}px`;
-      setTimeout(() => {
-        contact.classList.remove("hidden");
-        for (let i = 0; i < contact.childNodes.length; i++) {
-          const child = contact.childNodes[i];
-          child.classList.add("fade-in");
-          child.style.animationDelay = `${100 * i}ms`;
-        }
-      }, 200);
+      contact.classList.remove("hidden");
+      for (let i = 0; i < contact.childNodes.length; i++) {
+        const child = contact.childNodes[i];
+        child.classList.add("fade-in");
+        child.style.animationDelay = `${100 * i}ms`;
+      }
     };
     contact.style.width = `${w}px`;
     contact.addEventListener("animationend", onAnimationEnd);
