@@ -28,34 +28,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+  scrollbar-track-color: transparent;
 }
 
 body {
-  --shape-size: calc(var(--app-size) * .5);
+  padding: 0;
   margin: 0;
   min-height: 100vh;
   min-height: 100dvh;
   position: relative;
+  background-color: rgb(var(--rgb-gray-1));
 }
-body::before,
-body:after {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  content: "";
-}
-body::before {
-  z-index: -1;
-  background: linear-gradient(45deg, rgba(var(--rgb-gray-2), 0.6), rgba(var(--rgb-white), 0.6));
-}
-body::after {
-  background-color: rgba(var(--rgb-white),0.2);
-  backdrop-filter: blur(30px);
-}
+
 img {
   user-select: none;
 }
@@ -71,7 +62,7 @@ button {
   min-height: 100svh;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  place-content: center;
 }
 .text--vertical{
   writing-mode: vertical-rl;
@@ -89,6 +80,11 @@ button {
   animation-delay: 200ms;
   animation-fill-mode: both;
 }
+.slide-in-right {
+  animation: slide-in-right 900ms ease-in-out;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+}
 .slide-in-down {
   animation: slide-in-down 900ms ease-in-out;
   animation-fill-mode: both;
@@ -103,6 +99,19 @@ button {
 @keyframes slide-in-left {
   from {
     transform: translateX(-20%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  from {
+    transform: translateX(20%);
     opacity: 0;
   }
   30% {
