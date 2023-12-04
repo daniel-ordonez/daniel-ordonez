@@ -43,6 +43,22 @@
       el.style.animationDelay = `${100 * i}ms`;
       //el.classList.add("slide-in-down");
     }
+    const contact = document.getElementById("contact-links");
+    const w = parseInt(window.getComputedStyle(contact).minWidth);
+    const onAnimationEnd = ({ target }) => {
+      target.removeEventListener("animationend", onAnimationEnd);
+      contact.style.width = `${w * (social.length + 1)}px`;
+      setTimeout(() => {
+        contact.classList.remove("hidden");
+        for (let i = 0; i < contact.childNodes.length; i++) {
+          const child = contact.childNodes[i];
+          child.classList.add("fade-in");
+          child.style.animationDelay = `${100 * i}ms`;
+        }
+      }, 200);
+    };
+    contact.style.width = `${w}px`;
+    contact.addEventListener("animationend", onAnimationEnd);
   });
 </script>
 
@@ -107,7 +123,7 @@
       Guatemala
     </p>
 
-    <div class="contact__links">
+    <div id="contact-links" class="hidden">
       {#each social as link}
         <a href="#" target="_blank" rel="noopener noreferrer">
           <img src="social/{link.icon}.svg" alt="" srcset="" />
@@ -177,7 +193,7 @@
     justify-self: end;
     opacity: 0.3;
   }
-  .contact__links {
+  #contact-links {
     background-color: rgba(var(--rgb-white), 0.4);
     backdrop-filter: blur(16px);
     padding: 4px 16px;
@@ -185,11 +201,19 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    min-height: 44px;
+    min-width: 44px;
+    animation: fade-in 400ms ease-in-out 600ms;
+    animation-fill-mode: both;
+    transition: width ease-in-out 400ms;
   }
-  .contact__links a,
-  .contact__links img {
+  #contact-links a,
+  #contact-links img {
     height: 36px;
     width: 36px;
+  }
+  #contact-links.hidden a {
+    display: none;
   }
   #display-design {
     grid-row: 2/4;
@@ -232,7 +256,13 @@
     }
     #short-bio {
       grid-column: 3;
+      grid-row: 5/7;
       align-items: end;
+    }
+
+    #display-design > svg,
+    #display-dev > svg {
+      max-height: 100px;
     }
   }
 </style>

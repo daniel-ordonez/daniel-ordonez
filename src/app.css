@@ -18,7 +18,7 @@
 
 
 
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--c-text);
   background-color: var(--c-bg);
 
@@ -26,39 +26,20 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
 }
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   --shape-size: calc(var(--app-size) * .5);
   margin: 0;
   min-height: 100vh;
   min-height: 100svh;
   position: relative;
-  overflow: hidden;
 }
 
-body::before, body::after {
-  position: absolute;
-  content: "";
-  width: var(--shape-size);
-  height: var(--shape-size);
-  border-radius: 50%;
-  transform-origin: center center;
-}
-body::before{
-  --x0: calc((100vw - var(--app-size))/2);
-  background-color: rgba(var(--rgb-gray-2), 0.6);
-  top: calc(100% - (var(--shape-size) * .6));
-  left: calc(var(--x0) );
-}
-body::after{
-  z-index: -1;
-  background-color: rgba(var(--rgb-white),0.4);
-  bottom: calc(100% - (var(--shape-size) * .67));
-  right: calc(var(--shape-size) * -.3);
-  mix-blend-mode: lighten;
-  mix-blend-mode: plus-lighter;
-}
 img {
   user-select: none;
 }
@@ -66,6 +47,39 @@ button {
   border: none;
   appearance: none;
   outline: none;
+}
+
+#bg {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#bg::before,
+#bg::after {
+  position: absolute;
+  content: "";
+  width: var(--shape-size);
+  height: var(--shape-size);
+  border-radius: 50%;
+  transform-origin: center center;
+}
+#bg::before {
+  --x0: calc((100vw - var(--app-size)) / 2);
+  background-color: rgba(var(--rgb-gray-2), 0.6);
+  top: calc(100% - (var(--shape-size) * 0.6));
+  left: calc(var(--x0));
+}
+#bg::after {
+  z-index: -1;
+  background-color: rgba(var(--rgb-white), 0.4);
+  bottom: calc(100% - (var(--shape-size) * 0.67));
+  right: calc(var(--shape-size) * -0.3);
+  mix-blend-mode: lighten;
+  mix-blend-mode: plus-lighter;
 }
 #app {
   z-index: 2;
@@ -87,10 +101,6 @@ button {
 .text--dark {
   color: var(--c-text--dark);
 }
-@media (prefers-color-scheme: light) {
-
-}
-
 
 .slide-in-left {
   animation: slide-in-left 900ms ease-in-out;
@@ -103,6 +113,10 @@ button {
 }
 .slide-in-down+.slide-in-down{
   animation-delay: 100ms;
+}
+.fade-in {
+  animation: fade-in 400ms ease-in-out;
+  animation-fill-mode: both;
 }
 @keyframes slide-in-left {
   from {
@@ -125,5 +139,15 @@ button {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
