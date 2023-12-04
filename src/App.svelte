@@ -219,6 +219,10 @@
     justify-content: end;
     align-items: start;
   }
+  #display-design > svg,
+  #display-dev > svg {
+    height: 100%;
+  }
 
   @media (min-width: 1024px) {
     #display-design > svg,
