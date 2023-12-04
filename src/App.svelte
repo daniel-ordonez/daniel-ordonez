@@ -77,7 +77,7 @@
       </svg>
     </div>
     <div id="display-dev" class="slide-in-down">
-      <svg viewBox="0 0 452 181">
+      <svg viewBox="-375 0 830 181">
         <path
           d="M0.200001 0.919987H37.64C62.92 0.919987 81.32 2.83999 92.84 6.68C104.36 10.36 114.28 16.2 122.6 24.2C131.08 32.04 137.56 41.64 142.04 53C146.52 64.36 148.76 77.48 148.76 92.36C148.76 107.24 145.4 121.32 138.68 134.6C132.12 147.72 122.68 158.04 110.36 165.56C98.2 172.92 80.36 176.6 56.84 176.6H0.200001V0.919987ZM20.12 156.92H38.36C58.68 156.92 73.48 155.88 82.76 153.8C92.04 151.72 100.12 147.72 107 141.8C113.88 135.88 119.08 128.68 122.6 120.2C126.28 111.56 128.12 101.64 128.12 90.44C128.12 79.24 125.96 68.92 121.64 59.48C117.48 49.88 111.48 42.12 103.64 36.2C95.8 30.12 86.6 26.12 76.04 24.2C65.48 22.12 50.36 21.08 30.68 21.08H20.12V156.92ZM281.274 21.32H199.674V71.72H280.554V91.88H199.674V156.2H280.554V176.6H179.034V0.919987H281.274V21.32ZM451.226 0.919987L374.666 180.92H369.146L293.786 0.919987H315.866L372.026 136.04L429.146 0.919987H451.226Z"
         />
@@ -113,7 +113,7 @@
     height: 100vh;
     --bar: 0px;
     --gap: 20px;
-    --row-size: calc((100vh - (var(--gap) * 7)) / 8);
+    --row-size: calc((100vh - (var(--gap) * 6)) / 7);
     display: grid;
     grid-auto-flow: row;
     grid-template-rows: 1fr var(--bar);
@@ -129,16 +129,20 @@
   #name-jp {
     grid-column: 1/3;
     grid-row: 1/-1;
-    overflow: hidden;
+    overflow: visible;
+    --blur-max: 12px;
+    --blur-min: 6px;
   }
   #name-jp > svg {
-    filter: blur(6px);
-    fill: rgba(var(--rgb-accent), 0.6);
+    position: absolute;
+    height: 100%;
+    fill: rgba(var(--rgb-accent), 0.9);
+    animation: focus-in-out 9s ease-in-out infinite both;
   }
 
   #display-design {
     grid-row: 3;
-    grid-column: 1/-1;
+    grid-column: 2/-2;
     display: flex;
     justify-content: end;
     align-items: end;
@@ -151,9 +155,14 @@
     justify-content: end;
     align-items: end;
   }
+
+  #display-design,
+  #display-dev {
+    --rows-span: 1;
+  }
   #display-design > svg,
   #display-dev > svg {
-    height: var(--row-size);
+    height: calc(var(--row-size) * var(--rows-span));
   }
   #portrait {
     display: flex;
@@ -177,12 +186,12 @@
     opacity: 0.4;
   }
   #short-bio {
-    grid-row: 5/7;
+    grid-row: 5/-1;
     grid-column: -3;
     display: flex;
     flex-direction: column;
     align-items: end;
-    justify-content: end;
+    justify-content: start;
     row-gap: 8px;
     font-size: 14px;
   }
@@ -205,16 +214,40 @@
       margin-left: 0%;
     }
     #short-bio {
-      grid-row: 6/7;
-      font-size: 16px;
-    }
-    #display-design {
-      grid-column: 2/-2;
+      grid-row: 6/-1;
     }
   }
   @media (orientation: landscape) {
     main {
-      max-width: 100vh;
+      max-width: 133vh;
+    }
+
+    #portrait {
+      grid-row: 4/-1;
+    }
+    #display-design {
+      grid-row: 2/4;
+    }
+    #display-dev {
+      grid-row: 4/6;
+    }
+    #display-design,
+    #display-dev {
+      --rows-span: 2;
+    }
+  }
+  @keyframes focus-in-out {
+    from {
+      transform: scale(1);
+      filter: blur(var(--blur-max));
+    }
+    50% {
+      transform: scale(0.98);
+      filter: blur(var(--blur-min));
+    }
+    to {
+      transform: scale(1);
+      filter: blur(var(--blur-max));
     }
   }
   /*
