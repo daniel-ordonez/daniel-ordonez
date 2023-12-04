@@ -37,26 +37,6 @@
   onMount(() => {
     updateToday();
     setInterval(updateToday, 60000);
-    const elements = document.querySelectorAll("#name-jp>svg>*");
-    for (let i = 0; i < elements.length; i++) {
-      const el = elements[i];
-      el.style.animationDelay = `${100 * i}ms`;
-      //el.classList.add("slide-in-down");
-    }
-    const contact = document.getElementById("contact-links");
-    const w = parseInt(window.getComputedStyle(contact).minWidth);
-    const onAnimationEnd = ({ target }) => {
-      target.removeEventListener("animationend", onAnimationEnd);
-      contact.style.width = `${w * (social.length + 1)}px`;
-      contact.classList.remove("hidden");
-      for (let i = 0; i < contact.childNodes.length; i++) {
-        const child = contact.childNodes[i];
-        child.classList.add("fade-in");
-        child.style.animationDelay = `${100 * i}ms`;
-      }
-    };
-    contact.style.width = `${w}px`;
-    contact.addEventListener("animationend", onAnimationEnd);
   });
 </script>
 
@@ -121,9 +101,15 @@
       Guatemala
     </p>
 
-    <div id="contact-links" class="hidden">
-      {#each social as link}
-        <a href="#" target="_blank" rel="noopener noreferrer">
+    <div id="contact-links" class="hidden" style="--icons: {social.length}">
+      {#each social as link, i (i)}
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="scale-in"
+          style="animation-delay: {1000 + 100 * i}ms;"
+        >
           <img src="social/{link.icon}.svg" alt="" srcset="" />
         </a>
       {/each}
@@ -138,7 +124,7 @@
     --s-rowgap: 20px;
     --s-col4: 300px;
     height: 100vh;
-    height: 100svh;
+    height: 100dvh;
     display: grid;
     grid-template-columns: 0 repeat(3, 1fr) 0;
     grid-template-rows: 0 repeat(6, 1fr) 0;
@@ -172,18 +158,6 @@
     filter: blur(12px);
     fill: rgba(var(--rgb-accent), 0.8);
   }
-  #short-bio {
-    grid-row: 6/8;
-    grid-column: 4;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    row-gap: 16px;
-  }
-  #short-bio > p {
-    max-width: 200px;
-  }
   #date {
     grid-column: 2;
     grid-row: 3/-2;
@@ -191,27 +165,43 @@
     justify-self: end;
     opacity: 0.3;
   }
+  #short-bio {
+    grid-row: 6/8;
+    grid-column: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    row-gap: 8px;
+  }
+  #short-bio > p {
+    max-width: 200px;
+  }
   #contact-links {
-    background-color: rgba(var(--rgb-white), 0.4);
+    --icon-size: 30px;
+    --padding: 4px;
+    --gap: 8px;
+    --border: calc((var(--padding) * 2) + var(--icon-size));
+    --icons-n: 1;
+    --icons: 1;
+    background-color: rba(var(--rgb-white), 0.4);
     backdrop-filter: blur(16px);
-    padding: 4px 16px;
-    border-radius: 48px;
+    padding: var(--padding) calc(var(--padding) * 2);
+    border-radius: var(--border);
     display: flex;
     align-items: center;
-    gap: 16px;
-    min-height: 44px;
-    min-width: 44px;
-    animation: fade-in 400ms ease-in-out 600ms;
+    gap: var(--gap);
+    min-height: var(--border);
+    min-width: var(--border);
+    animation: fade-in--social 400ms ease-in-out 600ms;
     animation-fill-mode: both;
     transition: width ease-in-out 400ms;
+    will-change: width, opacity, transform;
   }
   #contact-links a,
   #contact-links img {
-    height: 36px;
-    width: 36px;
-  }
-  #contact-links.hidden a {
-    display: none;
+    height: var(--icon-size);
+    width: var(--icon-size);
   }
   #display-design {
     grid-row: 2/4;
@@ -235,6 +225,9 @@
     align-items: start;
   }
   @media (max-width: 1024px) {
+    main {
+      overflow: hidden;
+    }
     #display-design > svg,
     #display-dev > svg {
       max-height: 200px;
@@ -257,10 +250,27 @@
       grid-row: 5/7;
       align-items: end;
     }
-
+    #contact-links {
+      flex-direction: row-reverse;
+    }
     #display-design > svg,
     #display-dev > svg {
       max-height: 100px;
+    }
+  }
+  @keyframes fade-in--social {
+    0% {
+      opacity: 0;
+      max-width: calc((var(--padding) * 4) + var(--icon-size));
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      max-width: calc(
+        (var(--padding) * 4) + (var(--gap) * (var(--icons) - 1)) +
+          (var(--icon-size) * var(--icons))
+      );
     }
   }
 </style>
