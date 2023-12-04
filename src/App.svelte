@@ -208,23 +208,24 @@
   #display-design {
     grid-row: 2/4;
     grid-column: 1/5;
-    height: calc((100vh - (var(--s-rowgap) * 4)) / 3);
     display: flex;
     justify-content: center;
     align-items: end;
   }
-  #display-design > svg,
-  #display-dev > svg {
-    overflow: visible;
-    height: 70%;
-  }
   #display-dev {
     grid-row: 4/6;
     grid-column: 3/5;
-    height: calc((100vh - (var(--s-rowgap) * 4)) / 3);
     display: flex;
     justify-content: end;
     align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    #display-design > svg,
+    #display-dev > svg {
+      overflow: visible;
+      height: 70%;
+    }
   }
   @media (max-width: 1024px) {
     main {
@@ -252,15 +253,17 @@
     }
     #short-bio {
       grid-column: 3;
-      grid-row: 5/7;
+      grid-row: 5/8;
       align-items: end;
     }
     #contact-links {
       flex-direction: row-reverse;
     }
-    #display-design > svg,
-    #display-dev > svg {
-      max-height: 100px;
+    #display-design {
+      grid-row: 3;
+    }
+    #display-dev {
+      grid-row: 4;
     }
     #name-jp > svg {
       filter: blur(6px);
