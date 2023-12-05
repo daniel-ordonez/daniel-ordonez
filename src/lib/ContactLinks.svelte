@@ -1,15 +1,18 @@
 <script>
   const social = [
-    { icon: "github" },
-    { icon: "linkedin" },
-    { icon: "behance" },
+    { icon: "github", url: "https://github.com/daniel-ordonez" },
+    {
+      icon: "linkedin",
+      url: "https://www.linkedin.com/in/daniel-adolfo-ordo%C3%B1ez-rubio/",
+    },
+    { icon: "behance", url: "https://www.behance.net/daniordonez/" },
   ];
 </script>
 
 <div id="contact-links" class="hidden" style="--icons: {social.length}">
   {#each social as link, i (i)}
     <a
-      href="#"
+      href={link.url}
       target="_blank"
       rel="noopener noreferrer"
       class="scale-in"

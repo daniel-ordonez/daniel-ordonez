@@ -140,3 +140,18 @@ button {
     transform: scale(1);
   }
 }
+
+@keyframes focus-in-out {
+  from {
+    transform: scale(1);
+    filter: blur(var(--blur-max));
+  }
+  50% {
+    transform: scale(0.98);
+    filter: blur(var(--blur-min));
+  }
+  to {
+    transform: scale(1);
+    filter: blur(var(--blur-max));
+  }
+}

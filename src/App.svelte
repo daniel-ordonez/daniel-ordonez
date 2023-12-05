@@ -5,7 +5,7 @@
   import Bg from "./lib/Bg.svelte";
   import ContactLinks from "./lib/ContactLinks.svelte";
   const animateImg = ({ target }) => {
-    target.classList.add("slide-in-left");
+    target.classList.add("slide-in-right");
   };
 
   const months = [
@@ -97,11 +97,13 @@
     </div>
     <div id="next-page"></div>
     <div id="short-bio">
-      <p class="slide-in-right">
-        Graphic designer<br />Web developer<br />Game dev hobbyist<br />based in
-        Guatemala
-      </p>
-      <ContactLinks></ContactLinks>
+      <div class="bio-wrapper">
+        <p class="slide-in-left">
+          Graphic designer<br />Web developer<br />Game dev hobbyist<br />based
+          in Guatemala
+        </p>
+        <ContactLinks></ContactLinks>
+      </div>
     </div>
   </div>
   <div></div>
@@ -112,7 +114,7 @@
     width: 100vw;
     height: 100vh;
     --bar: 0px;
-    --gap: 20px;
+    --gap: 8px;
     --row-size: calc((100vh - (var(--gap) * 6)) / 7);
     display: grid;
     grid-auto-flow: row;
@@ -183,19 +185,25 @@
     grid-row: -2/-1;
     display: flex;
     align-items: end;
+    justify-content: start;
     opacity: 0.4;
+    margin-left: 1em;
   }
   #short-bio {
-    grid-row: 5/-1;
+    grid-row: 6/-1;
     grid-column: -3;
+    font-size: 14px;
+    display: flex;
+    justify-content: end;
+  }
+  .bio-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     justify-content: start;
     row-gap: 8px;
-    font-size: 14px;
   }
-  #short-bio > p {
+  #short-bio p {
     max-width: 200px;
   }
   @media (min-width: 768px) {
@@ -209,12 +217,17 @@
       grid-column: 2/4;
       grid-row: 5/-1;
     }
-
     #portrait > img {
       margin-left: 0%;
     }
     #short-bio {
-      grid-row: 6/-1;
+      justify-content: start;
+    }
+  }
+  @media (min-height: 768px) and (min-width: 480px) {
+    #short-bio {
+      justify-content: start;
+      font-size: 20px;
     }
   }
   @media (orientation: landscape) {
@@ -224,6 +237,10 @@
 
     #portrait {
       grid-row: 4/-1;
+    }
+
+    #portrait > img {
+      margin-left: 0%;
     }
     #display-design {
       grid-row: 2/4;
@@ -236,98 +253,4 @@
       --rows-span: 2;
     }
   }
-  @keyframes focus-in-out {
-    from {
-      transform: scale(1);
-      filter: blur(var(--blur-max));
-    }
-    50% {
-      transform: scale(0.98);
-      filter: blur(var(--blur-min));
-    }
-    to {
-      transform: scale(1);
-      filter: blur(var(--blur-max));
-    }
-  }
-  /*
-  main {
-    --min-h: 720px;
-    --s-colgap: 20px;
-    --s-rowgap: 20px;
-    --s-col4: 300px;
-    height: max(100vh, var(--min-h));
-    height: max(100dvh, var(--min-h));
-    display: grid;
-    grid-template-columns: 0 repeat(3, 1fr) 0;
-    grid-template-rows: 0 repeat(6, 1fr) 0;
-    column-gap: var(--s-colgap);
-    row-gap: var(--s-rowgap);
-    max-width: 1280px;
-    width: 100vw;
-    transition: all 600ms ease-in-out;
-    z-index: 1;
-  }
-
-
-  #date {
-    grid-column: 2;
-    grid-row: 3/-2;
-    align-self: self-end;
-    justify-self: end;
-    opacity: 0.3;
-  }
-
-
-  @media (min-width: 1024px) {
-    #display-design > svg,
-    #display-dev > svg {
-      overflow: visible;
-      height: 70%;
-    }
-  }
-  @media (max-width: 1024px) {
-    main {
-      overflow: hidden;
-    }
-    #display-design > svg,
-    #display-dev > svg {
-      max-height: 200px;
-    }
-    #name-jp > svg {
-      filter: blur(8px);
-    }
-  }
-  @media (max-width: 768px) {
-    main {
-      grid-template-columns: 0 repeat(2, 1fr) 0;
-    }
-    #portrait {
-      grid-column: 1/3;
-      grid-row: 5/-1;
-      justify-content: center;
-    }
-    #portrait > img {
-      margin-left: 0;
-    }
-    #short-bio {
-      grid-column: 3;
-      grid-row: 5/8;
-      align-items: end;
-    }
-    #contact-links {
-      flex-direction: row-reverse;
-    }
-    #display-design {
-      grid-row: 3;
-    }
-    #display-dev {
-      grid-row: 4;
-    }
-    #name-jp > svg {
-      filter: blur(6px);
-    }
-  }
- 
-  */
 </style>
