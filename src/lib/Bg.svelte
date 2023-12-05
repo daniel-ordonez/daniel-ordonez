@@ -14,18 +14,21 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
+    --color-a: rgba(var(--rgb-white), 0.3);
+    --color-b: rgba(var(--rgb-gray-2), 0.8);
+    --color-c: rgba(var(--rgb-white), 0.6);
   }
   #bg::after {
     z-index: 1;
     position: absolute;
     content: "";
-    background-color: rgba(var(--rgb-white), 0.6);
+    background-color: var(--color-a);
     backdrop-filter: blur(32px);
   }
   .shapes {
     position: absolute;
     overflow: hidden;
-    --size: min(1900px, 100vmax);
+    --size: min(1600px, 100vmax);
   }
 
   .shapes::before,
@@ -38,13 +41,13 @@
     height: var(--size);
     bottom: 0;
     left: 0;
-    --bx: -30%;
-    --by: 30%;
-    --ox: -70%;
-    --oy: 60%;
+    --bx: -70%;
+    --by: 70%;
+    --ox: -20%;
+    --oy: 90%;
     transform: translate(-50%, 50%);
     border-radius: 50%;
-    background-color: rgba(var(--rgb-gray-2), 0.5);
+    background-color: var(--color-b);
     animation: offset-xy 10s infinite 5s;
     animation-fill-mode: both;
   }
@@ -59,7 +62,7 @@
     --oy: -20%;
     transform: translate(50%, -50%);
     border-radius: 50%;
-    background-color: rgba(var(--rgb-white), 0.6);
+    background-color: var(--color-c);
     animation: offset-xy 10s infinite;
     animation-fill-mode: both;
   }

@@ -4,6 +4,7 @@
   import { onMount } from "svelte";
   import Bg from "./lib/Bg.svelte";
   import ContactLinks from "./lib/ContactLinks.svelte";
+  import Glitch from "./lib/Glitch.svelte";
   const animateImg = ({ target }) => {
     target.classList.add("slide-in-right");
   };
@@ -84,12 +85,14 @@
       </svg>
     </div>
     <div id="portrait">
-      <img
-        on:load={animateImg}
-        loading="lazy"
-        src="imgs/portrait-bw.webp"
-        alt="self portrait"
-      />
+      <Glitch>
+        <img
+          on:load={animateImg}
+          loading="lazy"
+          src="imgs/portrait-bw.webp"
+          alt="self portrait"
+        />
+      </Glitch>
     </div>
 
     <div id="date" class="text--mono text--dark">
@@ -133,13 +136,14 @@
     grid-row: 1/-1;
     overflow: visible;
     --blur-max: 12px;
-    --blur-min: 6px;
+    --blur-min: 9px;
   }
   #name-jp > svg {
     position: absolute;
     height: 100%;
     fill: rgba(var(--rgb-accent), 0.9);
-    animation: focus-in-out 9s ease-in-out infinite both;
+    animation: focus-in-out 9s ease-in-out infinite;
+    animation-fill-mode: both;
   }
 
   #display-design {
@@ -173,7 +177,7 @@
     grid-column: 2/-2;
     grid-row: 5/-1;
   }
-  #portrait > img {
+  #portrait img {
     object-fit: contain;
     max-height: 100%;
     max-width: 100%;
@@ -217,7 +221,7 @@
       grid-column: 2/4;
       grid-row: 5/-1;
     }
-    #portrait > img {
+    #portrait img {
       margin-left: 0%;
     }
     #short-bio {
@@ -239,7 +243,7 @@
       grid-row: 4/-1;
     }
 
-    #portrait > img {
+    #portrait img {
       margin-left: 0%;
     }
     #display-design {

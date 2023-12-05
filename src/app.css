@@ -4,9 +4,10 @@
   font-weight: 400;
 
   --c-text--light: black;
-  --c-text--dark: white;
+  --c-text--dark: #f0f0f0;
   --rgb-accent: 245, 0, 0;
 
+  --rgb-black: 0, 0, 0;
   --rgb-white: 255, 255, 255;
   --rgb-gray-1: 217, 217, 217;
   --rgb-gray-2: 148, 148, 148;
@@ -38,13 +39,19 @@
   scrollbar-track-color: transparent;
 }
 
+a, a:visited, a:hover, a:active {
+  appearance: none;
+  outline: none;
+  color: inherit;
+}
+
 body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
   min-height: 100dvh;
   position: relative;
-  background-color: rgb(var(--rgb-gray-1));
+  background-color: var(--c-bg);
 }
 
 img {
@@ -143,15 +150,15 @@ button {
 
 @keyframes focus-in-out {
   from {
-    transform: scale(1);
+    transform: scale(0.98);
     filter: blur(var(--blur-max));
   }
   50% {
-    transform: scale(0.98);
+    transform: scale(1);
     filter: blur(var(--blur-min));
   }
   to {
-    transform: scale(1);
+    transform: scale(0.98);
     filter: blur(var(--blur-max));
   }
 }
