@@ -17,6 +17,7 @@
       rel="noopener noreferrer"
       class="scale-in"
       style="animation-delay: {1000 + 100 * i}ms;"
+      aria-label="Go to my {link.icon} page"
     >
       <img src="social/{link.icon}.svg" alt="" srcset="" />
     </a>

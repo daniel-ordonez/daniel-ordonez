@@ -14,6 +14,8 @@
     position: fixed;
     width: 100vw;
     height: 100vh;
+    top: 0;
+    left: 0;
     --color-a: rgba(var(--rgb-white), 0.3);
     --color-b: rgba(var(--rgb-gray-2), 0.8);
     --color-c: rgba(var(--rgb-white), 0.6);

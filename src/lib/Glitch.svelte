@@ -1,17 +1,18 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
 
   let original;
   let before;
   let after;
+  let active = false;
+  const intervals = [];
   const copies = [];
 
-  const makeClips = (target) => {
-    const number = Math.floor(Math.random() * 60);
+  const makeClipPath = (target, n = 60) => {
+    const number = Math.floor(Math.random() * n);
     const points = [];
     let x = 0;
     let y = 0;
-
     for (let i = 0; i < number; i++) {
       if (i % 2) {
         x = Math.floor(Math.random() * 100);
@@ -21,35 +22,52 @@
       points.push(`${x}% ${y}%`);
     }
     target?.style.setProperty("--path", `polygon(${points.join(",")})`);
-    //console.log(`clip-path: polygon(${points});`);
   };
   const cloneChild = (el) => {
     const copyNode = el.cloneNode(true);
     copyNode.classList.add("clone");
     copies.push(copyNode);
-    makeClips(copyNode);
+    makeClipPath(copyNode);
     return copyNode;
   };
-  const rotateClips = () => {
+  const changeClipPaths = () => {
     for (const copyNode of copies) {
-      makeClips(copyNode);
+      makeClipPath(copyNode);
     }
+    makeClipPath(original, 150);
   };
-  const glitchOut = () => {
-    //setInterval(generatePoints, 1000);
+  const deactivate = () => {
+    active = false;
+  };
+  const activate = () => {
+    active = true;
+    setTimeout(deactivate, 5 * 1000);
+  };
+  export const turnOFF = () => {
+    active = false;
+    intervals.map((i) => {
+      clearInterval(i);
+    });
+  };
+  export const turnON = () => {
     if (original.children.length) {
       const child = original.children[0];
       before.prepend(cloneChild(child));
       after.prepend(cloneChild(child));
     }
-    setInterval(rotateClips, 4000);
+    changeClipPaths();
+    intervals.push(setInterval(changeClipPaths, 5 * 1000));
+    intervals.push(setInterval(activate, 15 * 1000));
   };
+  onDestroy(() => {
+    turnOFF();
+  });
   onMount(() => {
-    setTimeout(glitchOut, 5 * 1000);
+    turnON();
   });
 </script>
 
-<div class="glitch">
+<div class="glitch {active ? 'active' : ''}">
   <div class="copies before" bind:this={before}></div>
   <div class="original" bind:this={original}>
     <slot />
@@ -69,7 +87,11 @@
     width: 100%;
     overflow: hidden;
   }
-  :global(.copies.before > *) {
+  :global(.glitch.active > .original > *) {
+    clip-path: var(--path);
+    animation: paths 7s step-end infinite;
+  }
+  :global(.glitch.active > .copies.before > *) {
     position: absolute;
     left: 0;
     top: 0;
@@ -80,7 +102,7 @@
       styled 7s step-end infinite,
       movement 8s step-end infinite;
   }
-  :global(.copies.after > *) {
+  :global(.glitch.active > .copies.after > *) {
     animation-delay: 300ms;
     animation:
       opacity 5s step-end infinite,

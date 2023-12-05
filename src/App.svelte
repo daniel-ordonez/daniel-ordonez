@@ -1,48 +1,36 @@
 <script>
   // @ts-nocheck
-
-  import { onMount } from "svelte";
   import Bg from "./lib/Bg.svelte";
   import ContactLinks from "./lib/ContactLinks.svelte";
   import Glitch from "./lib/Glitch.svelte";
-  const animateImg = ({ target }) => {
+  import CurrentDate from "./lib/CurrentDate.svelte";
+  const animateImg = () => {
+    const target = document.getElementById("portrait");
     target.classList.add("slide-in-right");
   };
-
-  const months = [
-    "JAN",
-    "FEB",
-    "MAR",
-    "APR",
-    "MAY",
-    "JUN",
-    "JUL",
-    "AUG",
-    "SEP",
-    "OCT",
-    "NOV",
-    "DEC",
-  ];
-  const days = ["SUN", "MON", "TUE", "WED", "THR", "FRI", "SAT"];
-  let fullDate = "";
-  const updateToday = () => {
-    const today = new Date();
-    const month = months[today.getMonth()];
-    const day = days[today.getDay()];
-    const date = today.getDate().toString().padStart(3, "0");
-    const year = today.getFullYear().toString().substring(2).padStart(3, "X");
-    fullDate = `${month}•${day}•${date}•${year}`;
+  let depthForth = true;
+  const changeDepth = () => {
+    if (depthForth) {
+      document.getElementById("name-jp").classList.add("depth-forth");
+      depthForth = false;
+    } else {
+      document.getElementById("name-jp").classList.remove("depth-forth");
+      depthForth = true;
+    }
   };
-  onMount(() => {
-    updateToday();
-    setInterval(updateToday, 60000);
-  });
 </script>
 
 <Bg></Bg>
 <main>
   <div class="subgrid">
-    <div id="name-jp">
+    <div
+      id="name-jp"
+      on:mouseenter={changeDepth}
+      on:mouseleave={changeDepth}
+      aria-label="img"
+      role="img"
+      class={depthForth ? "" : "depth-forth"}
+    >
       <svg viewBox="0 0 60.16 258.22">
         <g>
           <path
@@ -70,21 +58,27 @@
         </g>
       </svg>
     </div>
-    <div id="display-design" class="slide-in-down">
+    <div
+      id="display-design"
+      class="slide-in-down depth {depthForth ? '' : 'depth-back'}"
+    >
       <svg viewBox="0 0 830 185">
         <path
           d="M0.200001 4.91999H37.64C62.92 4.91999 81.32 6.83999 92.84 10.68C104.36 14.36 114.28 20.2 122.6 28.2C131.08 36.04 137.56 45.64 142.04 57C146.52 68.36 148.76 81.48 148.76 96.36C148.76 111.24 145.4 125.32 138.68 138.6C132.12 151.72 122.68 162.04 110.36 169.56C98.2 176.92 80.36 180.6 56.84 180.6H0.200001V4.91999ZM20.12 160.92H38.36C58.68 160.92 73.48 159.88 82.76 157.8C92.04 155.72 100.12 151.72 107 145.8C113.88 139.88 119.08 132.68 122.6 124.2C126.28 115.56 128.12 105.64 128.12 94.44C128.12 83.24 125.96 72.92 121.64 63.48C117.48 53.88 111.48 46.12 103.64 40.2C95.8 34.12 86.6 30.12 76.04 28.2C65.48 26.12 50.36 25.08 30.68 25.08H20.12V160.92ZM281.274 25.32H199.674V75.72H280.554V95.88H199.674V160.2H280.554V180.6H179.034V4.91999H281.274V25.32ZM375.146 43.56C368.746 34.92 363.306 29.16 358.826 26.28C354.346 23.24 349.066 21.72 342.986 21.72C337.066 21.72 332.026 23.64 327.866 27.48C323.866 31.32 321.866 36.28 321.866 42.36C321.866 48.28 323.786 53.48 327.626 57.96C331.466 62.44 340.266 69.8 354.026 80.04C367.946 90.12 378.106 99.64 384.506 108.6C390.906 117.56 394.106 127 394.106 136.92C394.106 149.88 389.066 161.16 378.986 170.76C369.066 180.2 357.466 184.92 344.186 184.92C320.826 184.92 302.506 171.88 289.226 145.8L306.746 135.72C317.146 155.08 328.826 164.76 341.786 164.76C350.106 164.76 357.226 162.12 363.146 156.84C369.066 151.56 372.026 145.4 372.026 138.36C372.026 131.32 369.546 124.68 364.586 118.44C359.626 112.04 351.066 104.28 338.906 95.16C326.746 85.88 318.346 78.84 313.706 74.04C309.226 69.24 305.946 64.12 303.866 58.68C301.786 53.24 300.746 47.8 300.746 42.36C300.746 30.68 304.746 20.84 312.746 12.84C320.906 4.67999 331.386 0.599985 344.186 0.599985C354.106 0.599985 362.746 3.15999 370.106 8.27999C377.466 13.24 384.666 20.68 391.706 30.6L375.146 43.56ZM445.237 180.6H424.597V4.91999H445.237V180.6ZM661.618 94.68C661.138 123.16 652.818 145.32 636.658 161.16C620.658 177 599.538 184.92 573.298 184.92C543.218 184.92 519.218 175.72 501.298 157.32C483.378 138.76 474.418 117.08 474.418 92.28C474.418 67.48 483.378 46.04 501.298 27.96C519.218 9.71999 542.338 0.599985 570.658 0.599985C586.018 0.599985 600.258 3.47999 613.378 9.23999C626.658 14.84 639.618 23.48 652.258 35.16L636.418 50.28C626.658 40.84 616.098 33.64 604.738 28.68C593.378 23.56 581.698 21 569.698 21C557.698 21 545.778 24.2 533.938 30.6C522.098 37 512.818 45.64 506.098 56.52C499.378 67.4 496.018 79.16 496.018 91.8C496.018 111.48 503.378 128.68 518.098 143.4C532.978 157.96 551.538 165.24 573.778 165.24C590.258 165.24 604.498 160.76 616.498 151.8C628.498 142.68 635.858 130.28 638.578 114.6H583.858V94.68H661.618ZM829.394 180.6H823.154L711.794 53.16V180.6H690.674V4.91999H696.914L808.994 134.04V4.91999H829.394V180.6Z"
         />
       </svg>
     </div>
-    <div id="display-dev" class="slide-in-down">
+    <div
+      id="display-dev"
+      class="slide-in-down depth {depthForth ? '' : 'depth-back'}"
+    >
       <svg viewBox="-375 0 830 181">
         <path
           d="M0.200001 0.919987H37.64C62.92 0.919987 81.32 2.83999 92.84 6.68C104.36 10.36 114.28 16.2 122.6 24.2C131.08 32.04 137.56 41.64 142.04 53C146.52 64.36 148.76 77.48 148.76 92.36C148.76 107.24 145.4 121.32 138.68 134.6C132.12 147.72 122.68 158.04 110.36 165.56C98.2 172.92 80.36 176.6 56.84 176.6H0.200001V0.919987ZM20.12 156.92H38.36C58.68 156.92 73.48 155.88 82.76 153.8C92.04 151.72 100.12 147.72 107 141.8C113.88 135.88 119.08 128.68 122.6 120.2C126.28 111.56 128.12 101.64 128.12 90.44C128.12 79.24 125.96 68.92 121.64 59.48C117.48 49.88 111.48 42.12 103.64 36.2C95.8 30.12 86.6 26.12 76.04 24.2C65.48 22.12 50.36 21.08 30.68 21.08H20.12V156.92ZM281.274 21.32H199.674V71.72H280.554V91.88H199.674V156.2H280.554V176.6H179.034V0.919987H281.274V21.32ZM451.226 0.919987L374.666 180.92H369.146L293.786 0.919987H315.866L372.026 136.04L429.146 0.919987H451.226Z"
         />
       </svg>
     </div>
-    <div id="portrait">
+    <div id="portrait" class="depth {depthForth ? '' : 'depth-back'}">
       <Glitch>
         <img
           on:load={animateImg}
@@ -96,7 +90,7 @@
     </div>
 
     <div id="date" class="text--mono text--dark">
-      <span>{fullDate}</span>
+      <CurrentDate></CurrentDate>
     </div>
     <div id="next-page"></div>
     <div id="short-bio">
@@ -113,6 +107,22 @@
 </main>
 
 <style>
+  section {
+    height: 100vh;
+  }
+  aside {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(var(--rgb-accent), 1);
+    height: 120px;
+    width: 60px;
+    border-top-left-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
   main {
     width: 100vw;
     height: 100vh;
@@ -137,13 +147,23 @@
     overflow: visible;
     --blur-max: 12px;
     --blur-min: 9px;
+    will-change: z-index;
+    transition: all 800ms ease-in-out 300ms;
   }
   #name-jp > svg {
     position: absolute;
     height: 100%;
     fill: rgba(var(--rgb-accent), 0.9);
-    animation: focus-in-out 9s ease-in-out infinite;
-    animation-fill-mode: both;
+    filter: blur(6px);
+    will-change: filter, fill;
+    transition: all 500ms ease-in-out;
+  }
+  #name-jp.depth-forth {
+    z-index: 10;
+  }
+  #name-jp.depth-forth > svg {
+    fill: rgba(var(--rgb-accent), 1);
+    filter: blur(1px);
   }
 
   #display-design {
@@ -161,9 +181,16 @@
     justify-content: end;
     align-items: end;
   }
-
+  .depth {
+    will-change: filter;
+    transition: all 500ms ease-in-out;
+  }
+  .depth-back {
+    filter: blur(6px);
+  }
   #display-design,
   #display-dev {
+    pointer-events: none;
     --rows-span: 1;
   }
   #display-design > svg,
@@ -171,6 +198,7 @@
     height: calc(var(--row-size) * var(--rows-span));
   }
   #portrait {
+    pointer-events: none;
     display: flex;
     align-items: end;
     justify-content: start;
@@ -192,6 +220,7 @@
     justify-content: start;
     opacity: 0.4;
     margin-left: 1em;
+    z-index: 20;
   }
   #short-bio {
     grid-row: 6/-1;
@@ -255,6 +284,11 @@
     #display-design,
     #display-dev {
       --rows-span: 2;
+    }
+  }
+  @media (orientation: portrait) and (max-width: 1024px) {
+    main {
+      overflow-x: hidden;
     }
   }
 </style>
