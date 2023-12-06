@@ -35,7 +35,7 @@
     for (const copyNode of copies) {
       makeClipPath(copyNode);
     }
-    makeClipPath(original, 150);
+    makeClipPath(original, 100);
   };
   const deactivate = () => {
     active = false;
@@ -96,19 +96,19 @@
     overflow-y: hidden;
     display: flex;
   }
-  :global(.glitch.active > .original > *) {
+  :global(.glitch.active .original > *) {
     clip-path: var(--path);
     animation: paths 7s step-end infinite;
   }
 
-  :global(.glitch.active > .copies.before > *) {
+  :global(.glitch.active .copies.before > *) {
     clip-path: var(--path);
     animation:
       opacity 5s step-end infinite,
       styled 7s step-end infinite,
       movement 8s step-end infinite;
   }
-  :global(.glitch.active > .copies.after > *) {
+  :global(.glitch.active .copies.after > *) {
     clip-path: var(--path);
     animation-delay: 300ms;
     animation:

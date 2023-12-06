@@ -218,6 +218,7 @@
     margin-left: -20%;
   }
   #date {
+    user-select: none;
     grid-column: 2;
     grid-row: -2/-1;
     display: flex;
