@@ -36,7 +36,6 @@
   margin: 0;
   position: relative;
   font-weight: normal;
-  scrollbar-track-color: transparent;
 }
 
 a, a:visited, a:hover, a:active {
@@ -149,20 +148,5 @@ svg {
   }
   to {
     transform: scale(1);
-  }
-}
-
-@keyframes focus-in-out {
-  from {
-    transform: scale(0.98);
-    filter: blur(var(--blur-max));
-  }
-  50% {
-    transform: scale(1);
-    filter: blur(var(--blur-min));
-  }
-  to {
-    transform: scale(0.98);
-    filter: blur(var(--blur-max));
   }
 }

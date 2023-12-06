@@ -1,5 +1,6 @@
 <script>
   // @ts-nocheck
+  import { onMount, onDestroy } from "svelte";
   import Bg from "./lib/Bg.svelte";
   import ContactLinks from "./lib/ContactLinks.svelte";
   import Glitch from "./lib/Glitch.svelte";
@@ -9,7 +10,9 @@
     target.classList.add("slide-in-right");
   };
   let depthForth = true;
-  const changeDepth = () => {
+  let stopListeners = () => {};
+  const changeDepth = (e) => {
+    e.preventDefault();
     if (depthForth) {
       document.getElementById("name-jp").classList.add("depth-forth");
       depthForth = false;
@@ -18,6 +21,28 @@
       depthForth = true;
     }
   };
+  onDestroy(() => {
+    stopListeners();
+  });
+  onMount(() => {
+    const supportsHover = window.matchMedia("(hover)").matches;
+    const nameJp = document.getElementById("name-jp");
+    if (supportsHover) {
+      nameJp.addEventListener("mouseenter", changeDepth);
+      nameJp.addEventListener("mouseleave", changeDepth);
+      stopListeners = () => {
+        nameJp.removeEventListener("mouseenter", changeDepth);
+        nameJp.removeEventListener("mouseleave", changeDepth);
+      };
+    } else {
+      nameJp.addEventListener("touchstart", changeDepth);
+      nameJp.addEventListener("touchend", changeDepth);
+      stopListeners = () => {
+        nameJp.removeEventListener("touchstart", changeDepth);
+        nameJp.removeEventListener("touchend", changeDepth);
+      };
+    }
+  });
 </script>
 
 <Bg></Bg>
@@ -25,8 +50,6 @@
   <div class="subgrid">
     <div
       id="name-jp"
-      on:mouseenter={changeDepth}
-      on:mouseleave={changeDepth}
       aria-label="img"
       role="img"
       class={depthForth ? "" : "depth-forth"}
@@ -107,22 +130,6 @@
 </main>
 
 <style>
-  section {
-    height: 100vh;
-  }
-  aside {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(var(--rgb-accent), 1);
-    height: 120px;
-    width: 60px;
-    border-top-left-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-  }
   main {
     width: 100vw;
     height: 100vh;
@@ -202,14 +209,12 @@
     display: flex;
     align-items: end;
     justify-content: start;
-    grid-column: 2/-2;
+    grid-column: 1/-2;
     grid-row: 5/-1;
+    overflow-y: hidden;
   }
   #portrait img {
-    object-fit: contain;
-    max-height: 100%;
     max-width: 100%;
-    object-fit: cover;
     margin-left: -20%;
   }
   #date {
@@ -257,21 +262,13 @@
       justify-content: start;
     }
   }
-  @media (min-height: 768px) and (min-width: 480px) {
-    #short-bio {
-      justify-content: start;
-      font-size: 20px;
-    }
-  }
   @media (orientation: landscape) {
     main {
       max-width: 133vh;
     }
-
     #portrait {
       grid-row: 4/-1;
     }
-
     #portrait img {
       margin-left: 0%;
     }
@@ -286,9 +283,20 @@
       --rows-span: 2;
     }
   }
+  @media (orientation: landscape) and (max-width: 768px) {
+    #portrait {
+      grid-column: 2;
+    }
+  }
   @media (orientation: portrait) and (max-width: 1024px) {
     main {
       overflow-x: hidden;
+    }
+  }
+  @media (min-height: 768px) and (min-width: 480px) {
+    #short-bio {
+      justify-content: start;
+      font-size: 20px;
     }
   }
 </style>

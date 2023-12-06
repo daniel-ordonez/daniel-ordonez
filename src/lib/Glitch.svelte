@@ -5,6 +5,7 @@
   let before;
   let after;
   let active = false;
+  let aspectRation = "";
   const intervals = [];
   const copies = [];
 
@@ -50,11 +51,14 @@
     });
   };
   export const turnON = () => {
-    if (original.children.length) {
-      const child = original.children[0];
-      before.prepend(cloneChild(child));
-      after.prepend(cloneChild(child));
-    }
+    const child = Array.from(original.children).find((el) => {
+      return !el.classList.contains("copies");
+    });
+    if (!child) return;
+    const { height, width } = child.getBoundingClientRect();
+    aspectRation = `${width}/${height}`;
+    before.prepend(cloneChild(child));
+    after.prepend(cloneChild(child));
     changeClipPaths();
     intervals.push(setInterval(changeClipPaths, 5 * 1000));
     intervals.push(setInterval(activate, 15 * 1000));
@@ -68,34 +72,36 @@
 </script>
 
 <div class="glitch {active ? 'active' : ''}">
-  <div class="copies before" bind:this={before}></div>
   <div class="original" bind:this={original}>
+    <div class="copies before" bind:this={before}></div>
     <slot />
+    <div class="copies after" bind:this={after}></div>
   </div>
-  <div class="copies after" bind:this={after}></div>
 </div>
 
 <style>
+  .glitch {
+    max-height: 100%;
+    position: relative;
+  }
   .original {
+    position: relative;
     display: flex;
   }
   .copies {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow-y: hidden;
+    display: flex;
   }
   :global(.glitch.active > .original > *) {
     clip-path: var(--path);
     animation: paths 7s step-end infinite;
   }
+
   :global(.glitch.active > .copies.before > *) {
-    position: absolute;
-    left: 0;
-    top: 0;
-    fill: rgb(var(--rgb-accent));
     clip-path: var(--path);
     animation:
       opacity 5s step-end infinite,
@@ -103,6 +109,7 @@
       movement 8s step-end infinite;
   }
   :global(.glitch.active > .copies.after > *) {
+    clip-path: var(--path);
     animation-delay: 300ms;
     animation:
       opacity 5s step-end infinite,
