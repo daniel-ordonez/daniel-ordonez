@@ -93,7 +93,7 @@
     left: 0;
     top: 0;
     width: 100%;
-    overflow-y: hidden;
+    overflow: hidden;
     display: flex;
   }
   :global(.glitch.active .original > *) {
