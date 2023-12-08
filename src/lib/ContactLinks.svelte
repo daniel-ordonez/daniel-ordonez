@@ -32,7 +32,7 @@
     --border: calc((var(--padding) * 2) + var(--icon-size));
     --icons-n: 1;
     --icons: 1;
-    background-color: rgba(var(--rgb-white), 0.8);
+    background-color: rgba(var(--rgb-white), 0.4);
     backdrop-filter: blur(8px);
     padding: var(--padding) calc(var(--padding) * 2);
     border-radius: var(--border);

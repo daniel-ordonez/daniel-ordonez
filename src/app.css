@@ -84,6 +84,9 @@ svg.icon {
 .text--dark {
   color: var(--c-text--dark);
 }
+.text--nowrap {
+  white-space: nowrap;
+}
 
 .slide-in-left {
   animation: slide-in-left 900ms ease-in-out;

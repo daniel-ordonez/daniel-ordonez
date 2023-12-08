@@ -16,7 +16,7 @@
 
 <style>
   #gallery {
-    --padding: 50px;
+    --padding: 20px;
     height: 100%;
     min-width: 100vw;
     padding: var(--padding);
@@ -24,6 +24,7 @@
     justify-content: center;
   }
   .gallery__grid {
+    width: 100vw;
     max-width: 1024px;
     height: 100%;
     max-height: calc(100svh - (var(--padding) * 2));
@@ -46,17 +47,23 @@
   .text {
     padding: 2em;
     font-size: 12px;
+    max-width: 50em;
   }
   h1 {
     font-size: 3em;
     line-height: 1;
     margin-top: 0em;
     margin-bottom: 0.5em;
+    font-weight: 500;
   }
   p {
     font-size: 1em;
   }
-
+  @media (min-width: 480px) and (orientation: portrait) {
+    .text {
+      font-size: 18px;
+    }
+  }
   /*
   @media (min-width: 1024px) {
     .gallery__grid {

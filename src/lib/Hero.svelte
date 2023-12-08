@@ -1,5 +1,6 @@
 <script>
   import Glitch from "./Glitch.svelte";
+  import ContactLinks from "./ContactLinks.svelte";
   const animatePortrait = () => {
     const portrait = document.getElementById("portrait");
     portrait.classList.add("slide-in-right");
@@ -51,11 +52,19 @@
       <Glitch>
         <img
           on:load={animatePortrait}
-          loading="lazy"
           src="imgs/portrait-bw.webp"
           alt="self portrait"
         />
       </Glitch>
+    </div>
+    <div id="short-bio">
+      <div class="bio-wrapper">
+        <p class="slide-in-left">
+          Graphic designer<br />Web developer<br />Game dev hobbyist<br />based
+          in Guatemala
+        </p>
+        <ContactLinks></ContactLinks>
+      </div>
     </div>
   </div>
 </div>
@@ -108,6 +117,17 @@
     max-height: min(60vh, 480px);
     margin-left: -10vw;
   }
+  #short-bio {
+    grid-column: 3;
+    grid-row: 5 / 7;
+    display: flex;
+    justify-content: end;
+  }
+  .bio-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
   #hero svg {
     height: 100%;
   }
@@ -124,29 +144,49 @@
   @media (max-width: 480px) and (orientation: portrait) {
     #portrait img {
       max-height: min(60vh, 480px);
-      margin-left: -30vw;
+      margin-left: -40vw;
     }
   }
   @media (max-height: 480px) and (orientation: landscape) {
+    #display-text {
+      grid-row: 2 / 5;
+    }
+    #portrait {
+      grid-row: 1/-1;
+    }
     #portrait img {
-      max-height: min(70vh, 400px);
-      margin-left: 0;
+      max-height: min(90vh, 400px);
+      margin-left: -10vw;
+    }
+    #short-bio {
+      justify-content: start;
     }
   }
   /** TABLET SM
   */
   @media (min-width: 480px) and (max-width: 768px) and (orientation: portrait) {
     .hero__grid {
-      --cols: 3;
+      --cols: 6;
     }
     #display-text {
       grid-row: 3/5;
     }
+    #portrait {
+      grid-column: 1 / 5;
+    }
+    #portrait img {
+      max-height: min(70vh, 600px);
+      margin-left: -30vw;
+    }
+    #short-bio {
+      grid-column: 5 / 8;
+      justify-content: start;
+    }
   }
 
-  @media (min-height: 480px) and (orientation: landscape) {
+  @media (min-height: 480px) {
     .hero__grid {
-      --cols: 3;
+      --cols: 6;
     }
     #display-text {
       grid-row: 2/5;
@@ -157,6 +197,10 @@
     #portrait img {
       max-height: min(70vh, 600px);
       margin-left: 0;
+    }
+    #short-bio {
+      grid-column: 6 / 8;
+      justify-content: start;
     }
   }
   @media (max-height: 480px) and (min-width: 768px) and (orientation: landscape) {
@@ -189,8 +233,17 @@
   /** DESKTOP
   */
   @media (min-width: 1024px) and (orientation: landscape) {
+    .hero__grid {
+      --cols: 6;
+    }
     #portrait img {
       max-height: min(70vh, 800px);
+    }
+  }
+
+  @media (orientation: landscape) and (max-height: 1024px) {
+    .hero__grid {
+      max-width: 100vmin;
     }
   }
 </style>
