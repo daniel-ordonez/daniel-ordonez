@@ -1,10 +1,13 @@
 <script>
   import Glitch from "./Glitch.svelte";
-  import ContactLinks from "./ContactLinks.svelte";
   import CurrentDate from "./CurrentDate.svelte";
+  let glitch;
   const animatePortrait = () => {
     const portrait = document.getElementById("portrait");
     portrait.classList.add("slide-in-right");
+    window.requestAnimationFrame(() => {
+      //glitch.turnON();
+    });
   };
 </script>
 
@@ -28,10 +31,39 @@
       >
     </div>
     <div id="portrait">
-      <Glitch>
+      <Glitch bind:this={glitch}>
+        <!--
+        <picture>
+          <source
+            media="(max-height: 1024px)"
+            srcset="imgs/portrait-bw_w_300.webp"
+          />
+          <source
+            media="(min-height: 1024px)"
+            srcset="imgs/portrait-bw_w_804.webp 804w"
+          />
+          <img
+            height="100%"
+            width="auto"
+            style="aspect-ratio: 804/773;"
+            on:load={animatePortrait}
+            src="imgs/portrait-bw_w_300.webp"
+            alt="self portrait"
+          />
+        </picture>
+        -->
+
         <img
+          height="100%"
+          width="auto"
+          style="aspect-ratio: 804/773;"
           on:load={animatePortrait}
-          src="imgs/portrait-bw.webp"
+          src="imgs/portrait-bw_w_300.webp"
+          srcset="
+          imgs/portrait-bw_w_300.webp 300w,
+          imgs/portrait-bw_w_300.webp 500w,
+          imgs/portrait-bw_w_300.webp 760w,
+          imgs/portrait-bw_w_804.webp 804w"
           alt="self portrait"
         />
       </Glitch>

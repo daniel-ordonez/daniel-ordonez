@@ -64,9 +64,6 @@
   onDestroy(() => {
     turnOFF();
   });
-  onMount(() => {
-    turnON();
-  });
 </script>
 
 <div class="glitch {active ? 'active' : ''}">

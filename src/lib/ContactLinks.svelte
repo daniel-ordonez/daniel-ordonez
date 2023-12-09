@@ -1,11 +1,11 @@
 <script>
   const social = [
     { icon: "github", url: "https://github.com/daniel-ordonez" },
+    { icon: "behance", url: "https://www.behance.net/daniordonez/" },
     {
       icon: "linkedin",
       url: "https://www.linkedin.com/in/daniel-adolfo-ordo%C3%B1ez-rubio/",
     },
-    { icon: "behance", url: "https://www.behance.net/daniordonez/" },
   ];
 </script>
 
