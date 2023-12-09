@@ -1,6 +1,7 @@
 <script>
   import Glitch from "./Glitch.svelte";
   import ContactLinks from "./ContactLinks.svelte";
+  import CurrentDate from "./CurrentDate.svelte";
   const animatePortrait = () => {
     const portrait = document.getElementById("portrait");
     portrait.classList.add("slide-in-right");
@@ -9,34 +10,12 @@
 
 <div id="hero">
   <div class="hero__grid">
-    <div id="name-jp" aria-label="img" role="img" class="layer--1">
-      <svg viewBox="0 0 60.16 258.22">
-        <g>
-          <path
-            d="m60.16,7.49l-2.5,1.6c-1.41-3.16-3.01-5.8-4.8-7.94l2.24-1.15c1.96,2.56,3.65,5.06,5.06,7.49Z"
-          />
-          <path
-            d="m55.68,7.81l-2.37,1.54c-1.58-2.73-3.39-5.18-5.44-7.36l2.24-1.47c2.65,3.03,4.5,5.46,5.57,7.3Z"
-          />
-          <path
-            d="m34.75,38.34c-4.18-2.73-8.6-5.03-13.25-6.91l3.71-5.63c5.25,2.13,9.9,4.44,13.95,6.91,2.13-3.16,3.75-6.12,4.86-8.9,1.11-2.82,1.66-5.03,1.66-6.66s-.36-2.67-1.09-3.14c-.68-.51-1.86-.77-3.52-.77h-15.23c-1.62,0-2.69.15-3.2.45-.51.26-1.07.92-1.66,1.98-2.52,5.03-7.38,10.9-14.59,17.6l-6.4-3.14c4.91-4.61,8.36-8.26,10.37-10.94,2.05-2.69,3.82-5.97,5.31-9.86.38-1.07.79-1.81,1.22-2.24.43-.47,1.24-.7,2.43-.7h25.09c3.24,0,5.63.75,7.17,2.24,1.58,1.49,2.37,3.84,2.37,7.04s-.96,7.08-2.88,11.65c-1.92,4.57-4.63,9.11-8.13,13.63-3.5,4.52-7.4,8.23-11.71,11.14-4.27,2.86-11.24,5.74-20.93,8.64l-5.25-6.21c13.74-4.05,23.64-9.45,29.7-16.19Z"
-          />
-        </g>
-        <rect x="4.67" y="72.59" width="46.59" height="7.17" />
-        <rect x="1.09" y="112.98" width="55.55" height="7.49" />
-        <polygon
-          points="56.9 189.6 .06 189.6 .06 182.82 24.06 182.82 24.06 144.61 4.61 144.61 4.61 137.89 51.97 137.89 51.97 144.61 32.19 144.61 32.19 182.82 56.9 182.82 56.9 189.6"
-        />
-        <g>
-          <path
-            d="m58.37,240.3c-5.03,5.38-9.6,9.32-13.7,11.84-4.1,2.52-9.28,4.54-15.55,6.08l-4.99-7.94c2.3-.3,4.16-.68,5.57-1.15v-46.14h5.89c1.62,0,2.43.32,2.43.96,0,.08-.02.17-.06.26-.21.43-.32,1.88-.32,4.35v38.34c2.52-1.02,4.97-2.35,7.36-3.97,2.43-1.66,5.74-4.4,9.92-8.19l3.46,5.57Z"
-          />
-          <path
-            d="m10.82,205.49c3.46-.04,5.74.02,6.85.19,1.15.13,1.73.34,1.73.64,0,.08-.02.19-.06.32-.3.77-.45,2.28-.45,4.54-.13,10.11-1.07,18.69-2.82,25.73-1.75,7-4.39,13.48-7.94,19.46l-6.91-5.5c4.52-6.83,7.32-13.18,8.38-19.07,1.07-5.93,1.6-12.63,1.6-20.1,0-2.47-.13-4.54-.38-6.21Z"
-          />
-        </g>
-      </svg>
+    <div id="date-stamp" class="text--mono slide-in-left">
+      <div>
+        <CurrentDate></CurrentDate>
+      </div>
     </div>
+
     <div id="display-text" class="layer--2">
       <svg viewBox="0 0 829.19 384.56">
         <path
@@ -48,7 +27,7 @@
         /></svg
       >
     </div>
-    <div id="portrait" class="layer--2">
+    <div id="portrait">
       <Glitch>
         <img
           on:load={animatePortrait}
@@ -57,13 +36,37 @@
         />
       </Glitch>
     </div>
+    <div id="name-jp" aria-label="img" role="img" class="layer--2">
+      <svg viewBox="0 0 37.69 170.57">
+        <path
+          style="--delay: 4"
+          d="m37.28,158.49c-3.32,4.32-9.04,8.64-13.56,10.92-.84.44-1.32.88-1.72,1.16l-3.36-2.76c.2-.76.32-1.84.32-2.92v-23.32c0-1.8-.28-3.36-.28-3.44h5.92c0,.08-.28,1.68-.28,3.48v20.88c3.28-1.4,7.2-4.56,9.92-8.44l3.04,4.44Zm-29.16-16.64c0,4.8-.04,12.4-1.2,15.8-1.08,3.44-3.24,7.12-6.8,9.6l4.88,3.24c3.44-3.04,5.92-7,7.16-11.48,1.04-4.04,1.16-12.48,1.16-17.24,0-1.64.28-3.44.28-3.6h-5.88c.24,1,.4,2.04.4,3.68Z"
+        />
+        <path
+          style="--delay: 3"
+          d="m31.84,122.45h-10.64v-16.36h8.48c1.16,0,2.56.08,3.72.2v-5.52c-1.12.16-2.52.28-3.72.28H7.88c-1.08,0-2.76-.12-3.8-.28v5.52c1.04-.12,2.72-.2,3.8-.2h7.76v16.36H5.44c-1.2,0-2.64-.12-3.92-.32v5.76c1.32-.12,2.76-.16,3.92-.16h26.4c.92,0,2.6.04,3.72.16v-5.76c-1.04.12-2.32.32-3.72.32Z"
+        />
+        <path
+          style="--delay: 2"
+          d="m10.04,67.21c-1.52,0-3.36.08-4.72.12v-5.8c1.48.16,3.32.24,4.72.24h16.56c1.6,0,3.28-.08,4.44-.24v5.8c-1.16-.04-3.04-.12-4.44-.12H10.04Zm19.92,14.16H7c-1.6,0-3.48-.16-5.04-.24v6.12c1.52-.16,3.44-.28,5.04-.28h22.96c1.16,0,2.96.12,4.4.28v-6.12c-1.36.12-3.08.24-4.4.24Z"
+        />
+        <path
+          style="--delay: 1"
+          d="m30.6,22.3l2.96,1.83c-.44.76-.96,1.88-1.32,2.88-1.08,3.21-3.08,7.51-5.93,11.5,1.73,1.23,3.28,2.39,4.45,3.34l-3.8,4.52c-1.09-1.01-2.56-2.24-4.21-3.54-3.52,3.71-8.09,7.12-14.31,9.46l-4.64-4c6.92-2.15,11.39-5.4,14.66-8.72-2.58-1.89-5.2-3.7-7.26-5l3.52-3.64c2.1,1.21,4.66,2.84,7.19,4.54,2.07-2.92,3.8-6.35,4.41-8.86h-11.47c-2.8,3.72-6.51,7.58-10.53,10.36l-4.32-3.32c7-4.32,10.72-9.84,12.72-13.28.6-1,1.48-2.84,1.84-4.2l5.76,1.8c-.96,1.4-1.96,3.24-2.44,4.08,0,.01-.02.03-.02.04h8.14c1.1,0,2.29-.16,3.16-.4-.79-1.49-1.76-3.29-2.64-4.52l3.2-1.32c1,1.48,2.4,4,3.16,5.48l-2.28.97Zm3.84-8.25l-3.16,1.28c1.08,1.52,2.36,3.84,3.2,5.52l3.2-1.36c-.72-1.4-2.2-3.96-3.24-5.44Z"
+        />
+        <path
+          style="--delay: 0"
+          d="m2.05.42v7.27H.52V.42h1.54Zm2.21,0v2.76h-1.08V.42h1.08Zm1.12,7.27V2.23h1.44v.96h.06c.11-.32.3-.57.57-.76.27-.18.58-.28.95-.28s.69.09.96.28c.26.18.44.44.53.75h.06c.11-.31.31-.56.6-.75.29-.19.64-.28,1.04-.28.51,0,.92.16,1.24.49.32.32.48.78.48,1.37v3.67h-1.51v-3.37c0-.3-.08-.53-.24-.68-.16-.15-.36-.23-.6-.23-.27,0-.49.09-.64.26-.15.17-.23.4-.23.69v3.33h-1.47v-3.4c0-.27-.08-.48-.23-.64-.15-.16-.35-.24-.6-.24-.17,0-.32.04-.45.13-.13.08-.24.2-.32.35-.08.15-.12.32-.12.53v3.27h-1.51Zm14.04,0h-2.58V.42h2.6c.73,0,1.36.15,1.89.44.53.29.93.7,1.22,1.25.29.54.43,1.19.43,1.95s-.14,1.41-.43,1.95c-.28.54-.69.96-1.23,1.25-.53.29-1.16.44-1.9.44Zm-1.04-1.32h.98c.45,0,.84-.08,1.15-.24.31-.16.55-.42.7-.76.16-.34.24-.79.24-1.33s-.08-.98-.24-1.32c-.16-.34-.39-.59-.7-.75-.31-.16-.69-.24-1.15-.24h-.98v4.64Zm7.26,1.42c-.35,0-.66-.06-.93-.18-.27-.12-.49-.3-.65-.54-.16-.24-.23-.54-.23-.9,0-.3.06-.56.17-.76.11-.21.26-.37.45-.5.19-.13.41-.22.65-.28.25-.06.5-.11.77-.13.32-.03.57-.06.77-.09.19-.03.33-.08.42-.13.09-.06.13-.15.13-.26v-.02c0-.22-.07-.4-.21-.52-.14-.12-.34-.18-.6-.18-.27,0-.49.06-.65.18-.16.12-.27.27-.32.45l-1.4-.11c.07-.33.21-.62.42-.86.21-.24.48-.43.81-.56.33-.13.72-.2,1.15-.2.3,0,.59.04.87.11.28.07.53.18.74.33.22.15.39.34.51.58.13.23.19.51.19.83v3.68h-1.43v-.76h-.04c-.09.17-.2.32-.35.45-.15.13-.32.23-.53.3-.21.07-.44.11-.71.11Zm.43-1.04c.22,0,.42-.04.59-.13.17-.09.3-.21.4-.36.1-.15.15-.32.15-.51v-.58s-.11.06-.2.09c-.08.02-.17.05-.27.07-.1.02-.2.04-.31.05-.1.01-.19.03-.28.04-.18.03-.33.07-.47.12-.13.06-.24.13-.31.23-.07.09-.11.21-.11.36,0,.21.07.36.22.47.15.11.34.16.58.16Zm5.33-2.21v3.15h-1.51V2.23h1.44v.96h.06c.12-.32.32-.57.61-.75.28-.19.63-.28,1.03-.28.38,0,.71.08.99.25.28.17.5.4.66.71.16.31.23.67.23,1.09v3.47h-1.51v-3.2c0-.33-.08-.59-.26-.78-.17-.19-.41-.28-.71-.28-.2,0-.38.04-.54.13-.15.09-.27.22-.36.38-.09.17-.13.37-.13.6Zm4.71,3.15V2.23h1.51v5.45h-1.51Zm.76-6.16c-.22,0-.42-.07-.58-.22-.16-.15-.24-.33-.24-.54s.08-.39.24-.54c.16-.15.35-.23.58-.23s.42.08.58.23c.16.15.24.33.24.54s-.08.39-.24.54c-.16.15-.35.22-.58.22Z"
+        />
+      </svg>
+    </div>
     <div id="short-bio">
-      <div class="bio-wrapper">
-        <p class="slide-in-left">
+      <div class="bio-wrapper slide-in-left">
+        <h1>About me</h1>
+        <p>
           Graphic designer<br />Web developer<br />Game dev hobbyist<br />based
           in Guatemala
         </p>
-        <ContactLinks></ContactLinks>
       </div>
     </div>
   </div>
@@ -75,10 +78,15 @@
     min-width: 100vw;
     display: flex;
     justify-content: center;
+    padding: var(--margin);
+    padding-bottom: 0;
+  }
+  #hero svg {
+    height: 100%;
   }
   .hero__grid {
-    --cols: 2;
-    --rows: 6;
+    --cols: 6;
+    --rows: 9;
     width: 100vw;
     max-width: 1455px;
     height: 100%;
@@ -86,164 +94,206 @@
     max-height: 100svh;
     display: grid;
     gap: var(--gap);
-    grid-template-columns: 0 repeat(var(--cols), 1fr) 0;
-    grid-template-rows: 0 repeat(var(--rows), 1fr) 0;
+    grid-template-columns: repeat(var(--cols), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+  }
+  #date-stamp {
+    grid-row: 1;
+    grid-column: -1 / -4;
+    display: flex;
+    justify-content: end;
   }
   #name-jp {
     grid-column: 1;
-    grid-row: 1/-1;
+    grid-row: 4/6;
+    display: flex;
+  }
+  #name-jp path {
+    animation: slide-in-up 600ms ease-out;
+    --path-delay: calc(200ms * var(--delay));
+    --base-delay: 1200ms;
+    animation-delay: calc(var(--base-delay) + var(--path-delay));
+    animation-fill-mode: both;
   }
   #name-jp svg {
     fill: rgb(var(--rgb-accent));
     height: 100%;
   }
   #display-text {
-    grid-column: 2/-2;
+    grid-column: 1/-1;
+    grid-row: 2 / 5;
     display: flex;
     justify-content: end;
-  }
-  #display-text {
-    grid-row: 2 / 6;
     align-items: end;
-  }
-  #portrait {
-    grid-column: 1/3;
-    grid-row-start: 4;
-    grid-row-end: -1;
-    display: flex;
-    align-items: end;
-  }
-  #portrait img {
-    max-height: min(60vh, 480px);
-    margin-left: -10vw;
   }
   #short-bio {
-    grid-column: 3;
-    grid-row: 5 / 7;
+    grid-column: -1/-4;
+    grid-row: 5 / span 2;
     display: flex;
     justify-content: end;
   }
   .bio-wrapper {
+    font-size: 12px;
+    line-height: 1;
+    text-align: right;
     display: flex;
     flex-direction: column;
     gap: var(--gap);
   }
-  #hero svg {
-    height: 100%;
-  }
-  .layer--1 {
-    filter: blur(6px);
-    opacity: 0.9;
-  }
-  .layer--2 {
-    z-index: 10;
+  .bio-wrapper h1 {
+    font-size: 14px;
+    font-weight: bold;
   }
 
-  /** MOBILE
-  */
-  @media (max-width: 480px) and (orientation: portrait) {
-    #portrait img {
-      max-height: min(60vh, 480px);
-      margin-left: -40vw;
+  #portrait {
+    grid-column: 1/-3;
+    grid-row: 5 / -2;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+  }
+  #portrait img {
+    max-height: min(50vh, 480px);
+    margin-right: calc(-15vw - var(--margin));
+  }
+
+  @media (orientation: portrait) {
+    #display-text {
+      align-items: start;
+    }
+    #display-text svg {
+      height: auto;
+      width: 100%;
     }
   }
+  /** LIMIT ASPECT RATIO
+  */
+  @media (max-height: 1024px) {
+    .hero__grid {
+      max-width: 1280px;
+    }
+  }
+  @media (max-height: 768px) {
+    .hero__grid {
+      max-width: 768px;
+    }
+  }
+  @media (max-height: 480px) {
+    .hero__grid {
+      max-width: 480px;
+    }
+  }
+  /** MOBILE LANDSCAPE
+  */
   @media (max-height: 480px) and (orientation: landscape) {
-    #display-text {
-      grid-row: 2 / 5;
+    #name-jp {
+      grid-row-start: 1;
+      display: flex;
+      justify-content: end;
     }
     #portrait {
-      grid-row: 1/-1;
+      grid-row: 3 / -1;
+      justify-content: center;
     }
     #portrait img {
-      max-height: min(90vh, 400px);
-      margin-left: -10vw;
-    }
-    #short-bio {
-      justify-content: start;
+      max-height: min(80vh, 480px);
+      margin-left: 0;
     }
   }
+
   /** TABLET SM
   */
-  @media (min-width: 480px) and (max-width: 768px) and (orientation: portrait) {
-    .hero__grid {
-      --cols: 6;
-    }
-    #display-text {
-      grid-row: 3/5;
-    }
-    #portrait {
-      grid-column: 1 / 5;
-    }
+  @media (min-width: 480px) {
     #portrait img {
-      max-height: min(70vh, 600px);
-      margin-left: -30vw;
+      max-height: 60vh;
+      max-width: 100vw;
     }
-    #short-bio {
-      grid-column: 5 / 8;
-      justify-content: start;
+    #name-jp {
+      justify-content: center;
     }
   }
-
-  @media (min-height: 480px) {
-    .hero__grid {
-      --cols: 6;
-    }
-    #display-text {
-      grid-row: 2/5;
-    }
+  @media (min-width: 480px) and (orientation: portrait) {
     #portrait {
-      grid-column: 1/4;
-    }
-    #portrait img {
-      max-height: min(70vh, 600px);
-      margin-left: 0;
-    }
-    #short-bio {
-      grid-column: 6 / 8;
+      grid-column-end: -1;
       justify-content: start;
     }
+    #portrait img {
+      margin-right: 10vw;
+      margin-left: -10vw;
+    }
   }
-  @media (max-height: 480px) and (min-width: 768px) and (orientation: landscape) {
+  @media (min-width: 480px) and (orientation: landscape) {
     #portrait {
-      grid-row: 2/-1;
+      grid-column-end: 5;
     }
     #portrait img {
-      max-height: min(100vh, 600px);
-      margin-left: 0;
+      max-height: 80vh;
+      margin-right: 5vw;
+      margin-left: -5vw;
     }
   }
   /** TABLET LG
   */
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    .hero__grid {
-      --cols: 6;
-    }
-    #display-text {
-      grid-row: 2/5;
+  @media (min-width: 768px) {
+    #name-jp {
+      grid-row-start: 2;
     }
     #portrait {
-      grid-column: 1/6;
+      grid-row-start: 4;
+      grid-column-end: -2;
     }
-
     #portrait img {
-      max-height: min(70vh, 600px);
+      max-height: 70vh;
+    }
+  }
+  @media (min-width: 768px) and (orientation: landscape) {
+    #portrait {
+      justify-content: start;
+      z-index: 1000;
+      grid-row-end: -1;
+    }
+    #portrait img {
+      margin-right: 0vw;
+      margin-left: 0vw;
+    }
+  }
+  @media (min-width: 786px) and (orientation: portrait) {
+    #portrait img {
+      margin-right: 10vw;
       margin-left: -10vw;
     }
   }
-  /** DESKTOP
-  */
-  @media (min-width: 1024px) and (orientation: landscape) {
-    .hero__grid {
-      --cols: 6;
+  @media (min-height: 768px) and (orientation: portrait) {
+    .bio-wrapper {
+      font-size: 14px;
     }
-    #portrait img {
-      max-height: min(70vh, 800px);
+    .bio-wrapper h1 {
+      font-size: 16px;
+    }
+  }
+  @media (min-height: 1024px) and (orientation: portrait) {
+    .bio-wrapper {
+      font-size: 18px;
+    }
+    .bio-wrapper h1 {
+      font-size: 32px;
     }
   }
 
-  @media (orientation: landscape) and (max-height: 1024px) {
-    .hero__grid {
-      max-width: 100vmin;
+  /** DESKTOP
+  */
+  @media (min-width: 1024px) {
+    #portrait {
+      grid-row-start: 3;
+    }
+    #display-text {
+      grid-row-end: 6;
+    }
+    #display-text svg {
+      max-width: calc(80vw);
+    }
+    #short-bio {
+      grid-row-start: 6;
     }
   }
 </style>

@@ -5,7 +5,6 @@
   let before;
   let after;
   let active = false;
-  let aspectRation = "";
   const intervals = [];
   const copies = [];
 
@@ -56,7 +55,6 @@
     });
     if (!child) return;
     const { height, width } = child.getBoundingClientRect();
-    aspectRation = `${width}/${height}`;
     before.prepend(cloneChild(child));
     after.prepend(cloneChild(child));
     changeClipPaths();
@@ -67,7 +65,7 @@
     turnOFF();
   });
   onMount(() => {
-    //turnON();
+    turnON();
   });
 </script>
 
@@ -105,7 +103,7 @@
     clip-path: var(--path);
     animation:
       opacity 5s step-end infinite,
-      styled 7s step-end infinite,
+      styled 5s step-end infinite,
       movement 8s step-end infinite;
   }
   :global(.glitch.active .copies.after > *) {
@@ -113,7 +111,7 @@
     animation-delay: 300ms;
     animation:
       opacity 5s step-end infinite,
-      blurred 7s step-end infinite,
+      blurred 5s step-end infinite,
       movement 8s step-end infinite;
   }
 

@@ -1,30 +1,74 @@
 <div id="bg">
   <div class="shapes"></div>
+  <div class="blur"></div>
+
+  <img
+    class="texture texture--dust"
+    src="textures/DUST-2.webp"
+    alt="dust texture"
+  />
+  <!--
+  <img
+    class="texture texture--paper"
+    src="textures/PAPER.webp"
+    alt="paper texture"
+  />
+  -->
 </div>
+<svg class="pattern" width="100%" height="100%">
+  <pattern
+    id="pattern-circles"
+    x="0"
+    y="0"
+    width="15"
+    height="15"
+    patternUnits="userSpaceOnUse"
+    patternContentUnits="userSpaceOnUse"
+  >
+    <circle id="pattern-circle" cx="5" cy="5" r="1.6257413380501518" fill="#000"
+    ></circle>
+  </pattern>
+  <rect
+    id="rect"
+    x="0"
+    y="0"
+    width="100%"
+    height="100%"
+    fill="url(#pattern-circles)"
+  ></rect>
+</svg>
 
 <style>
-  #bg::after,
+  .pattern,
+  .blur,
   .shapes {
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
   }
+  .pattern {
+    --blur: 1px;
+    position: absolute;
+    opacity: 0.1;
+    animation: focus-in-out 10s ease-in-out infinite both;
+  }
   #bg {
+    overflow: hidden;
     position: fixed;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
-    --color-a: rgba(var(--rgb-gray-1), 0.4);
-    --color-b: rgba(var(--rgb-gray-2), 0.4);
-    --color-c: rgba(var(--rgb-white), 0.6);
+    background: linear-gradient(#d9d9d9, #b2b0b2);
+    --color-overlay: rgba(var(--rgb-white), 0.4);
+    --color-shape-a: rgba(var(--rgb-gray-2), 0.4);
+    --color-shape-b: rgba(var(--rgb-white), 0.5);
   }
-  #bg::after {
+  .blur {
     z-index: 1;
     position: absolute;
-    content: "";
-    background-color: var(--color-a);
+    background-color: var(--color-overlay);
     backdrop-filter: blur(32px);
   }
   .shapes {
@@ -49,8 +93,8 @@
     --oy: 90%;
     transform: translate(-50%, 50%);
     border-radius: 50%;
-    background-color: var(--color-b);
-    animation: offset-xy 10s infinite 5s;
+    background-color: var(--color-shape-a);
+    animation: offset-shape-xy 30s infinite 5s;
     animation-fill-mode: both;
   }
   .shapes::after {
@@ -64,11 +108,54 @@
     --oy: -20%;
     transform: translate(50%, -50%);
     border-radius: 50%;
-    background-color: var(--color-c);
-    animation: offset-xy 10s infinite;
+    background-color: var(--color-shape-b);
+    animation: offset-shape-xy 30s infinite;
     animation-fill-mode: both;
   }
-  @keyframes offset-xy {
+  .texture {
+    --offsetX: 0;
+    --scale: 1;
+    z-index: 2;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    min-width: 120vmax;
+    min-height: 120vmax;
+    mix-blend-mode: screen;
+    animation:
+      offset-texture 40s ease-in-out infinite both,
+      focus-in-out 10s ease-in-out infinite both;
+    pointer-events: none;
+    transition: all 300ms;
+  }
+  .texture--paper {
+    animation-delay: 10s;
+  }
+  @keyframes focus-in-out {
+    0%,
+    30%,
+    70%,
+    100% {
+      filter: blur(0px);
+      --scale: 1;
+    }
+    50% {
+      filter: blur(var(--blur, 3px));
+      --scale: 1.05;
+    }
+  }
+  @keyframes offset-texture {
+    from {
+      transform: scale(var(--scale)) translateX(-5vmin);
+    }
+    50% {
+      transform: scale(var(--scale)) translateX(5vmin);
+    }
+    to {
+      transform: scale(var(--scale)) translateX(-5vmin);
+    }
+  }
+  @keyframes offset-shape-xy {
     from {
       transform: translate(var(--bx), var(--by)) scale(1);
     }

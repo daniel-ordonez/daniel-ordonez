@@ -16,7 +16,6 @@
   --c-text: rgb(var(--c-text--light));
 
   --app-size: min(1280px, 100vw);
-  --gap: 20px;
 
 
   color-scheme: light;
@@ -55,6 +54,7 @@ body {
 
 img {
   user-select: none;
+  pointer-events: none;
 }
 button {
   border: none;
@@ -89,17 +89,17 @@ svg.icon {
 }
 
 .slide-in-left {
-  animation: slide-in-left 900ms ease-in-out;
+  animation: slide-in-left 600ms ease-in-out;
   animation-delay: 200ms;
   animation-fill-mode: both;
 }
 .slide-in-right {
-  animation: slide-in-right 900ms ease-in-out;
+  animation: slide-in-right 1200ms ease-in-out;
   animation-delay: 200ms;
   animation-fill-mode: both;
 }
 .slide-in-down {
-  animation: slide-in-down 900ms ease-in-out;
+  animation: slide-in-down 1200ms ease-in-out;
   animation-fill-mode: both;
 }
 .slide-in-down+.slide-in-down{
@@ -138,6 +138,16 @@ svg.icon {
 @keyframes slide-in-down {
   from {
     transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-up {
+  from {
+    transform: translateY(-10px);
     opacity: 0;
   }
   to {

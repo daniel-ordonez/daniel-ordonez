@@ -15,7 +15,7 @@
     "DEC",
   ];
   const days = ["SUN", "MON", "TUE", "WED", "THR", "FRI", "SAT"];
-  let fullDate = "";
+  let currentDate = "";
   let refresher = null;
   const updateCD = () => {
     const today = new Date();
@@ -23,7 +23,7 @@
     const day = days[today.getDay()];
     const date = today.getDate().toString().padStart(3, "0");
     const year = today.getFullYear().toString().substring(2).padStart(3, "X");
-    fullDate = `${month}•${day}•${date}•${year}`;
+    currentDate = `${day}•${date}•${month}•${year}`;
   };
   onDestroy(() => {
     clearInterval(refresher);
@@ -34,4 +34,4 @@
   });
 </script>
 
-<span>{fullDate}</span>
+<span>{currentDate}</span>

@@ -5,8 +5,8 @@
   import CustomScroll from "./lib/CustomScroll.svelte";
   import Gallery from "./lib/Gallery.svelte";
   import Hero from "./lib/Hero.svelte";
-  import CurrentDate from "./lib/CurrentDate.svelte";
-  let page = 1;
+  import ContactLinks from "./lib/ContactLinks.svelte";
+  let page = 0;
   const getPageMenu = (page) => {
     switch (page) {
       case 0:
@@ -25,43 +25,21 @@
       <section>
         <Hero></Hero>
       </section>
+      <!--
       <section>
         <Gallery></Gallery>
       </section>
+      -->
     </CustomScroll>
   </div>
 </main>
-<aside id="date-stamp" class="text--mono">
-  <div>
-    <CurrentDate></CurrentDate>
-  </div>
-</aside>
 <nav id="menu">
-  <div class="hr"></div>
-  <div class="menu__btn">
-    <div class="text--nowrap">{pageMenu}</div>
-    <svg viewBox="0 0 24 24" class="icon">
-      <line x1="5" y1="12" x2="19" y2="12"></line><polyline
-        points="12 5 19 12 12 19"
-      ></polyline>
-    </svg>
+  <div class="menu__content">
+    <ContactLinks></ContactLinks>
   </div>
 </nav>
 
 <style>
-  #date-stamp {
-    position: fixed;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-100%);
-  }
-  #date-stamp > * {
-    width: 1em;
-    overflow: visible;
-    transform-origin: center center;
-    transform: rotate(90deg);
-    color: rgba(var(--rgb-white), 0.8);
-  }
   #viewport {
     height: 100vh;
     height: 100dvh;
@@ -81,24 +59,55 @@
     justify-content: center;
     align-items: center;
   }
-  .hr {
-    width: 100%;
-    height: 0px;
-    border-top: 1px solid currentColor;
-  }
   #menu {
+    background-color: rgb(var(--rgb-accent));
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100vw;
-    padding: 16px 50px;
+    padding: 0px 20px;
+    height: calc(((100vh - 20px) / 10));
     display: flex;
-    align-items: center;
-    gap: 20px;
+    justify-content: center;
   }
-  .menu__btn {
+  .menu__content {
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: end;
+    --gap: 16px;
+  }
+  main {
+    --margin: 20px;
+    --gap: 8px;
+  }
+
+  @media (min-height: 786px) {
+    #menu {
+      --icon-size: 40px;
+    }
+  }
+  @media (min-height: 1024px) {
+    #menu {
+      --icon-size: 48px;
+    }
+  }
+  /** LIMIT ASPECT RATIO
+  */
+  @media (max-height: 1024px) {
+    .menu__content {
+      max-width: 1280px;
+    }
+  }
+  @media (max-height: 768px) {
+    .menu__content {
+      max-width: 768px;
+    }
+  }
+  @media (max-height: 480px) {
+    .menu__content {
+      max-width: 480px;
+    }
   }
 </style>

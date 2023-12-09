@@ -10,6 +10,7 @@
   let currentSectionIndex = 0;
   let resizeObserver;
 
+  //UPDATE ON RESIZE DEBOUNCED
   const updateScrollOffset = () => {
     const naturalScrollWidth = Math.max(
       0,
@@ -77,11 +78,11 @@
     sections.map((el) => {
       intersectionObserver.observe(el);
     });
-    /*
-    container.addEventListener("scrollend", () => {
-      scrollSectionToView();
-    });
-    */
+    window
+      .matchMedia("(orientation: landscape)")
+      .addEventListener("change", ({ matches }) => {
+        window.requestAnimationFrame(updateScrollOffset);
+      });
   });
 </script>
 
