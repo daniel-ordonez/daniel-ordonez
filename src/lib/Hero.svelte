@@ -105,6 +105,9 @@
 </div>
 
 <style>
+  /**
+  * TODO: REDO MEDIA QUERYES WITH ASPECT RATIO MOCKUPS
+  */
   #hero {
     height: 100%;
     min-width: 100vw;
@@ -193,10 +196,6 @@
     #display-text {
       align-items: start;
     }
-    #display-text svg {
-      height: auto;
-      width: 100%;
-    }
   }
   /** LIMIT ASPECT RATIO
   */
@@ -271,7 +270,6 @@
       grid-row-start: 2;
     }
     #portrait {
-      grid-row-start: 4;
       grid-column-end: -2;
     }
     #portrait img {
@@ -280,8 +278,8 @@
   }
   @media (min-width: 768px) and (orientation: landscape) {
     #portrait {
-      justify-content: start;
       z-index: 1000;
+      grid-row-start: 3;
       grid-row-end: -1;
     }
     #portrait img {
