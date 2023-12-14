@@ -18,7 +18,6 @@
     href={social[0].url}
     target="_blank"
     rel="noopener noreferrer"
-    class="scale-in"
     style="animation-delay: {1000 + 100 * 0}ms;"
     aria-label="Go to my {social[0].url} page"
   >
@@ -32,7 +31,6 @@
     href={social[1].url}
     target="_blank"
     rel="noopener noreferrer"
-    class="scale-in"
     style="animation-delay: {1000 + 100 * 1}ms;"
     aria-label="Go to my {social[1].url} page"
   >
@@ -46,7 +44,6 @@
     href={social[2].url}
     target="_blank"
     rel="noopener noreferrer"
-    class="scale-in"
     style="animation-delay: {1000 + 100 * 2}ms;"
     aria-label="Go to my {social[2].url} page"
   >
@@ -68,7 +65,6 @@
     gap: var(--gap);
     min-height: var(--border);
     min-width: var(--border);
-    animation: fade-in--social 400ms ease-in-out 600ms;
     animation-fill-mode: both;
     transition: all ease-in-out 400ms;
     will-change: width, max-width, opacity, transform;
@@ -77,20 +73,5 @@
   #contact-links svg {
     height: var(--size);
     width: var(--size);
-  }
-  @keyframes fade-in--social {
-    0% {
-      opacity: 0;
-      max-width: calc((var(--padding) * 4) + var(--size));
-    }
-    30% {
-      opacity: 1;
-    }
-    100% {
-      max-width: calc(
-        (var(--padding) * 4) + (var(--gap) * (var(--icons) - 1)) +
-          (var(--size) * var(--icons))
-      );
-    }
   }
 </style>

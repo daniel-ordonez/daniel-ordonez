@@ -46,8 +46,8 @@
     left: 0;
     background: linear-gradient(#d9d9d9, #b2b0b2, #656565);
     --color-overlay: rgba(193, 193, 193, 0.2);
-    --color-shape-a: rgba(var(--rgb-gray-2), 0.4);
-    --color-shape-b: rgba(var(--rgb-white), 0.2);
+    --color-shape-a: rgba(var(--rgb-white), 0.3);
+    --color-shape-b: rgba(var(--rgb-gray-2), 0.6);
   }
   .pattern,
   .blur,
@@ -67,7 +67,7 @@
     z-index: 1;
     position: absolute;
     background-color: var(--color-overlay);
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(20px);
   }
   .shapes {
     position: absolute;
@@ -92,7 +92,7 @@
     transform: translate(-50%, 50%);
     border-radius: 50%;
     background-color: var(--color-shape-a);
-    animation: offset-shape-xy 60s ease infinite 5s;
+    animation: offset-shape-xy 60s ease-in-out infinite 5s;
     animation-fill-mode: both;
   }
   .shapes::after {
@@ -107,7 +107,7 @@
     transform: translate(50%, -50%);
     border-radius: 50%;
     background-color: var(--color-shape-b);
-    animation: offset-shape-xy 60s ease infinite;
+    animation: offset-shape-xy 60s ease-in-out infinite;
     animation-fill-mode: both;
   }
   .texture {
