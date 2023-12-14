@@ -2,19 +2,16 @@
   <div class="shapes"></div>
   <div class="blur"></div>
 
+  <!--
   <img
     class="texture texture--dust"
     src="textures/DUST-2.webp"
     alt="dust texture"
   />
-  <!--
-  <img
-    class="texture texture--paper"
-    src="textures/PAPER.webp"
-    alt="paper texture"
-  />
   -->
 </div>
+
+<!--
 <svg class="pattern" width="100%" height="100%">
   <pattern
     id="pattern-circles"
@@ -37,8 +34,21 @@
     fill="url(#pattern-circles)"
   ></rect>
 </svg>
+-->
 
 <style>
+  #bg {
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#d9d9d9, #b2b0b2, #656565);
+    --color-overlay: rgba(193, 193, 193, 0.2);
+    --color-shape-a: rgba(var(--rgb-gray-2), 0.4);
+    --color-shape-b: rgba(var(--rgb-white), 0.2);
+  }
   .pattern,
   .blur,
   .shapes {
@@ -53,23 +63,11 @@
     opacity: 0.1;
     animation: focus-in-out 10s ease-in-out infinite both;
   }
-  #bg {
-    overflow: hidden;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background: linear-gradient(#d9d9d9, #b2b0b2);
-    --color-overlay: rgba(var(--rgb-white), 0.4);
-    --color-shape-a: rgba(var(--rgb-gray-2), 0.4);
-    --color-shape-b: rgba(var(--rgb-white), 0.5);
-  }
   .blur {
     z-index: 1;
     position: absolute;
     background-color: var(--color-overlay);
-    backdrop-filter: blur(32px);
+    backdrop-filter: blur(40px);
   }
   .shapes {
     position: absolute;
@@ -94,7 +92,7 @@
     transform: translate(-50%, 50%);
     border-radius: 50%;
     background-color: var(--color-shape-a);
-    animation: offset-shape-xy 30s infinite 5s;
+    animation: offset-shape-xy 60s ease infinite 5s;
     animation-fill-mode: both;
   }
   .shapes::after {
@@ -109,7 +107,7 @@
     transform: translate(50%, -50%);
     border-radius: 50%;
     background-color: var(--color-shape-b);
-    animation: offset-shape-xy 30s infinite;
+    animation: offset-shape-xy 60s ease infinite;
     animation-fill-mode: both;
   }
   .texture {
@@ -123,13 +121,13 @@
     min-height: 120vmax;
     mix-blend-mode: screen;
     animation:
-      offset-texture 40s ease-in-out infinite both,
-      focus-in-out 10s ease-in-out infinite both;
+      offset-texture 60s ease-in-out infinite both,
+      focus-in-out 20s ease-in-out infinite both;
     pointer-events: none;
     transition: all 300ms;
   }
-  .texture--paper {
-    animation-delay: 10s;
+  .texture--dust {
+    opacity: 0.5;
   }
   @keyframes focus-in-out {
     0%,

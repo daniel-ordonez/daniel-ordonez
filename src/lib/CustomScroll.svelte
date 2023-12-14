@@ -78,11 +78,16 @@
     sections.map((el) => {
       intersectionObserver.observe(el);
     });
+    /**
+     * TODO: Check if scroll changes depending on orientation
+     */
+    /*
     window
       .matchMedia("(orientation: landscape)")
       .addEventListener("change", ({ matches }) => {
         window.requestAnimationFrame(updateScrollOffset);
       });
+      */
   });
 </script>
 

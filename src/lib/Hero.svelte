@@ -13,6 +13,7 @@
 
 <div id="hero">
   <div class="hero__grid">
+    <!--
     <div id="date-stamp" class="text--mono slide-in-left">
       <div>
         <CurrentDate></CurrentDate>
@@ -32,27 +33,6 @@
     </div>
     <div id="portrait">
       <Glitch bind:this={glitch}>
-        <!--
-        <picture>
-          <source
-            media="(max-height: 1024px)"
-            srcset="imgs/portrait-bw_w_300.webp"
-          />
-          <source
-            media="(min-height: 1024px)"
-            srcset="imgs/portrait-bw_w_804.webp 804w"
-          />
-          <img
-            height="100%"
-            width="auto"
-            style="aspect-ratio: 804/773;"
-            on:load={animatePortrait}
-            src="imgs/portrait-bw_w_300.webp"
-            alt="self portrait"
-          />
-        </picture>
-        -->
-
         <img
           height="100%"
           width="auto"
@@ -101,6 +81,7 @@
         </p>
       </div>
     </div>
+    -->
   </div>
 </div>
 
