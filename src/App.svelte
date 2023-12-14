@@ -1,20 +1,8 @@
 <script>
   // @ts-nocheck
-  import { onMount, onDestroy } from "svelte";
   import Bg from "./lib/Bg.svelte";
   import CustomScroll from "./lib/CustomScroll.svelte";
-  import Gallery from "./lib/Gallery.svelte";
   import Landing from "./lib/Landing.svelte";
-  let page = 0;
-  const getPageMenu = (page) => {
-    switch (page) {
-      case 0:
-        return "Portfolio";
-      case 1:
-        return "Next 1 /3";
-    }
-  };
-  $: pageMenu = getPageMenu(page);
 </script>
 
 <Bg></Bg>

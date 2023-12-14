@@ -5,7 +5,7 @@
   let glitch;
   const animatePortrait = () => {
     const portrait = document.getElementById("portrait");
-    //portrait.classList.add("slide-in-right");
+    portrait.classList.add("slide-in-right");
     window.requestAnimationFrame(() => {
       glitch.turnON();
     });
@@ -16,7 +16,7 @@
   <div class="landing__grid">
     <div class="lines"></div>
     <div id="name-jp" aria-label="img" role="img">
-      <svg viewBox="0 0 37.69 170.57">
+      <svg width="380" height="1710" viewBox="0 0 38 171">
         <path
           style="--delay: 4"
           d="m37.28,158.49c-3.32,4.32-9.04,8.64-13.56,10.92-.84.44-1.32.88-1.72,1.16l-3.36-2.76c.2-.76.32-1.84.32-2.92v-23.32c0-1.8-.28-3.36-.28-3.44h5.92c0,.08-.28,1.68-.28,3.48v20.88c3.28-1.4,7.2-4.56,9.92-8.44l3.04,4.44Zm-29.16-16.64c0,4.8-.04,12.4-1.2,15.8-1.08,3.44-3.24,7.12-6.8,9.6l4.88,3.24c3.44-3.04,5.92-7,7.16-11.48,1.04-4.04,1.16-12.48,1.16-17.24,0-1.64.28-3.44.28-3.6h-5.88c.24,1,.4,2.04.4,3.68Z"
@@ -39,11 +39,13 @@
         />
       </svg>
     </div>
-    <div id="display-text">
-      <svg viewBox="0 0 829.19 384.56">
+    <div id="display-text" aria-label="img" role="img">
+      <svg width="830" height="385" viewBox="0 0 830 385">
         <path
+          class="slide-in-down"
           d="m0,4.32h37.44c25.28,0,43.68,1.92,55.2,5.76,11.52,3.68,21.44,9.52,29.76,17.52,8.48,7.84,14.96,17.44,19.44,28.8,4.48,11.36,6.72,24.48,6.72,39.36s-3.36,28.96-10.08,42.24c-6.56,13.12-16,23.44-28.32,30.96-12.16,7.36-30,11.04-53.52,11.04H0V4.32Zm19.92,156h18.24c20.32,0,35.12-1.04,44.4-3.12s17.36-6.08,24.24-12,12.08-13.12,15.6-21.6c3.68-8.64,5.52-18.56,5.52-29.76s-2.16-21.52-6.48-30.96c-4.16-9.6-10.16-17.36-18-23.28-7.84-6.08-17.04-10.08-27.6-12-10.56-2.08-25.68-3.12-45.36-3.12h-10.56v135.84ZM281.07,24.72h-81.6v50.4h80.88v20.16h-80.88v64.32h80.88v20.4h-101.52V4.32h102.24v20.4Zm93.87,18.24c-6.4-8.64-11.84-14.4-16.32-17.28-4.48-3.04-9.76-4.56-15.84-4.56s-10.96,1.92-15.12,5.76c-4,3.84-6,8.8-6,14.88s1.92,11.12,5.76,15.6,12.64,11.84,26.4,22.08c13.92,10.08,24.08,19.6,30.48,28.56,6.4,8.96,9.6,18.4,9.6,28.32,0,12.96-5.04,24.24-15.12,33.84-9.92,9.44-21.52,14.16-34.8,14.16-23.36,0-41.68-13.04-54.96-39.12l17.52-10.08c10.4,19.36,22.08,29.04,35.04,29.04,8.32,0,15.44-2.64,21.36-7.92,5.92-5.28,8.88-11.44,8.88-18.48s-2.48-13.68-7.44-19.92c-4.96-6.4-13.52-14.16-25.68-23.28-12.16-9.28-20.56-16.32-25.2-21.12-4.48-4.8-7.76-9.92-9.84-15.36-2.08-5.44-3.12-10.88-3.12-16.32,0-11.68,4-21.52,12-29.52,8.16-8.16,18.64-12.24,31.44-12.24,9.92,0,18.56,2.56,25.92,7.68,7.36,4.96,14.56,12.4,21.6,22.32l-16.56,12.96Zm70.09,137.04h-20.64V4.32h20.64v175.68Zm216.38-85.92c-.48,28.48-8.8,50.64-24.96,66.48-16,15.84-37.12,23.76-63.36,23.76-30.08,0-54.08-9.2-72-27.6-17.92-18.56-26.88-40.24-26.88-65.04s8.96-46.24,26.88-64.32c17.92-18.24,41.04-27.36,69.36-27.36,15.36,0,29.6,2.88,42.72,8.64,13.28,5.6,26.24,14.24,38.88,25.92l-15.84,15.12c-9.76-9.44-20.32-16.64-31.68-21.6-11.36-5.12-23.04-7.68-35.04-7.68s-23.92,3.2-35.76,9.6c-11.84,6.4-21.12,15.04-27.84,25.92s-10.08,22.64-10.08,35.28c0,19.68,7.36,36.88,22.08,51.6,14.88,14.56,33.44,21.84,55.68,21.84,16.48,0,30.72-4.48,42.72-13.44,12-9.12,19.36-21.52,22.08-37.2h-54.72v-19.92h77.76Zm167.78,85.92h-6.24l-111.36-127.44v127.44h-21.12V4.32h6.24l112.08,129.12V4.32h20.4v175.68Z"
         /><path
+          class="slide-in-down"
           d="m378.17,204.56h37.44c25.28,0,43.68,1.92,55.2,5.76,11.52,3.68,21.44,9.52,29.76,17.52,8.48,7.84,14.96,17.44,19.44,28.8,4.48,11.36,6.72,24.48,6.72,39.36s-3.36,28.96-10.08,42.24c-6.56,13.12-16,23.44-28.32,30.96-12.16,7.36-30,11.04-53.52,11.04h-56.64v-175.68Zm19.92,156h18.24c20.32,0,35.12-1.04,44.4-3.12s17.36-6.08,24.24-12,12.08-13.12,15.6-21.6c3.68-8.64,5.52-18.56,5.52-29.76s-2.16-21.52-6.48-30.96c-4.16-9.6-10.16-17.36-18-23.28-7.84-6.08-17.04-10.08-27.6-12-10.56-2.08-25.68-3.12-45.36-3.12h-10.56v135.84Zm261.15-135.6h-81.6v50.4h80.88v20.16h-80.88v64.32h80.88v20.4h-101.52v-175.68h102.24v20.4Zm169.95-20.4l-76.56,180h-5.52l-75.36-180h22.08l56.16,135.12,57.12-135.12h22.08Z"
         /></svg
       >
@@ -56,9 +58,9 @@
             width="100%"
             style="aspect-ratio: 3/4;"
             on:load={animatePortrait}
-            src="imgs/self-bw-990.webp"
-            srcset="
-          imgs/self-bw-990.webp 900w,"
+            src="imgs/self-bw.webp"
+            srcset="imgs/self-bw-400w.avif 400w, imgs/self-bw-600w.avif 600w, imgs/self-bw-800w.avif 800w"
+            sizes="(max-width: 400px) 400px, (max-width: 600px) 600px, (min-width: 601px) 800px"
             alt="self portrait"
           />
         </Glitch>
@@ -80,35 +82,17 @@
       <div>Daniel Ordoñez</div>
     </div>
     <div id="date" class="text--mono text--dark">
-      <CurrentDate></CurrentDate>
+      <div>
+        <CurrentDate></CurrentDate>
+      </div>
     </div>
   </div>
 </div>
 
-<!--
-<img
-  class="texture texture--paper"
-  src="textures/BLACKPAPER.webp"
-  alt="Paper texture"
-/>
--->
 <style>
   /** TODO: on screen portrait and too small reduce margin 8~10px
   */
-  .texture {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    mix-blend-mode: screen;
-    pointer-events: none;
-    z-index: 100;
-    opacity: 0.5;
-  }
-  .texture--paper {
-    mix-blend-mode: color-dodge;
-    mix-blend-mode: plus-lighter;
-    transform: rotate(180deg) scaleY(-1);
-  }
+
   #landing {
     --ratio-w: 3;
     --ratio-h: 2;
@@ -200,7 +184,17 @@
     grid-row: 2 / -4;
     color: rgb(var(--rgb-accent));
   }
-
+  #name-jp svg {
+    width: auto;
+    height: 100%;
+  }
+  #name-jp path {
+    animation: slide-in-up 800ms ease;
+    --path-delay: calc(150ms * var(--delay));
+    --base-delay: 600ms;
+    animation-delay: calc(var(--base-delay) + var(--path-delay));
+    animation-fill-mode: both;
+  }
   #name-es {
     grid-column: 2 / span 4;
     grid-row: -3;
@@ -220,6 +214,12 @@
     justify-content: end;
     padding-right: 8px;
     font-size: 12px;
+    overflow: hidden;
+  }
+  #date > div {
+    animation: slide-in-down 600ms ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 600ms;
   }
   #socials {
     grid-column: 2 / span 2;
@@ -255,7 +255,7 @@
     animation: expand-hor 1s ease-in-out 900ms both;
   }
   #display-text svg {
-    width: 100%;
+    aspect-ratio: 830/385;
   }
   #portrait {
     --3d-rot: 0deg;
@@ -288,6 +288,7 @@
     color: white;
     text-align: right;
     padding-right: 8px;
+    animation: slide-in-left 600ms ease-in-out 1s both;
   }
   #short-bio h1 {
     font-weight: bold;
@@ -323,6 +324,27 @@
       max-height: 60vh;
     }
   }
+  @media (min-width: 768px) {
+    #date {
+      font-size: 16px;
+      overflow: hidden;
+    }
+    #name-es {
+      grid-column: 1;
+      grid-row: 2/-2;
+      display: flex;
+      justify-content: end;
+      align-items: end;
+      padding-right: 0.3em;
+    }
+    #name-es > div {
+      font-size: 16px;
+      width: 1em;
+      transform: rotate(-90deg);
+      word-spacing: 1ch;
+      letter-spacing: 0.3ch;
+    }
+  }
   @media (max-width: 480px) {
     #landing {
       --margin: 10px;
@@ -344,26 +366,6 @@
       #portrait {
         grid-column: 1/-1;
       }
-    }
-  }
-  @media (min-width: 480px) {
-    #date {
-      font-size: 16px;
-    }
-    #name-es {
-      grid-column: 1;
-      grid-row: 2/-2;
-      display: flex;
-      justify-content: end;
-      align-items: end;
-      padding-right: 0.3em;
-    }
-    #name-es > div {
-      font-size: 16px;
-      width: 1em;
-      transform: rotate(-90deg);
-      word-spacing: 1ch;
-      letter-spacing: 0.3ch;
     }
   }
   @media (min-height: 768px) {
