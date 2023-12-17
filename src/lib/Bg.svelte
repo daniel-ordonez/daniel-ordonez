@@ -1,40 +1,7 @@
 <div id="bg">
   <div class="shapes"></div>
   <div class="blur"></div>
-
-  <!--
-  <img
-    class="texture texture--dust"
-    src="textures/DUST-2.webp"
-    alt="dust texture"
-  />
-  -->
 </div>
-
-<!--
-<svg class="pattern" width="100%" height="100%">
-  <pattern
-    id="pattern-circles"
-    x="0"
-    y="0"
-    width="15"
-    height="15"
-    patternUnits="userSpaceOnUse"
-    patternContentUnits="userSpaceOnUse"
-  >
-    <circle id="pattern-circle" cx="5" cy="5" r="1.6257413380501518" fill="#000"
-    ></circle>
-  </pattern>
-  <rect
-    id="rect"
-    x="0"
-    y="0"
-    width="100%"
-    height="100%"
-    fill="url(#pattern-circles)"
-  ></rect>
-</svg>
--->
 
 <style>
   #bg {
@@ -49,19 +16,13 @@
     --color-shape-a: rgba(var(--rgb-white), 0.3);
     --color-shape-b: rgba(var(--rgb-gray-2), 0.6);
   }
-  .pattern,
+
   .blur,
   .shapes {
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-  }
-  .pattern {
-    --blur: 1px;
-    position: absolute;
-    opacity: 0.1;
-    animation: focus-in-out 10s ease-in-out infinite both;
   }
   .blur {
     z-index: 1;
@@ -92,7 +53,7 @@
     transform: translate(-50%, 50%);
     border-radius: 50%;
     background-color: var(--color-shape-a);
-    animation: offset-shape-xy 60s ease-in-out infinite 5s;
+    animation: offset-shape-xy 30s ease-in-out infinite 5s;
     animation-fill-mode: both;
   }
   .shapes::after {
@@ -107,27 +68,8 @@
     transform: translate(50%, -50%);
     border-radius: 50%;
     background-color: var(--color-shape-b);
-    animation: offset-shape-xy 60s ease-in-out infinite;
+    animation: offset-shape-xy 30s ease-in-out infinite;
     animation-fill-mode: both;
-  }
-  .texture {
-    --offsetX: 0;
-    --scale: 1;
-    z-index: 2;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    min-width: 120vmax;
-    min-height: 120vmax;
-    mix-blend-mode: screen;
-    animation:
-      offset-texture 60s ease-in-out infinite both,
-      focus-in-out 20s ease-in-out infinite both;
-    pointer-events: none;
-    transition: all 300ms;
-  }
-  .texture--dust {
-    opacity: 0.5;
   }
   @keyframes focus-in-out {
     0%,

@@ -1,23 +1,27 @@
 <script>
   // @ts-nocheck
   import Bg from "./lib/Bg.svelte";
-  import CustomScroll from "./lib/CustomScroll.svelte";
+  //import CustomScroll from "./lib/CustomScroll.svelte";
   import Landing from "./lib/Landing.svelte";
 </script>
 
 <Bg></Bg>
 <main id="viewport">
   <div>
+    <!--
     <CustomScroll>
-      <section>
-        <Landing></Landing>
-      </section>
-      <!--
+      -->
+    <section>
+      <Landing></Landing>
+    </section>
+    <!--
       <section>
         <Gallery></Gallery>
       </section>
       -->
+    <!--
     </CustomScroll>
+  -->
   </div>
 </main>
 
