@@ -16,6 +16,7 @@
   ];
   const days = ["SUN", "MON", "TUE", "WED", "THR", "FRI", "SAT"];
   let currentDate = "";
+  let iso = "";
   let refresher = null;
   const updateCD = () => {
     const today = new Date();
@@ -23,6 +24,7 @@
     const day = days[today.getDay()];
     const date = today.getDate().toString().padStart(3, "0");
     const year = today.getFullYear().toString().substring(2).padStart(3, "X");
+    iso = `${year}-${month}-${day}`;
     currentDate = `${day}•${date}•${month}•${year}`;
   };
   onDestroy(() => {
@@ -34,4 +36,4 @@
   });
 </script>
 
-<span>{currentDate}</span>
+<time datetime={iso}>{currentDate}</time>
