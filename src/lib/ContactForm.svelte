@@ -52,6 +52,7 @@
   <form
     bind:this={form}
     class="form__body"
+    name="contact"
     data-netlify="true"
     on:submit={onFormSubmit}
     method="POST"
