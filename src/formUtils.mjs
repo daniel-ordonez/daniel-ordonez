@@ -28,7 +28,6 @@ const setInputValid = (input) => {
 const setInputInvalid = (input) => {
   const label = input.closest("label");
   label?.setAttribute("invalid", "");
-  console.log(input.validity);
   if (input.validity.valueMissing) {
     input.setCustomValidity("Please fill out this field");
   }

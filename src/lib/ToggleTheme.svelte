@@ -13,7 +13,6 @@
     document.documentElement.setAttribute("theme", colorScheme);
   });
   colorScheme.subscribe((systemTheme) => {
-    console.log(systemTheme);
     if (!$theme) {
       darkMode = systemTheme === "dark";
     }
