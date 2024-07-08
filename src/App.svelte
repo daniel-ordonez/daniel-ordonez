@@ -87,7 +87,6 @@
           </div>
           <big>Blog</big>
         </a>
-        -->
         <a href="#" style="--i: 2" on:click={showContactForm}>
           <div class="link-arrow">
             <Arrow></Arrow>
@@ -95,7 +94,6 @@
           <big>Contact</big>
         </a>
 
-        <!--
         <a href="#" style="--i: 3">
           <div class="link-arrow">
             <Arrow></Arrow>
@@ -334,7 +332,7 @@
     justify-content: start;
     align-items: end;
     text-align: right;
-    animation: slide-in-R 1s cubic-bezier(0.65, 0, 0.35, 1) both;
+    animation: slide-in-L 1s cubic-bezier(0.65, 0, 0.35, 1) both;
     animation-delay: 0.6s;
     animation-delay: 0s;
     line-height: 1.4;
