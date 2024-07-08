@@ -3,7 +3,7 @@
 
   import { createEventDispatcher } from "svelte";
   import BtnClose from "./BtnClose.svelte";
-  import { validateFormInputs, animations } from "../formUtils.mjs";
+  import { validateFormInputs, animations, clearForm } from "../formUtils.mjs";
   const dispatch = createEventDispatcher();
 
   let form;
@@ -23,6 +23,11 @@
     }
     return form.checkValidity();
   };
+  const onFormSubmitted = () => {
+    console.log("Form successfully submitted");
+    clearForm(form);
+    dispatch("close");
+  };
   const onSend = async () => {
     const ok = await validateForm(form);
     if (ok) {
@@ -32,7 +37,7 @@
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       })
-        .then(() => console.log("Form successfully submitted"))
+        .then(onFormSubmitted)
         .catch((error) => alert(error));
     }
   };
@@ -54,6 +59,7 @@
     class="form__body"
     name="contact"
     data-netlify="true"
+    nelifty
     on:submit={onFormSubmit}
     method="POST"
   >

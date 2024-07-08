@@ -57,3 +57,10 @@ export const validateFormInputs = (form) => {
   });
   return invalidInputs;
 };
+
+export const clearForm = (form) => {
+  const inputs = Array.from(form.querySelectorAll("input, textarea"));
+  inputs.forEach((el) => {
+    el.value = null;
+  });
+};

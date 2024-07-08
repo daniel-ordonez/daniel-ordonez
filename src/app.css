@@ -1,6 +1,8 @@
 @font-face {
   font-family: Afacad;
   src: url("./fonts/Afacad-VariableFont_wght.ttf");
+  src: url("./assets/fonts/Afacad-VariableFont_wght.ttf");
+  src: url("../fonts/Afacad-VariableFont_wght.ttf");
   src: url("../assets/fonts/Afacad-VariableFont_wght.ttf");
 }
 :root {
