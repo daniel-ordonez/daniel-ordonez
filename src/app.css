@@ -1,7 +1,7 @@
 @font-face {
   font-family: Afacad;
   src: url("https://daniordonez.com/fonts/Afacad-VariableFont_wght.ttf");
-  src: url("./fonts/Afacad-VariableFont_wght.ttf");
+  src: url("fonts/Afacad-VariableFont_wght.ttf");
 }
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
