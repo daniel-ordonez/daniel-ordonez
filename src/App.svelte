@@ -453,8 +453,7 @@
       display: none;
     }
     .glow-wrapper {
-      --hsl-accent: 200, 10%, 18%;
-      opacity: 0.6;
+      --hsl-accent: 160, 50%, 38%;
     }
     #name > * {
       background: linear-gradient(
@@ -471,7 +470,7 @@
     :global(:root[theme="light"] .photo--light) {
       display: block;
     }
-    :global(:root[theme="light"] .glow) {
+    :global(:root[theme="light"] .glow-wrapper) {
       --hsl-accent: 355, 70%, 48%;
     }
   }
