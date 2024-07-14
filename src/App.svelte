@@ -50,18 +50,8 @@
   </div>
   <div id="main-grid">
     <div id="photo">
-      <img
-        class="photo--light"
-        src="/imgs/self-full-light.png"
-        alt=""
-        srcset=""
-      />
-      <img
-        class="photo--dark"
-        src="/imgs/self-full-dark.png"
-        alt=""
-        srcset=""
-      />
+      <img class="photo--light" src="/imgs/self-light.webp" alt="" srcset="" />
+      <img class="photo--dark" src="/imgs/self-dark.webp" alt="" srcset="" />
     </div>
     <div id="subgrid">
       <div id="sitename">daniordonez.com</div>
@@ -215,7 +205,7 @@
     padding: var(--pad);
   }
   #photo {
-    --scale: 1.4;
+    --scale: 1;
     --offsetx: 0;
     grid-column: 1 / -1;
     grid-row: 1 / -1;
@@ -374,7 +364,7 @@
     }
     #photo {
       grid-column: 1 / -1;
-      --scale: 1.3;
+      --scale: 1;
       --offsetx: 5%;
     }
     #photo > img {
@@ -418,7 +408,7 @@
     #photo {
       grid-column: 1 / -1;
       --offsetx: -5%;
-      --scale: 1.6;
+      --scale: 1.2;
     }
     #photo > img {
       max-height: 75vh;
