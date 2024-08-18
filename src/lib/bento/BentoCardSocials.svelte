@@ -6,25 +6,37 @@
   import IconYouTube from "../../lib/icons/IconYouTube.svelte";
   import { Heart } from "../../models.mjs";
 
+  let card;
   let canvas;
   onMount(() => {
-    const delay = 400;
-    setTimeout(() => {
-      const heart = new Heart(canvas);
-      setTimeout(() => {
-        heart.rotate();
-        heart.draw();
-        const card = document.getElementById("card-socials");
-        card.addEventListener("mouseenter", () => {
-          heart.rampUpRotation();
-        });
-      }, 600);
+    let heart;
+    const onAnimationStart = () => {
+      card.removeEventListener("animationstart", onAnimationStart);
+      card.addEventListener("animationend", onAnimationEnd);
+      heart = new Heart(canvas);
       canvas.style.animation = "grow 1.2s cubic-bezier(0.34, 1.36, 0.64, 1)";
-    }, delay);
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(({ isIntersecting }) => {
+            heart.rotate(isIntersecting);
+          });
+        },
+        { threshold: [0.5] }
+      );
+      observer.observe(card);
+    };
+    const onAnimationEnd = () => {
+      card.removeEventListener("animationend", onAnimationEnd);
+      card.addEventListener("mouseenter", () => {
+        heart.rampUpRotation();
+      });
+    };
+    card.addEventListener("animationstart", onAnimationStart);
   });
 </script>
 
-<div id="card-socials" class="card">
+<div id="card-socials" class="card" bind:this={card}>
   <div class="card__bg">
     <div class="model-container flex justify--center align--center">
       <canvas bind:this={canvas}></canvas>
@@ -60,19 +72,24 @@
     );
     --card-color: rgba(250, 250, 250, 0.8);
   }
+  :global(#card-socials.animate) {
+    animation: grow 0.9s ease-in-out both;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-delay: 150ms;
+    transform-origin: top left;
+  }
   #card-socials .card__body {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  /*
-  #card-socials .card__bg {
-    animation: grow 1200ms ease-in-out both;
+
+  :global(#card-socials.animate .card__bg) {
+    animation: grow 900ms ease-in-out both;
     animation-delay: 500ms;
     animation-timing-function: cubic-bezier(0.34, 1.36, 0.64, 1);
   }
-    */
   #social-links {
     display: flex;
     flex-wrap: wrap;

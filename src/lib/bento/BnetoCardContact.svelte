@@ -80,6 +80,12 @@
 </div>
 
 <style>
+  :global(#card-contact.animate) {
+    animation: grow 0.9s ease-in-out both;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-delay: 150ms;
+    transform-origin: top left;
+  }
   #card-contact:hover {
     cursor: pointer;
   }

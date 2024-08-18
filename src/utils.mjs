@@ -24,3 +24,22 @@ export class SystemColorsSchemeTracker {
     return this.value;
   }
 }
+
+export const hideElements = (ids) => {
+  const els = [];
+  for (const id of ids) {
+    const el = document.getElementById(id);
+    el.classList.add("hidden");
+    els.push(el);
+  }
+  return els;
+};
+export const unhideElements = (ids) => {
+  const els = [];
+  for (const id of ids) {
+    const el = document.getElementById(id);
+    el.classList.remove("hidden");
+    els.push(el);
+  }
+  return els;
+};

@@ -8,7 +8,11 @@
   });
 </script>
 
-<div class="circle-text" style="--char-count: {Math.max(40, chars.length)};">
+<div
+  id="circle-text"
+  class="circle-text"
+  style="--char-count: {Math.max(40, chars.length)};"
+>
   {#each chars as char, i}
     <span class="ct-char" style="--char-index:{i};">{char}</span>
   {/each}
@@ -23,6 +27,9 @@
     font-family: "VT323", monospace, Afacad;
     text-transform: uppercase;
     animation: rotation var(--cycle-duration, 30s) linear infinite;
+    will-change: font-size;
+    transition: font-size 300ms ease-in-out;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
   }
   .ct-char {
     font-weight: inherit;

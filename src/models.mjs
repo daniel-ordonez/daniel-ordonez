@@ -162,6 +162,7 @@ export class Heart {
   }
   rotate(value = true) {
     this.rotation = value;
+    if (value) this.draw();
   }
   zoomIn() {
     this.camera.position.z = 30;
@@ -203,79 +204,6 @@ const getFPS = (sampleRate = 1000) =>
 const getQuadraticFunction = (t, h) => {
   const w = t / 2;
   return (x) => h * (1 - Math.pow((x - w) / w, 2));
-};
-
-export const makeEarth = (canvas) => {
-  const w = 640;
-  const h = 640;
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(35, w / h, 1, 100);
-  camera.position.z = 30;
-  const renderer = new THREE.WebGLRenderer({
-    antialias: true,
-    alpha: true,
-    canvas,
-  });
-  renderer.setSize(w, h);
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
-
-  const loader = new THREE.TextureLoader();
-
-  const earthGroup = new THREE.Group();
-  earthGroup.rotation.z = (-23.4 * Math.PI) / 180;
-  scene.add(earthGroup);
-
-  const detail = 12;
-  const geometry = new THREE.IcosahedronGeometry(8, detail);
-  const material = new THREE.MeshPhongMaterial({
-    map: loader.load("./textures/00_earthmap1k.jpg"),
-    specularMap: loader.load("./textures/02_earthspec1k.jpg"),
-    bumpMap: loader.load("./textures/01_earthbump1k.jpg"),
-    bumpScale: 0.05,
-  });
-  // material.map.colorSpace = THREE.SRGBColorSpace;
-  const earthMesh = new THREE.Mesh(geometry, material);
-  earthGroup.add(earthMesh);
-
-  const lightsMat = new THREE.MeshBasicMaterial({
-    map: loader.load("./textures/03_earthlights1k.jpg"),
-    blending: THREE.AdditiveBlending,
-  });
-  const lightsMesh = new THREE.Mesh(geometry, lightsMat);
-  earthGroup.add(lightsMesh);
-
-  const cloudsMat = new THREE.MeshStandardMaterial({
-    map: loader.load("./textures/04_earthcloudmap.jpg"),
-    transparent: true,
-    opacity: 0.8,
-    blending: THREE.AdditiveBlending,
-    alphaMap: loader.load("./textures/05_earthcloudmaptrans.jpg"),
-    // alphaTest: 0.3,
-  });
-  const cloudsMesh = new THREE.Mesh(geometry, cloudsMat);
-  cloudsMesh.scale.setScalar(1.003);
-  earthGroup.add(cloudsMesh);
-
-  const fresnelMat = getFresnelMat();
-  const glowMesh = new THREE.Mesh(geometry, fresnelMat);
-  glowMesh.scale.setScalar(1.02);
-  earthGroup.add(glowMesh);
-
-  const sunLight = new THREE.DirectionalLight(0xffffff, 2.0);
-  sunLight.position.set(-2, 0.5, 1.5);
-  scene.add(sunLight);
-
-  let rotationSpeed = 0.0005;
-  function draw() {
-    requestAnimationFrame(draw);
-    earthMesh.rotation.y += rotationSpeed;
-    lightsMesh.rotation.y += rotationSpeed;
-    cloudsMesh.rotation.y += rotationSpeed * 1.5;
-    glowMesh.rotation.y += rotationSpeed;
-    renderer.render(scene, camera);
-  }
-  draw();
 };
 
 const getFresnelMat = (rimHex = 0x00c6fb, facingHex = 0x000000) => {
@@ -327,3 +255,93 @@ const getFresnelMat = (rimHex = 0x00c6fb, facingHex = 0x000000) => {
   });
   return fresnelMat;
 };
+
+export const makeEarth = (canvas) => {
+  const w = 640;
+  const h = 640;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, w / h, 1, 100);
+  camera.position.z = 30;
+  const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: true,
+    canvas,
+  });
+  renderer.setSize(w, h);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+
+  const loader = new THREE.TextureLoader();
+
+  const earthGroup = new THREE.Group();
+  earthGroup.rotation.z = (-23.4 * Math.PI) / 180;
+  scene.add(earthGroup);
+
+  const detail = 12;
+  const geometry = new THREE.IcosahedronGeometry(8, detail);
+  const material = new THREE.MeshPhongMaterial({
+    map: loader.load("./textures/00_earthmap1k.jpg"),
+    specularMap: loader.load("./textures/02_earthspec1k.jpg"),
+    bumpMap: loader.load("./textures/01_earthbump1k.jpg"),
+    bumpScale: 0.05,
+  });
+  // material.map.colorSpace = THREE.SRGBColorSpace;
+  const earthMesh = new THREE.Mesh(geometry, material);
+  earthGroup.add(earthMesh);
+
+  const lightsMat = new THREE.MeshBasicMaterial({
+    map: loader.load("./textures/03_earthlights1k.jpg"),
+    blending: THREE.AdditiveBlending,
+  });
+  const lightsMesh = new THREE.Mesh(geometry, lightsMat);
+  earthGroup.add(lightsMesh);
+
+  const cloudsMat = new THREE.MeshStandardMaterial({
+    map: loader.load("./textures/04_earthcloudmap.jpg"),
+    transparent: true,
+    opacity: 0.8,
+    blending: THREE.AdditiveBlending,
+    alphaMap: loader.load("./textures/05_earthcloudmaptrans.jpg"),
+  });
+  const cloudsMesh = new THREE.Mesh(geometry, cloudsMat);
+  cloudsMesh.scale.setScalar(1.003);
+  earthGroup.add(cloudsMesh);
+
+  const fresnelMat = getFresnelMat();
+  const glowMesh = new THREE.Mesh(geometry, fresnelMat);
+  glowMesh.scale.setScalar(1.02);
+  earthGroup.add(glowMesh);
+
+  const sunLight = new THREE.DirectionalLight(0xffffff, 2.0);
+  sunLight.position.set(-2, 0.5, 1.5);
+  scene.add(sunLight);
+
+  const rotate = (speed = 0.0005) => {
+    earthMesh.rotation.y += speed;
+    lightsMesh.rotation.y += speed;
+    cloudsMesh.rotation.y += speed * 1.5;
+    glowMesh.rotation.y += speed;
+  };
+  const draw = () => {
+    renderer.render(scene, camera);
+  };
+  draw();
+  return { rotate, draw };
+};
+
+export class Earth {
+  constructor(canvas) {
+    const { rotate, draw } = makeEarth(canvas);
+    this.draw = () => {
+      if (this.rotation) {
+        rotate();
+        requestAnimationFrame(this.draw);
+      }
+      draw();
+    };
+  }
+  rotate(value = true) {
+    this.rotation = value;
+    if (value) this.draw();
+  }
+}

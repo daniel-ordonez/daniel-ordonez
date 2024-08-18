@@ -4,13 +4,60 @@
   import BentoCardPhoto from "./lib/bento/BentoCardPhoto.svelte";
   import BentoCardWork from "./lib/bento/BentoCardWork.svelte";
   import BnetoCardContact from "./lib/bento/BnetoCardContact.svelte";
+  import { onMount } from "svelte";
+  import { hideElements, unhideElements } from "./utils.mjs";
+
+  /**
+   * TODO: add observer to start/stop animations
+   */
+
+  let splashOutResolve = null;
+  let splashOut = new Promise((resolve) => {
+    splashOutResolve = resolve;
+  });
+  const onImgLoad = async ({ detail }) => {
+    const revealPhoto = detail;
+    await splashOut;
+    revealPhoto();
+    const cards = unhideElements([
+      "card-photo",
+      "card-work",
+      "card-socials",
+      "card-contact",
+    ]);
+    cards.forEach((card) => {
+      card.classList.add("animate");
+    });
+  };
+  const removeSplash = () => {
+    // splash exit animation
+    window.scrollTo({ top: 0, behavior: "instant" });
+    const splash = document.getElementById("splash");
+    splash.classList.add("out");
+
+    // Hide cards
+    hideElements(["card-photo", "card-work", "card-socials", "card-contact"]);
+    splash.addEventListener("animationend", () => {
+      // remove splash after exit animation
+      requestAnimationFrame(() => {
+        splash.remove();
+      });
+      // allow scroll on document
+      document.body.classList.remove("noscroll");
+      splashOutResolve();
+    });
+  };
+  onMount(() => {
+    // remove splash
+    setTimeout(removeSplash, 400);
+  });
 </script>
 
 <AppHeader></AppHeader>
 <main>
   <div id="bento-grid">
     <section id="main-card">
-      <BentoCardPhoto></BentoCardPhoto>
+      <BentoCardPhoto on:imgLoad={onImgLoad}></BentoCardPhoto>
     </section>
     <section>
       <BentoCardWork></BentoCardWork>
@@ -60,10 +107,8 @@
   :global(section > .card) {
     min-height: 100%;
   }
-  #bento-grid > section {
+  :global(#bento-grid > section) {
     overflow: hidden;
-    animation: grow 900ms ease-in-out both;
-    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
     min-height: 100px;
     animation-delay: 150ms;
     position: relative;

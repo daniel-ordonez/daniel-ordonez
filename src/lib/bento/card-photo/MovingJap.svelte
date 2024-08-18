@@ -2,7 +2,7 @@
   const rows = 5;
 </script>
 
-<div class="moving-jap" style="--rows: {rows};">
+<div id="moving-jap" class="moving-jap" style="--rows: {rows};">
   {#each new Array(rows) as row, i (i)}
     <div class="bg__animated-row">
       <svg class="jap" viewBox="0 0 1200 300">

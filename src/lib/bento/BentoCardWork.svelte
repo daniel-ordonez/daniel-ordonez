@@ -2,21 +2,32 @@
   import IconArrowDown from "../icons/IconArrowDown.svelte";
   import BtnTextIcon from "../BtnTextIcon.svelte";
   import { onMount } from "svelte";
-  import { makeEarth } from "../../models.mjs";
+  import { Earth } from "../../models.mjs";
 
-  let el;
+  let card;
   let canvas;
   onMount(() => {
     // Wait for opening animation to end
-    const delay = 400;
-    setTimeout(() => {
-      makeEarth(canvas);
+    const onAnimationStart = () => {
+      card.removeEventListener("animationstart", onAnimationStart);
+      const earth = new Earth(canvas);
       canvas.style.animation = "slide-in 1s cubic-bezier(0, 0.55, 0.45, 1)";
-    }, delay);
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(({ isIntersecting }) => {
+            earth.rotate(isIntersecting);
+          });
+        },
+        { threshold: [0.5] }
+      );
+      observer.observe(card);
+    };
+    card.addEventListener("animationstart", onAnimationStart);
   });
 </script>
 
-<div id="card-work" class="card" bind:this={el}>
+<div id="card-work" class="card" bind:this={card}>
   <div class="card__bg">
     <div class="model-container flex justify--center">
       <canvas bind:this={canvas}></canvas>
@@ -38,7 +49,7 @@
 </div>
 
 <style>
-  #card-work {
+  :global(#card-work.animate) {
     animation: slide-in 0.9s ease-in-out both;
     animation-delay: 150ms;
     animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);

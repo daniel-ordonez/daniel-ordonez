@@ -10,31 +10,6 @@
   font-display: swap;
 }
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: unset;
-
-  --rgb-color--dark: 250, 250, 250;
-  --rgb-color--light: 36, 36, 36;
-
-  --rgb-bg--light: 250, 250, 250;
-  --rgb-bg--dark: 36, 36, 36;
-
-  --c-color: rgba(var(--rgb-color--light), 1);
-  --c-bg: rgb(var(--rgb-bg--light));
-
-  --hsl-accent: 355, 70%, 48%;
-  --c-accent: hsl(var(--hsl-accent));
-
-  color: var(--c-color);
-  background-color: var(--c-bg);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   --full-height: 100vh;
   --full-width: 100vw;
@@ -72,12 +47,6 @@ span {
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
-}
-button, a {
-  color: inherit;
-  appearance: none;
-  text-decoration: none;
-  cursor: pointer;
 }
 .btn {
   color: var(--c-btn-color, inherit);
@@ -119,6 +88,7 @@ header {
 }
 .hidden {
   opacity: 0;
+  pointer-events: none;
 }
 .justify--end {
   justify-content: end;
