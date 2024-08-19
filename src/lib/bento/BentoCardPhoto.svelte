@@ -7,6 +7,7 @@
   const dispatch = createEventDispatcher();
 
   const onImgLoad = (e) => {
+    const img = e.target;
     const revealPhoto = () => {
       const cardPhoto = document.getElementById("card-photo");
       cardPhoto.classList.add("animate");
@@ -15,9 +16,9 @@
       }, 2000);
       unhideElements(["circle-text", "photo", "photo-name"]);
     };
-    dispatch("imgLoad", revealPhoto);
-    /*
-     */
+    setTimeout(() => {
+      dispatch("imgLoad", revealPhoto);
+    }, 100);
   };
 
   onMount(() => {
@@ -27,7 +28,9 @@
 
 <div id="card-photo" class="card">
   <div class="card card__bg">
+    <!--
     <MovingJap></MovingJap>
+-->
     <div class="circle-text-wrapper">
       <CircleText></CircleText>
     </div>

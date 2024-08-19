@@ -1,5 +1,5 @@
 <script>
-  const rows = 5;
+  const rows = 2;
 </script>
 
 <div id="moving-jap" class="moving-jap" style="--rows: {rows};">
@@ -39,7 +39,7 @@
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    opacity: 0.1;
+    opacity: 0.4;
   }
   .bg__animated-row svg {
     height: 100%;
@@ -75,6 +75,6 @@
     fill: var(--c-svg, rgba(0, 0, 0, 0.4));
   }
   :global(:root[theme="light"] .bg__animated-row svg) {
-    fill: white;
+    fill: var(--c-svg, rgba(255, 255, 255, 0.4));
   }
 </style>

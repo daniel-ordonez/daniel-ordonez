@@ -2,12 +2,12 @@
   import * as rive from "@rive-app/canvas-lite";
   import { onMount } from "svelte";
   import IconMail from "../icons/IconMail.svelte";
+  import { supportsHover } from "../../store";
 
+  let card;
   let canvas;
 
-  onMount(() => {
-    let loopTimeout = null;
-    let loopAnimation = false;
+  const startRiveAnimation = () => {
     const r = new rive.Rive({
       src: "animations/mailbox.riv",
       canvas,
@@ -16,20 +16,29 @@
       stateMachines: "SM1",
       animations: "mail_in",
     });
-    const clearLoopTimeout = () => {
-      clearTimeout(loopTimeout);
-      loopTimeout = null;
-    };
-    const playMailAnimation = () => {
-      if (loopTimeout) clearLoopTimeout();
-      r.play("mail_in");
-    };
-    const setLoopTimeout = () => {
-      if (loopAnimation) {
-        loopTimeout = setTimeout(playMailAnimation, 2000);
+
+    let replayTimeout = null;
+    let loopAnimation = false;
+
+    const clearReplayTimeout = () => {
+      if (replayTimeout) {
+        clearTimeout(replayTimeout);
+        replayTimeout = null;
       }
     };
-    const listenToMouseEnter = () => {
+    const playMailAnimation = () => {
+      clearReplayTimeout();
+      r.play("mail_in");
+    };
+    const setReplayTimeout = (t = 2000) => {
+      if (loopAnimation) {
+        replayTimeout = setTimeout(() => {
+          playMailAnimation();
+        }, t);
+      }
+    };
+
+    const triggerAnimationOnHover = () => {
       canvas.addEventListener("mouseenter", () => {
         loopAnimation = true;
         // check animation is not playing
@@ -37,30 +46,58 @@
           playMailAnimation();
         }
       });
-      canvas.addEventListener("mouseleave", () => {
-        loopAnimation = false;
-        clearLoopTimeout();
-      });
     };
+
+    const setAnimationLoop = () => {
+      loopAnimation = true;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(({ isIntersecting }) => {
+            if (isIntersecting) {
+              loopAnimation = true;
+              clearReplayTimeout();
+              playMailAnimation();
+            } else {
+              clearReplayTimeout();
+              if (r.isPlaying) {
+                loopAnimation = false;
+                r.stop();
+              }
+            }
+          });
+        },
+        { threshold: [0.5] }
+      );
+      observer.observe(card);
+    };
+
+    // If loopAnimation true set timeout to replay after stops
     r.on(rive.EventType.Stop, () => {
-      //r.reset();
-      // set timeout to loop
-      requestAnimationFrame(setLoopTimeout);
+      requestAnimationFrame(setReplayTimeout);
     });
 
-    // check if device supports hover
-    const query = window.matchMedia("(hover:hover)");
-    if (query.matches) {
-      // set animation to trigger on mousenter
-      r.on(rive.EventType.Load, listenToMouseEnter);
-    } else {
-      setTimeout(playMailAnimation, 2000);
-      loopAnimation = true;
-    }
+    r.on(rive.EventType.Load, () => {
+      if ($supportsHover) {
+        triggerAnimationOnHover();
+      } else {
+        // loop animation while visible
+        setAnimationLoop();
+      }
+    });
+
+    return r;
+  };
+
+  onMount(() => {
+    const onAnimationStart = () => {
+      card.removeEventListener("animationstart", onAnimationStart);
+      const r = startRiveAnimation();
+    };
+    card.addEventListener("animationstart", onAnimationStart);
   });
 </script>
 
-<div id="card-contact" class="card">
+<div id="card-contact" class="card" bind:this={card}>
   <div class="card__bg">
     <div class="model-container">
       <canvas bind:this={canvas} height="380" width="380"></canvas>
@@ -75,7 +112,7 @@
     </div>
   </div>
   <div class="card__actions">
-    <p>Got a project?<br />Let's talk.</p>
+    <p>Got projects?<br />Let's talk.</p>
   </div>
 </div>
 

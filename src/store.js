@@ -13,3 +13,7 @@ export const supportsHover = writable(false);
 const systemColorTracker = new SystemColorsSchemeTracker((theme) => {
   systemColor.set(theme);
 });
+
+// Check if device supports hover
+const mediaHover = window.matchMedia("(hover:hover)");
+supportsHover.set(mediaHover.matches);
