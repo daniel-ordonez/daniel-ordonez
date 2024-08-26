@@ -50,7 +50,14 @@
   });
 </script>
 
-<form bind:this={form} action="/" method="POST" on:submit={onSubmit}>
+<form
+  bind:this={form}
+  action="/"
+  method="POST"
+  on:submit={onSubmit}
+  data-netlify="true"
+  name="contact"
+>
   <InputText
     id="cf-name"
     name="name"
