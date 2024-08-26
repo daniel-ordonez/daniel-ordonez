@@ -219,4 +219,7 @@ export class FormManager {
       });
     }
   }
+  get inputs() {
+    return Array.from(this.inputsMap.values());
+  }
 }

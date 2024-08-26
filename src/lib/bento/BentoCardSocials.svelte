@@ -5,14 +5,20 @@
   import IconLinkedin from "../../lib/icons/IconLinkedin.svelte";
   import IconYouTube from "../../lib/icons/IconYouTube.svelte";
   import { Heart } from "../../models.mjs";
+  import { supportsHover } from "../../store";
 
   let card;
   let canvas;
   onMount(() => {
     let heart;
+    const onAnimationEnd = () => {
+      card.removeEventListener("animationend", onAnimationEnd);
+      card.addEventListener("mouseenter", () => {
+        heart.rampUpRotation();
+      });
+    };
     const onAnimationStart = () => {
       card.removeEventListener("animationstart", onAnimationStart);
-      card.addEventListener("animationend", onAnimationEnd);
       heart = new Heart(canvas);
       canvas.style.animation = "grow 1.2s cubic-bezier(0.34, 1.36, 0.64, 1)";
 
@@ -25,12 +31,9 @@
         { threshold: [0.5] }
       );
       observer.observe(card);
-    };
-    const onAnimationEnd = () => {
-      card.removeEventListener("animationend", onAnimationEnd);
-      card.addEventListener("mouseenter", () => {
-        heart.rampUpRotation();
-      });
+      if ($supportsHover) {
+        card.addEventListener("animationend", onAnimationEnd);
+      }
     };
     card.addEventListener("animationstart", onAnimationStart);
   });
@@ -71,6 +74,10 @@
       #6654f1 110%
     );
     --c-card-color: rgba(250, 250, 250, 1);
+  }
+  #card-socials,
+  #card-socials .card__bg {
+    will-change: transform;
   }
   :global(#card-socials.animate) {
     animation: grow 0.9s ease-in-out both;

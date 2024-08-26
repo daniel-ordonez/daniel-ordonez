@@ -6,9 +6,14 @@
   let icon;
 
   export let disabled = false;
+  export const stopIcon = () => {
+    if (!icon) return;
+    icon.stop();
+  };
   export const updateIcon = () => {
     if (!disabled && icon) {
       icon.resizeDrawingSurfaceToCanvas();
+      icon.play("fly");
     }
   };
   const sendIconAnimation = (canvas) => {

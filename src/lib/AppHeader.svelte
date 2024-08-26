@@ -7,9 +7,9 @@
     <div style="appearance: none; color: inherit; text-decoration: none;">
       daniordonez
     </div>
-    <div>•</div>
+    <div><span style="opacity: 0.25;">•</span></div>
     <div>© 2024</div>
-    <div>•</div>
+    <div><span style="opacity: 0.25;">•</span></div>
     <div>
       <ThemeBtn></ThemeBtn>
     </div>
@@ -27,6 +27,9 @@
     font-size: 1.25rem;
     --ani-delay: 600ms;
     --ani-duration: 600ms;
+  }
+  .header-wrapper > div {
+    will-change: transform, opacity;
   }
 
   .header-wrapper > div:nth-child(1),

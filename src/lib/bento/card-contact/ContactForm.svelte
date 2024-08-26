@@ -8,8 +8,10 @@
   import SubmitBtn from "../../../form/SubmitBtn.svelte";
 
   let form;
+  let formManager;
   let unlockStatus = "";
   let updateIcon;
+  let stopIcon;
   let isValid = false;
   const dispatch = createEventDispatcher();
 
@@ -26,7 +28,6 @@
   const onSubmit = (e) => {
     e.preventDefault();
     if (!isValid) return;
-
     const formData = new FormData(e.target);
     const request = fetch("/", {
       method: "POST",
@@ -38,13 +39,27 @@
       })
       .catch((error) => alert(error));
   };
+
+  const focusFirstInput = () => {
+    if (formManager) {
+      formManager.inputs[0].focus();
+      formManager.inputs[0].select();
+    }
+  };
+  const onVisibilityChanged = (visible) => {
+    if (visible) {
+      setTimeout(focusFirstInput, 500);
+      updateIcon();
+    } else {
+      // stop icon
+      stopIcon();
+    }
+  };
   onMount(() => {
-    const mng = new FormManager(form, onValidityUpdate);
+    formManager = new FormManager(form, onValidityUpdate);
     const observer = new IntersectionObserver((entries) => {
       const { isIntersecting } = entries[0];
-      if (isIntersecting) {
-        updateIcon();
-      }
+      onVisibilityChanged(isIntersecting);
     });
     observer.observe(form);
   });
@@ -65,7 +80,6 @@
     required
     requiredMessage="You have a name, right?"
     placeholder="I am..."
-    autofocus
   ></InputText>
   <InputTextarea
     id="cf-message"
@@ -87,7 +101,7 @@
   ></InputText>
   <div class="btn--send-wrapper">
     <small>{unlockStatus}</small>
-    <SubmitBtn bind:updateIcon disabled={!isValid}></SubmitBtn>
+    <SubmitBtn bind:updateIcon bind:stopIcon disabled={!isValid}></SubmitBtn>
   </div>
   <input type="hidden" name="form-name" value="contact" />
 </form>

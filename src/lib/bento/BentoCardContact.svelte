@@ -141,6 +141,7 @@
   #card-contact {
     --c-card-bg: #d3d3d3;
     --c-card-color: #222222;
+    will-change: transform;
   }
   :global(#card-contact.animate) {
     animation: grow 0.9s ease-in-out both;

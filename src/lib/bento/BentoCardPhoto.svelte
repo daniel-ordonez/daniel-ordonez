@@ -3,18 +3,22 @@
   import CircleText from "./card-photo/CircleText.svelte";
   import { createEventDispatcher, onMount } from "svelte";
   import { hideElements, unhideElements } from "../../utils.mjs";
+  import { supportsHover } from "../../store";
 
   const dispatch = createEventDispatcher();
 
   const onImgLoad = (e) => {
-    const img = e.target;
+    //const img = e.target;
     const revealPhoto = () => {
       const cardPhoto = document.getElementById("card-photo");
       cardPhoto.classList.add("animate");
-      setTimeout(() => {
-        cardPhoto.classList.add("hover");
-      }, 2000);
       unhideElements(["circle-text", "photo", "photo-name"]);
+
+      if ($supportsHover) {
+        setTimeout(() => {
+          cardPhoto.classList.add("hover");
+        }, 2000);
+      }
     };
     setTimeout(() => {
       dispatch("imgLoad", revealPhoto);
@@ -63,6 +67,7 @@
     grid-template-columns: subgrid;
     grid-template-rows: subgrid;
     background: none;
+    will-change: transform;
   }
   :global(#card-photo.animate) {
     animation: grow 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -108,6 +113,7 @@
   /**
     PHOTO / PHOTO CARD
   */
+
   #photo {
     grid-row: 1 / -1;
     border-radius: calc(var(--card-radius, 40px) - 3px);
@@ -121,9 +127,9 @@
     height: 100%;
     transform-origin: center bottom;
     filter: drop-shadow(-24px 16px 20px rgba(0, 0, 0, 0.2));
-    will-change: filter, margin;
     transition: all 400ms ease-in-out;
     transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, opacity;
   }
   :global(#card-photo.animate .img-wrapper) {
     animation: slide-in 1s ease-in-out both;
@@ -147,6 +153,9 @@
     CARD TITLE
   */
 
+  #photo-name {
+    will-change: transform, opacity;
+  }
   :global(#card-photo.animate #photo-name) {
     animation: slide-in 1.2s cubic-bezier(0.33, 1, 0.68, 1) both;
     animation-delay: 400ms;

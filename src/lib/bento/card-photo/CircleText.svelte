@@ -27,9 +27,9 @@
     font-family: "VT323", monospace, Afacad;
     text-transform: uppercase;
     animation: rotation var(--cycle-duration, 30s) linear infinite;
-    will-change: font-size;
     transition: font-size 300ms ease-in-out;
     transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
   }
   .ct-char {
     font-weight: inherit;

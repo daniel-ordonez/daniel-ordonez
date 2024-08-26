@@ -171,14 +171,24 @@ export class Heart {
     this.camera.position.z = 20;
   }
 }
-
+const easeOutQuart = (x) => {
+  return 1 - Math.pow(1 - x, 4);
+};
+const easeInQuart = (x) => {
+  return x * x * x * x;
+};
+const easeInOutCubic = (x) => {
+  return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+};
 const easeInOutQuart = (x) => {
   return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2;
 };
 const easeInOutSine = (x) => {
   return -(Math.cos(Math.PI * x) - 1) / 2;
 };
-
+const easeOutQuint = (x) => {
+  return 1 - Math.pow(1 - x, 5);
+};
 const getFPS = (sampleRate = 1000) =>
   new Promise((resolve) => {
     let fps = 0;
@@ -200,11 +210,6 @@ const getFPS = (sampleRate = 1000) =>
     };
     calculateFPS();
   });
-
-const getQuadraticFunction = (t, h) => {
-  const w = t / 2;
-  return (x) => h * (1 - Math.pow((x - w) / w, 2));
-};
 
 const getFresnelMat = (rimHex = 0x00c6fb, facingHex = 0x000000) => {
   const uniforms = {
@@ -261,6 +266,8 @@ export const makeEarth = (canvas) => {
   const h = 640;
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(35, w / h, 1, 100);
+  // zoom in = 30
+  // zoom out = 50
   camera.position.z = 30;
   const renderer = new THREE.WebGLRenderer({
     antialias: true,
@@ -274,16 +281,16 @@ export const makeEarth = (canvas) => {
   const loader = new THREE.TextureLoader();
 
   const earthGroup = new THREE.Group();
-  earthGroup.rotation.z = (-23.4 * Math.PI) / 180;
+  //earthGroup.rotation.z = (-23.4 * Math.PI) / 180;
+  earthGroup.rotation.set(-0.4, 2.8, 0.5);
+
   scene.add(earthGroup);
 
-  const detail = 12;
+  const detail = 40;
   const geometry = new THREE.IcosahedronGeometry(8, detail);
   const material = new THREE.MeshPhongMaterial({
-    map: loader.load("./textures/00_earthmap1k.jpg"),
+    map: loader.load("./textures/00_earthmap2k.jpg"),
     specularMap: loader.load("./textures/02_earthspec1k.jpg"),
-    bumpMap: loader.load("./textures/01_earthbump1k.jpg"),
-    bumpScale: 0.05,
   });
   // material.map.colorSpace = THREE.SRGBColorSpace;
   const earthMesh = new THREE.Mesh(geometry, material);
@@ -297,51 +304,100 @@ export const makeEarth = (canvas) => {
   earthGroup.add(lightsMesh);
 
   const cloudsMat = new THREE.MeshStandardMaterial({
-    map: loader.load("./textures/04_earthcloudmap.jpg"),
+    map: loader.load("./textures/04_earthcloudmap2k.jpg"),
     transparent: true,
-    opacity: 0.8,
+    opacity: 0.5,
     blending: THREE.AdditiveBlending,
     alphaMap: loader.load("./textures/05_earthcloudmaptrans.jpg"),
   });
   const cloudsMesh = new THREE.Mesh(geometry, cloudsMat);
-  cloudsMesh.scale.setScalar(1.003);
+  cloudsMesh.scale.setScalar(1.02);
   earthGroup.add(cloudsMesh);
 
   const fresnelMat = getFresnelMat();
   const glowMesh = new THREE.Mesh(geometry, fresnelMat);
-  glowMesh.scale.setScalar(1.02);
+  glowMesh.scale.setScalar(1.05);
   earthGroup.add(glowMesh);
 
   const sunLight = new THREE.DirectionalLight(0xffffff, 2.0);
   sunLight.position.set(-2, 0.5, 1.5);
   scene.add(sunLight);
 
-  const rotate = (speed = 0.0005) => {
+  const rotate = (speed = 0.00025) => {
     earthMesh.rotation.y += speed;
     lightsMesh.rotation.y += speed;
-    cloudsMesh.rotation.y += speed * 1.5;
+    cloudsMesh.rotation.y += speed * 1.25;
     glowMesh.rotation.y += speed;
   };
   const draw = () => {
     renderer.render(scene, camera);
   };
   draw();
-  return { rotate, draw };
+  return { rotate, draw, camera };
 };
 
 export class Earth {
   constructor(canvas) {
-    const { rotate, draw } = makeEarth(canvas);
+    const { rotate, draw, camera } = makeEarth(canvas);
+
+    this.camera = camera;
     this.draw = () => {
+      let redraw = false;
       if (this.rotation) {
         rotate();
-        requestAnimationFrame(this.draw);
+        redraw = true;
       }
+      if (this.zooming) {
+        redraw = true;
+      }
+      if (redraw) requestAnimationFrame(this.draw);
       draw();
     };
+
+    // at least 60fps
+    this.fps = 60;
+    getFPS().then((fps) => {
+      this.fps = Math.max(fps, 60);
+    });
   }
   rotate(value = true) {
     this.rotation = value;
     if (value) this.draw();
+  }
+  zoomTo(targetZoom) {
+    // base case - no zooming needed
+    const startZoom = this.camera.position.z;
+    const delta = targetZoom - startZoom;
+    if (delta === 0) return;
+    this.targetZoom = targetZoom;
+    this.zooming = true;
+
+    const fps = this.fps;
+    const t = 1.2; // seconds
+    const steps = t * fps;
+    let count = 1;
+    let progress = count / steps;
+    let step = 0;
+    const easeFunction = delta > 0 ? easeOutQuint : easeOutQuart;
+
+    const zoom = () => {
+      count++;
+      if (count >= steps) {
+        this.zooming = false;
+        this.camera.position.z = targetZoom;
+        return;
+      }
+      progress = count / steps;
+      step = easeFunction(progress) * delta;
+      this.camera.position.z = startZoom + step;
+      requestAnimationFrame(zoom);
+    };
+    zoom();
+  }
+  zoomIn() {
+    this.zoomTo(30);
+  }
+  zoomOut() {
+    this.zoomTo(60);
   }
 }
