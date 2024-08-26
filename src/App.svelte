@@ -3,7 +3,7 @@
   import BentoCardSocials from "./lib/bento/BentoCardSocials.svelte";
   import BentoCardPhoto from "./lib/bento/BentoCardPhoto.svelte";
   import BentoCardWork from "./lib/bento/BentoCardWork.svelte";
-  import BnetoCardContact from "./lib/bento/BnetoCardContact.svelte";
+  import BnetoCardContact from "./lib/bento/BentoCardContact.svelte";
   import { onMount } from "svelte";
   import { hideElements, unhideElements } from "./utils.mjs";
 
@@ -139,7 +139,7 @@
   */
   @media (max-width: 480px) {
     main {
-      --px: 16px;
+      --px: 8px;
     }
     #bento-grid > section:nth-child(1) {
       max-height: min(60vh, calc(var(--app-min-h) - var(--header-h)));

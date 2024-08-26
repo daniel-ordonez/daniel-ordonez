@@ -11,7 +11,9 @@
     const onAnimationStart = () => {
       card.removeEventListener("animationstart", onAnimationStart);
       const earth = new Earth(canvas);
-      canvas.style.animation = "slide-in 1s cubic-bezier(0, 0.55, 0.45, 1)";
+      canvas.style.animation =
+        "slide-in 1s cubic-bezier(0, 0.55, 0.45, 1) both";
+      canvas.style.animationDelay = "150ms";
 
       const observer = new IntersectionObserver(
         (entries) => {
@@ -55,13 +57,13 @@
     animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
   }
   #card-work .model-container {
-    top: 35%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, 0%);
   }
   #card-work {
-    --card-bg: #242424;
-    --card-color: hsl(0, 0%, 60%);
+    --c-card-bg: #242424;
+    --c-card-color: hsl(0, 0%, 60%);
     --c-btn-color: #242424;
     --c-btn-bg: rgb(250, 250, 250);
     background: radial-gradient(
@@ -74,7 +76,7 @@
     transition: color 300ms ease-in-out;
   }
   #card-work:hover {
-    --card-color: hsl(0, 0%, 90%);
+    --c-card-color: hsl(0, 0%, 90%);
   }
   #card-work .card__bg {
     filter: hue-rotate(355deg) saturate(0.5);

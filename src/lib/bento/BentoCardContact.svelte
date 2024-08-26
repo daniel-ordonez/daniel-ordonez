@@ -3,7 +3,10 @@
   import { onMount } from "svelte";
   import IconMail from "../icons/IconMail.svelte";
   import { supportsHover } from "../../store";
+  import ModalDialog from "../ModalDialog.svelte";
+  import ContactForm from "./card-contact/ContactForm.svelte";
 
+  let dialog;
   let card;
   let canvas;
 
@@ -79,6 +82,11 @@
     r.on(rive.EventType.Load, () => {
       if ($supportsHover) {
         triggerAnimationOnHover();
+        setTimeout(() => {
+          if (!r.isPlaying) {
+            playMailAnimation();
+          }
+        }, 1000);
       } else {
         // loop animation while visible
         setAnimationLoop();
@@ -87,11 +95,22 @@
 
     return r;
   };
-
+  const onCardClick = (e) => {
+    e.preventDefault();
+    dialog.showModal();
+  };
+  const closeDialog = () => {
+    dialog.close();
+  };
   onMount(() => {
+    const onAnimationEnd = () => {
+      card.removeEventListener("animationend", onAnimationEnd);
+      card.addEventListener("click", onCardClick);
+    };
     const onAnimationStart = () => {
       card.removeEventListener("animationstart", onAnimationStart);
-      const r = startRiveAnimation();
+      card.addEventListener("animationend", onAnimationEnd);
+      startRiveAnimation();
     };
     card.addEventListener("animationstart", onAnimationStart);
   });
@@ -103,20 +122,26 @@
       <canvas bind:this={canvas} height="380" width="380"></canvas>
     </div>
   </div>
-  <div class="card__body">
-    <div class="card__tools">
-      <h2>Mail me</h2>
-      <div class="icon--round">
-        <IconMail></IconMail>
-      </div>
+  <div class="card__tools">
+    <h2>Mail me</h2>
+    <div class="icon--round">
+      <IconMail></IconMail>
     </div>
   </div>
   <div class="card__actions">
-    <p>Got projects?<br />Let's talk.</p>
+    <p>Got projects?</p>
   </div>
 </div>
 
+<ModalDialog bind:this={dialog} title="Let's talk">
+  <ContactForm on:submit={closeDialog}></ContactForm>
+</ModalDialog>
+
 <style>
+  #card-contact {
+    --c-card-bg: #d3d3d3;
+    --c-card-color: #222222;
+  }
   :global(#card-contact.animate) {
     animation: grow 0.9s ease-in-out both;
     animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -132,22 +157,6 @@
   p {
     line-height: 1;
   }
-  .card__tools {
-    display: flex;
-    justify-content: space-between;
-  }
-  .icon--round {
-    background-color: var(--c-btn-color, inherit);
-    color: var(--c-btn-bg, inherit);
-    --icon-size: 2rem;
-    height: 3.25rem;
-    width: auto;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   #card-contact .model-container {
     display: flex;
     justify-content: end;
@@ -158,6 +167,15 @@
     height: 100%;
     width: auto;
     aspect-ratio: 1/1;
-    transform: translateX(10%);
+    transform: translateX(8%);
+  }
+  @media (max-width: 480px) {
+    #card-contact canvas {
+      max-height: 330px;
+      height: 115%;
+      width: auto;
+      aspect-ratio: 1/1;
+      transform: translateX(15%);
+    }
   }
 </style>

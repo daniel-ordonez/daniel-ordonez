@@ -18,7 +18,7 @@
     };
     setTimeout(() => {
       dispatch("imgLoad", revealPhoto);
-    }, 100);
+    }, 200);
   };
 
   onMount(() => {
@@ -73,7 +73,6 @@
   :global(#card-photo .card__bg) {
     grid-row: 2 / -1;
     background: radial-gradient(#c6cdd5, #f0f1f3 120%);
-    background-image: linear-gradient(200deg, #20e2d7 0%, #f9fea5 100%);
     background-image: linear-gradient(-225deg, #7de2fc 0%, #b9b6e5 100%);
   }
   :global(:root[theme="dark"] #card-photo .card__bg) {

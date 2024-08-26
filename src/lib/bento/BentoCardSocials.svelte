@@ -70,7 +70,7 @@
       #eaccf8 48%,
       #6654f1 110%
     );
-    --card-color: rgba(250, 250, 250, 0.8);
+    --c-card-color: rgba(250, 250, 250, 1);
   }
   :global(#card-socials.animate) {
     animation: grow 0.9s ease-in-out both;
@@ -83,6 +83,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
   }
 
   :global(#card-socials.animate .card__bg) {

@@ -53,6 +53,9 @@
         text-decoration: none;
         cursor: pointer;
       }
+      button:disabled {
+        cursor:not-allowed;
+      }
       #splash {
         position: fixed;
         top: 0;
@@ -68,7 +71,6 @@
       #splash.out {
         animation: fade 900ms forwards;
         animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
-
       }
       @keyframes fade {
         from {
@@ -80,15 +82,25 @@
       body.noscroll {
         overflow: hidden;
       }
+      #contact-dialog>.card{
+        --c-btn-color: white;
+      }
+      #contact-form h2{
+        margin: auto 0;
+      }
+      #contact-form  {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+      }
     </style>
     <div id="app"></div>
     <div id="splash">
       daniordonez.com
     </div>
-    <dialog>
-      <form name="contact" method="POST" data-netlify="true">
-      </form>
-    </dialog>
+
+    <form name="contact" data-netlify="true">
+    </form>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
