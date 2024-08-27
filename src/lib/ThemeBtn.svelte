@@ -47,7 +47,7 @@
     color-scheme: none;
     font-size: 1rem;
     --h: 2em;
-    --p: 0.2em;
+    --p: 0.25em;
     --r: calc(var(--h) - (2 * var(--p)));
     height: var(--h);
     width: auto;
@@ -57,7 +57,6 @@
     outline: none;
     appearance: none;
     background-color: rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(8px);
     margin: 0;
     padding: var(--p);
   }
@@ -84,6 +83,10 @@
     justify-content: center;
     align-items: center;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  :global(:root[theme="light"] .toggle__icon) {
+    color: #ffde4d;
+    fill: currentColor;
   }
   :global(:root[theme="dark"] .toggle) {
     background-color: hsla(200, 5%, 100%, 0.2);

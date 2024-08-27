@@ -30,7 +30,7 @@
         },
         {
           opacity: 0,
-          offset: 0.4,
+          offset: 0.6,
         },
         {
           opacity: 0,
