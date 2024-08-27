@@ -28,6 +28,7 @@
   const onSubmit = (e) => {
     e.preventDefault();
     if (!isValid) return;
+    /*
     const formData = new FormData(e.target);
     const request = fetch("/", {
       method: "POST",
@@ -38,6 +39,8 @@
         dispatch("submit");
       })
       .catch((error) => alert(error));
+    */
+    dispatch("submit");
   };
 
   const focusFirstInput = () => {

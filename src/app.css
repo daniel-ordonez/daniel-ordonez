@@ -216,9 +216,11 @@ svg.icon {
 .card>.card__body:only-child {
   height: 100%;
 }
+/*
 .card>.card__body:not(:last-child) {
   padding-bottom: 0;
 }
+  */
 .card__actions {
   margin-top: auto;
   display: flex;

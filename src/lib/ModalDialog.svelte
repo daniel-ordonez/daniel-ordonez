@@ -1,10 +1,25 @@
 <script>
   export let title = "";
   let dialog;
+  let card;
 
   export const showModal = () => {
     document.body.classList.add("noscroll");
     dialog.showModal();
+  };
+  export const exitAnimation = () => {
+    const animation = card.animate(
+      {
+        opacity: [1, 0],
+        transform: ["scale(1)", "scale(0)"],
+      },
+      {
+        duration: 300,
+        fill: "both",
+        easing: "cubic-bezier(0.33, 1, 0.68, 1)",
+      }
+    );
+    return animation;
   };
   export const close = () => {
     document.body.classList.remove("noscroll");
@@ -16,7 +31,7 @@
 <dialog bind:this={dialog} class="modal" on:close={onClose}>
   <div class="dialog__content">
     <div class="content-wrapper">
-      <div class="card">
+      <div class="card" bind:this={card}>
         <div class="card__tools">
           <h3>
             {title}
@@ -34,6 +49,7 @@
           <slot></slot>
         </div>
       </div>
+      <slot name="cover"></slot>
     </div>
   </div>
 </dialog>
@@ -53,6 +69,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100%;
+    overflow: hidden;
   }
   .content-wrapper > .card {
     will-change: opacity, transform;
