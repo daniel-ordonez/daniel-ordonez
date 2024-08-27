@@ -47,16 +47,32 @@
   </div>
   <div class="card__body">
     <div id="social-links">
-      <a class="social-link" href="">
+      <a
+        class="social-link"
+        href="https://www.behance.net/daniordonez/"
+        target="_blank"
+      >
         <IconBehance></IconBehance>
       </a>
-      <a class="social-link" href="">
+      <a
+        class="social-link"
+        href="https://github.com/daniel-ordonez"
+        target="_blank"
+      >
         <IconGithub></IconGithub>
       </a>
-      <a class="social-link" href="">
+      <a
+        class="social-link"
+        href="https://www.linkedin.com/in/daniel-adolfo-ordo%C3%B1ez-rubio/"
+        target="_blank"
+      >
         <IconLinkedin></IconLinkedin>
       </a>
-      <a class="social-link" href="">
+      <a
+        class="social-link"
+        href="https://www.youtube.com/channel/UCVR7hxJwj8qe1WVCIUXVFJQ"
+        target="_blank"
+      >
         <IconYouTube></IconYouTube>
       </a>
     </div>
