@@ -1,13 +1,10 @@
 <script>
   // @ts-nocheck
 
-  /**
-   * TODO: RESET STAGES FOR DIALOG AND FORM AFTER DIALOG CLOSE
-   */
   import * as rive from "@rive-app/canvas-lite";
   import { onMount } from "svelte";
   import IconMail from "../icons/IconMail.svelte";
-  import { supportsHover } from "../../store";
+  import { supportsHover, theme } from "../../store";
   import ModalDialog from "../ModalDialog.svelte";
   import ContactForm from "./card-contact/ContactForm.svelte";
 
@@ -24,7 +21,6 @@
       stateMachines: "SM1",
       animations: "mail_in",
     });
-
     let replayTimeout = null;
     let loopAnimation = false;
 
@@ -109,6 +105,7 @@
   const onFormSubmit = async () => {
     const hideForm = dialog.exitAnimation();
     const card = document.getElementById("thnx-card");
+    // Animate thanx card in
     card.classList.remove("hidden");
     card.animate(
       {
@@ -117,30 +114,29 @@
       },
       {
         duration: 600,
-        easing: "cubic-bezier(0.33, 1, 0.68, 1)",
+        easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
       }
     );
     const canvas = document.getElementById("thnx-canvas");
-
+    // Show mailbox animation
     await hideForm.finished;
+    const animationName = $theme == "dark" ? "mail_in_dark" : "mail_in";
     const r = new rive.Rive({
       src: "animations/mailbox.riv",
       canvas,
       autoplay: false,
       layout: new rive.Layout({ fit: rive.Fit.Contain }),
-      stateMachines: "SM2",
-      animations: "mail_in_dark",
+      stateMachines: "SM1",
+      animations: animationName,
     });
     r.on(rive.EventType.Load, () => {
       r.resizeDrawingSurfaceToCanvas();
-      r.play();
+      r.play(animationName);
     });
     const onRiveStop = async () => {
-      console.log("stop");
       await card.animate(
         {
           opacity: [1, 0],
-          transform: ["scale(1)", "scale(0)"],
         },
         {
           duration: 300,
@@ -191,6 +187,9 @@
     <div class="card__cover">
       <div class="model-container">
         <canvas id="thnx-canvas"></canvas>
+        <div class="card__body">
+          <h3>Thank you!</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -202,6 +201,13 @@
     aspect-ratio: 1/1;
     height: auto;
     width: min(300px, calc(100vw - var(--px, 2rem)));
+  }
+  #thnx-card .card__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: var(--c-card-color, var(--c-card-default-color));
   }
   .card__cover {
     position: absolute;
@@ -218,9 +224,10 @@
   .card__cover .model-container {
     aspect-ratio: 1/1;
     width: 100%;
-    height: auto;
+    height: 100%;
+  }
+  :global(:root[theme="dark"] #thnx-card canvas) {
     mix-blend-mode: screen;
-    opacity: 0.8;
   }
   #card-contact {
     --c-card-bg: #d3d3d3;

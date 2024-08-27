@@ -45,7 +45,7 @@
 <style>
   .toggle {
     color-scheme: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
     --h: 2em;
     --p: 0.2em;
     --r: calc(var(--h) - (2 * var(--p)));

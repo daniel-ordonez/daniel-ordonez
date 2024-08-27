@@ -43,9 +43,4 @@
       rotate(calc(var(--inner-angle) * var(--char-index)))
       translateY(var(--radius)) scaleY(1);
   }
-  @keyframes rotation {
-    to {
-      rotate: -360deg;
-    }
-  }
 </style>

@@ -1,14 +1,3 @@
-@font-face {
-  font-family: Afacad;
-  src: url("https://daniordonez.com/fonts/Afacad-VariableFont_wght.ttf");
-  src: url("fonts/Afacad-VariableFont_wght.ttf");
-}
-@font-face {
-  font-family: VT323;
-  src: url("https://daniordonez.com/fonts/VT323/VT323-Regular.ttf");
-  src: url("fonts/VT323/VT323-Regular.ttf");
-  font-display: swap;
-}
 :root {
 
   --full-height: 100vh;
@@ -272,16 +261,18 @@ svg.icon {
 */
 h2 {
   font-variation-settings: "wght" 520;
-  font-size: clamp(2rem, 4vw, 3.75rem);
+  font-size: clamp(2.5rem, 4vw, 3rem);
   text-transform: uppercase;
   font-weight: bold;
+  font-weight: 800;
   line-height: 1;
 }
 h3 {
   font-variation-settings: "wght" 520;
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: 2.488rem;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: bolder;
+  font-weight: 800;
   line-height: 1;
 }
 
@@ -555,7 +546,11 @@ button:disabled.btn--send {
     opacity: 1;
   }
 }
-
+@keyframes rotation {
+  to {
+    rotate: -360deg;
+  }
+}
 
   /*
     MOBILE / SMALL BREAKPOINT

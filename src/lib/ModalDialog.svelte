@@ -21,6 +21,30 @@
     );
     return animation;
   };
+  const exitDialog = async () => {
+    const animation = card.animate(
+      [
+        {
+          opacity: 1,
+          transform: "translateY(0px) scale(1)",
+        },
+        {
+          opacity: 0,
+          offset: 0.4,
+        },
+        {
+          opacity: 0,
+          transform: "translateY(150px) scale(0.95)",
+        },
+      ],
+      {
+        duration: 400,
+        easing: "ease-in-out",
+      }
+    );
+    await animation.finished;
+    close();
+  };
   export const close = () => {
     document.body.classList.remove("noscroll");
     dialog.close();
@@ -36,7 +60,7 @@
           <h3>
             {title}
           </h3>
-          <button class="btn--close" on:click={close}>
+          <button class="btn--close" on:click={exitDialog}>
             <div class="icon--round">
               <svg viewBox="0 0 24 24" class="icon icon--stroke">
                 <line x1="18" y1="6" x2="6" y2="18"></line>

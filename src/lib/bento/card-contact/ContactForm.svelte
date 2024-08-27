@@ -25,21 +25,20 @@
       unlockStatus = "";
     }
   };
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (!isValid) return;
-    /*
-    const formData = new FormData(e.target);
+
+  const submitData = (data) => {
     const request = fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => {
-        dispatch("submit");
-      })
-      .catch((error) => alert(error));
-    */
+    });
+    return request;
+  };
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (!isValid) return;
+    const formData = new FormData(e.target);
+    //await submitData(formData)
     dispatch("submit");
   };
 
