@@ -26,7 +26,7 @@
     }
   };
 
-  const submitData = (data) => {
+  const submitData = (formData) => {
     const request = fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },

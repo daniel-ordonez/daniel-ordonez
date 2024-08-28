@@ -1,4 +1,9 @@
 <script>
+  /**
+   * TODO: Add pin to point GT
+   * TODO: Add interaction/ drag to rotate
+   */
+
   import IconArrowDown from "../icons/IconArrowDown.svelte";
   import BtnTextIcon from "../BtnTextIcon.svelte";
   import { onMount } from "svelte";
