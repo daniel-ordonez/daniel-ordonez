@@ -38,7 +38,7 @@
     e.preventDefault();
     if (!isValid) return;
     const formData = new FormData(e.target);
-    //await submitData(formData)
+    await submitData(formData);
     dispatch("submit");
   };
 
