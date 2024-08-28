@@ -120,7 +120,7 @@
     const canvas = document.getElementById("thnx-canvas");
     // Show mailbox animation
     await hideForm.finished;
-    const animationName = $theme == "dark" ? "mail_in_dark" : "mail_in";
+    const animationName = "mail_in"; //$theme == "dark" ? "mail_in_dark" : "mail_in";
     const r = new rive.Rive({
       src: "animations/mailbox.riv",
       canvas,
@@ -226,9 +226,11 @@
     width: 100%;
     height: 100%;
   }
-  :global(:root[theme="dark"] #thnx-card canvas) {
-    mix-blend-mode: screen;
+  :global(:root[theme="dark"] #thnx-card) {
+    --c-card-bg: #d3d3d3;
+    --c-card-color: #222222;
   }
+
   #card-contact {
     --c-card-bg: #d3d3d3;
     --c-card-color: #222222;
