@@ -37,8 +37,8 @@
               </div>
               <!--
               <div><a class="hover" href="#"><span>Portfolio</span></a></div>
-              <div><a class="hover" href="#"><span>Contact</span></a></div>
               -->
+              <div><a class="hover" href="#" id="contact-btn"><span>Contact</span></a></div>
             </nav>
           </div>
         </div>
@@ -127,6 +127,43 @@
           </div>
         </div>
       </main>
+      <dialog id="contact-dialog">
+        <div class="dialog-container">
+          <div class="dialog-wrapper">
+            <div class="dialog__controls">
+              <button class="close-dialog">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="current-color">
+                  <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                  </svg>
+              </button>
+            </div>
+            <div class="dialog-card">
+              <h2>Let's work</h2>
+              <form name="contact" data-netlify="true">
+                <label for="contact-form-name">
+                  <small>Name</small>
+                  <input type="text" name="name" id="contact-form-name" autocomplete="off" required>
+                </label>
+                <label for="contact-form-name">
+                  <small>Contact email</small>
+                  <input type="email" name="email" id="contact-form-email" autocomplete="off" required>
+                </label>
+                <label for="contact-form-subject">
+                  <small>Subject</small>
+                  <input type="text" name="text" id="contact-form-subject" autocomplete="off">
+                </label>
+                <label for="contact-form-name">
+                  <small>Message</small>
+                <textarea name="message" id="contact-form-message" required></textarea>
+              </label>
+              <div>
+                <button class="btn btn--cta">Send message</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </dialog>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

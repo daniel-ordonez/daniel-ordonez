@@ -24,6 +24,21 @@ body {
   margin: 0;
   padding: 0;
 }
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+dialog {
+  border: none;
+  position: relative;
+  padding: 0;
+}
+h2 {
+  font-size: 4rem;
+  margin: 0;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
 svg>* {
   pointer-events: none;
   user-select: none;
@@ -33,6 +48,83 @@ a, a:hover, a:active {
   appearance: none;
   color: inherit;
   text-decoration: none;
+}
+
+.dialog-container {
+  position: fixed;
+  inset: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+.dialog-wrapper {
+  background-color: white;
+}
+.dialog-card {
+  padding: 2rem;
+  padding-top: 0;
+}
+.dialog__controls {
+  display: flex;
+  justify-content: end;
+}
+button:hover {
+  cursor: pointer;
+}
+button.close-dialog {
+  --btn-size: 4rem;
+  height: var(--btn-size);
+  width:var(--btn-size);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  padding: .5rem;
+  color: inherit;
+}
+button>svg {
+  fill: currentColor;
+  height: 100%;
+  width: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+label {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 4px;
+}
+input[type=text], input[type=email] {
+  height: 3rem;
+  padding: .75rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+label>small {
+  font-weight: 600;
+  font-size: .75rem;
+}
+textarea {
+  resize: none;
+  height: 8rem;
+  padding: .75rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.btn.btn--cta {
+  padding: .5rem 2rem;
+  font-size: 1.5rem;
+  background: #080808;
+  color: white;
+  width: 100%;
+  border-radius: 4px;
 }
 
 #app {

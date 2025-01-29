@@ -1,6 +1,69 @@
 import "./style.css";
 import { gsap } from "gsap";
 
+const setupContactDialog = () => {
+  // Add functionality to buttons
+  const contactBtn = document.getElementById("contact-btn");
+  const dialog = document.getElementById("contact-dialog");
+  const closeBtn = document.querySelector(".close-dialog");
+  const card = dialog.querySelector(".dialog-wrapper");
+  const form = dialog.querySelector("form");
+
+  const closeDialog = () => {
+    gsap.fromTo(
+      card,
+      {
+        opacity: 1,
+        translateY: 0,
+      },
+      {
+        opacity: 0,
+        translateY: "100px",
+        onComplete: () => {
+          dialog.close();
+        },
+      }
+    );
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    // Validate form
+    const isValid = form.checkValidity();
+    if (isValid) {
+      // Submit form
+      const formData = new FormData(e.target);
+      const request = fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+      await request;
+      closeDialog();
+    }
+  });
+
+  contactBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    dialog.showModal();
+    gsap.fromTo(
+      card,
+      {
+        opacity: 0,
+        translateY: "100px",
+      },
+      {
+        opacity: 1,
+        translateY: 0,
+      }
+    );
+  });
+  closeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeDialog();
+  });
+};
+
 const onInitialAnimationEnd = () => {
   // Check if device supports hover
   const supportsHover = window.matchMedia("(hover)").matches;
@@ -40,12 +103,13 @@ const onInitialAnimationEnd = () => {
       item.appendChild(child);
     });
   }
+  setupContactDialog();
 };
 
 const animateMenu = (tl) => {
   const nav = document.getElementById("header-nav");
   const items = Array.from(nav?.children || []);
-  if (items.length >= 3) {
+  if (items.length >= 2) {
     const left = items[0];
     const right = items[items.length - 1];
     items.pop();
