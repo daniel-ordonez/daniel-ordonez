@@ -72,9 +72,8 @@ a, a:hover, a:active {
 }
 
 
-.animated {
+.animated, .header__nav>div, .social-item, .info-item {
   will-change: transform, opacity;
-  opacity: 0;
 }
 
 
