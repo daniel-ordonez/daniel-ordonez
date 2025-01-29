@@ -1,0 +1,16 @@
+{
+  "short_name": "danio",
+  "name": "daniordonez.com",
+  "icons": [
+    { "src": "/icon.svg", "type": "image/svg+xml", "sizes": "512x512", "purpose": "any maskable" },
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "background_color": "#d9d9d9",
+  "display_override": ["window-control-overlay", "minimal-ui"],
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#d9d9d9"
+}
