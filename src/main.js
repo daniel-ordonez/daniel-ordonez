@@ -223,6 +223,7 @@ const animateFoot = (tl) => {
 };
 
 const onLoad = () => {
+  document.getElementById("app")?.classList.remove("hidden");
   //window.scrollTo({ top: 0, behavior: "instant" });
   const tl = gsap.timeline();
   const title = document.getElementById("headline-title");

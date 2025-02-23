@@ -137,9 +137,6 @@ textarea {
   --header-height: 4rem;
   --content-height: calc(100dvh - var(--header-height));
 }
-#app.hidden {
-  opacity: 1;
-}
 .content-width {
   max-width: 1440px;
   width: var(--content-width);
