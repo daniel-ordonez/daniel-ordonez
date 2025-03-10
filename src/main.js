@@ -99,7 +99,7 @@ const onInitialAnimationEnd = () => {
     // Add animation to menu items
     const menuItems = Array.from(document.querySelectorAll("a.hover"));
     menuItems.forEach((item) => {
-      const child = item.firstChild.cloneNode(true);
+      const child = item.querySelector("span").cloneNode(true);
       item.appendChild(child);
     });
   }

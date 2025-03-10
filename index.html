@@ -20,7 +20,7 @@
         opacity: 0;
         will-change: opacity;
       }
-      .header__nav .active {
+      #header-nav .active {
         font-weight: 800;
       }
     </style>
@@ -29,13 +29,21 @@
         <div class="header__menu">
           <div>
             <nav id="header-nav" class="header__nav">
-              <div class="active">
-                <a class="hover" href="#"><span>Wellcome</span></a>
+              <div class="active animated">
+                <a class="hover" href="#">
+                  <span>Wellcome</span>
+                </a>
               </div>
-              <!--
-              <div><a class="hover" href="#"><span>Portfolio</span></a></div>
-              -->
-              <div><a class="hover" href="#" id="contact-btn"><span>Contact Me</span></a></div>
+              <div class="animated">
+                <a class="hover" href="#">
+                  <span>Portfolio</span>
+                </a>
+              </div>
+              <div class="animated">
+                <a class="hover" href="#" id="contact-btn">
+                  <span>Contact Me</span>
+                </a>
+              </div>
             </nav>
           </div>
         </div>
@@ -124,6 +132,9 @@
           </div>
         </div>
       </main>
+      <section id="portfolio">
+
+      </section>
       <dialog id="contact-dialog">
         <div class="dialog-container">
           <div class="dialog-wrapper">
