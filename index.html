@@ -16,12 +16,19 @@
   </head>
   <body>
     <style>
-      .hidden {
+      #app.hidden {
         opacity: 0;
         will-change: opacity;
       }
       #header-nav .active {
         font-weight: 800;
+      }
+      collapse-section {
+        font-family: inherit;
+        font-size: inherit;
+      }
+      projects-pagination {
+        display: contents;
       }
     </style>
     <div id="app" class="hidden">
@@ -35,7 +42,7 @@
                 </a>
               </div>
               <div class="animated">
-                <a class="hover" href="#">
+                <a class="hover" href="#portfolio" id="anchor-to-porfolio">
                   <span>Portfolio</span>
                 </a>
               </div>
@@ -50,7 +57,7 @@
       </header>
       <main class="grid main-grid">
         <div id="headline">
-          <div class="content-width grid grid--template headline-grid">
+          <div class="content-width grid headline-grid">
 
             <div id="headline-title" class="animated">
               <svg class="animate" viewBox="0 0 1301 121" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -112,8 +119,8 @@
             <div id="headline-foot">
               <div class="foot-info">
                 <div class="info-item">
-                  <div>Based in</div>
-                  <div>Guatemala, GMT -6</div>
+                  <div>© 2025</div>
+                  <div>daniordonez.com</div>
                 </div>
                 <div class="info-item">
                   <div>Specialized in</div>
@@ -124,8 +131,8 @@
                   <div>Clean and minimal</div>
                 </div>
                 <div class="info-item">
-                  <div>© 2025</div>
-                  <div>daniordonez.com</div>
+                  <div>Based in</div>
+                  <div>Guatemala, GMT -6</div>
                 </div>
               </div>
             </div>
@@ -133,8 +140,70 @@
         </div>
       </main>
       <section id="portfolio">
+        <div class="content-width grid portfolio-grid">
+          <h2 class="column__full">RECENT WORK</h2>
+          <div class="projects-wrapper">
+            
 
+
+
+
+            <collapse-section label="Web">
+              <div class="collapse-section__content">
+                <projects-pagination>
+                    <div class="portfolio__project">
+                      <div class="project__img">
+                        <img src="" alt="" width="637" height="auto">
+                      </div>
+                      <div class="project__info">
+                        <div class="project__name">Fotecap <small>(website)</small></div>
+                        <div class="project__year">2025</div>
+                      </div>
+                    </div>
+                </projects-pagination>
+              </div>
+            </collapse-section>
+
+
+
+            <collapse-section label="Design">
+              <div class="collapse-section__content">
+                <projects-pagination>
+
+                  <div class="portfolio__project">
+                    <div class="project__img">
+                      <img src="" alt="" width="637" height="auto">
+                    </div>
+                    <div class="project__info">
+                      <div class="project__name">Itzá <small>(Visual identity)</small></div>
+                      <div class="project__year">2025</div>
+                    </div>
+                  </div>
+    
+    
+                  <div class="portfolio__project">
+                    <div class="project__img">
+                      <img src="" alt="" width="637" height="auto">
+                    </div>
+                    <div class="project__info">
+                      <div class="project__name">Rabí <small>(Visual identity)</small></div>
+                      <div class="project__year">2024</div>
+                    </div>
+                  </div>
+              </projects-pagination>
+
+              </div>
+            </collapse-section>
+
+            <collapse-section label="Side projects">
+            </collapse-section>
+          </div>
+
+        </div>
       </section>
+
+
+
       <dialog id="contact-dialog">
         <div class="dialog-container">
           <div class="dialog-wrapper">
@@ -146,7 +215,7 @@
               </button>
             </div>
             <div class="dialog-card">
-              <h2>Let's work</h2>
+              <h3>Let's work</h3>
               <form name="contact" data-netlify="true">
                 <label for="contact-form-name">
                   <small>Name</small>
@@ -174,5 +243,7 @@
       </dialog>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/components/collapse-section/collapse-section.mjs" defer></script>
+    <script type="module" src="/src/components/projects-pagination/projects-pagination.mjs" defer></script>
   </body>
 </html>

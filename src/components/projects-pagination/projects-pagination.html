@@ -1,0 +1,101 @@
+<style>
+.projects-layout {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+}
+
+.pagination {
+  display: none;
+  justify-content: space-between;
+  --btn-size: 4rem;
+}
+.pagination-btn {
+  margin: 0;
+  padding: 1rem;
+  width: calc(3 * var(--btn-size));
+  height: var(--btn-size);
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity 500ms ease-in-out;
+  cursor: pointer;
+}
+.pagination-btn>svg {
+  aspect-ratio: 1;
+  height: calc(var(--btn-size) - 2rem);
+  width: auto;
+}
+.pagination-btn--next {
+  justify-content: end;
+}
+.pagination-btn--prev {
+  justify-content: start;
+}
+.pagination-btn.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.pagination-btn:hover {
+  background: #f9f9f9;
+}
+.pagination-btn:active {
+  background: #e4e4e4;
+}
+
+.pagination__index {
+  align-self: flex-end;
+  display: flex;
+  gap: .5ch;
+  visibility: hidden;
+}
+.pagination__index>span:not(:first-child) {
+  opacity: 0.4;
+}
+
+@media (min-width: 700px) {
+  .projects-layout {
+    width: calc(100% * max(1, var(--pages)));
+    display: grid;
+    grid-template-columns: repeat(var(--project-count), 1fr);
+    grid-template-rows: 1fr;
+    column-gap: var(--grid-gap-x);
+    transform: translateX(calc(var(--current-page) * (-100% / max(1, var(--pages)))));
+    transition: transform 800ms ease-in-out;
+  }
+  .pagination {
+    display: flex;
+  }
+
+  .pagination__index {
+    visibility: visible;
+  }
+  
+}
+</style>
+
+
+<div class="pagination__index">
+  <span class="pagination-index--current"></span><span>/</span><span class="pagination-index--total"></span>
+</div>
+
+<div class="projects-layout">
+  <slot></slot>
+</div>
+
+<div class="pagination">
+  <button class="pagination-btn pagination-btn--prev hidden">
+    <svg style="transform: scaleX(-1)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+      <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+    </svg>
+  </button>
+  <button class="pagination-btn pagination-btn--next hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
+      <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+    </svg>
+  </button>
+</div>

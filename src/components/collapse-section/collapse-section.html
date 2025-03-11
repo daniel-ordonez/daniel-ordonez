@@ -1,0 +1,93 @@
+<style>
+  .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .control__label {
+    font-size: 2rem;
+    margin: 0;
+    transition: padding-left 200ms ease-in-out;
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+  }
+  @media (hover:hover) {
+    .control:hover {
+      cursor: pointer;
+      background-color: #f9f9f9;
+      transition: background-color 300ms ease-in-out;
+    }
+    .control:hover .control__label {
+      padding-left: 1ch;
+    }
+  }
+
+  .icon {
+    --icon-size: 3rem;
+    height: var(--icon-size);
+    width: var(--icon-size);
+    position: relative;
+  }
+  .icon>div {
+    position: absolute;
+    inset: 0 0 0 0;
+    pointer-events: none;
+    will-change: opacity, transform;
+    transition-property: opacity, transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+  }
+  .control:not([active]) .icon--off,
+  .control[active] .icon--on {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .control:not([active]) .icon--on,
+  .control[active] .icon--off {
+    opacity: 0;
+    transform: scale(0);
+  }
+  .container {
+    overflow: hidden;
+    will-change: height;
+    position: relative;
+  }
+  .control:not([active])+.container {
+    max-height: 0px;
+  }
+  .control[active]+.container {
+    max-height: fit-content;
+  }
+  .content-wrapper {
+    will-change: transform, opacity;
+  }
+</style>
+
+<div class="control">
+  <span class="control__label">Web</span>
+
+  <div class="icon">
+    <div class="icon--on">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+    </div>
+    <div class="icon--off">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+    </div>
+  
+  </div>
+</div>
+<div class="container">
+  <div class="content-wrapper">
+    <div class="content">
+    <slot></slot>
+    <div>
+  <div>
+<div>

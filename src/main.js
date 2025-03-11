@@ -1,5 +1,6 @@
 import "./style.css";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 const setupContactDialog = () => {
   // Add functionality to buttons
@@ -64,7 +65,7 @@ const setupContactDialog = () => {
   });
 };
 
-const onInitialAnimationEnd = () => {
+const onHomeAnimationEnd = () => {
   // Check if device supports hover
   const supportsHover = window.matchMedia("(hover)").matches;
 
@@ -95,7 +96,6 @@ const onInitialAnimationEnd = () => {
         lastItem.addEventListener("transitionend", onFirstTransitionEnd);
       }
     }
-
     // Add animation to menu items
     const menuItems = Array.from(document.querySelectorAll("a.hover"));
     menuItems.forEach((item) => {
@@ -104,137 +104,27 @@ const onInitialAnimationEnd = () => {
     });
   }
   setupContactDialog();
+  const anchorToPortfolio = document.getElementById("anchor-to-porfolio");
+  const portfolio = document.getElementById("portfolio");
+  anchorToPortfolio.addEventListener("click", (e) => {
+    e.preventDefault();
+    portfolio.scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+  setupPorfolio();
 };
 
-const animateMenu = (tl) => {
-  const nav = document.getElementById("header-nav");
-  const items = Array.from(nav?.children || []);
-  if (items.length >= 2) {
-    const left = items[0];
-    const right = items[items.length - 1];
-    items.pop();
-    items.shift();
-    tl.fromTo(
-      left,
-      {
-        opacity: 0,
-        translateX: "-2rem",
-      },
-      {
-        opacity: 1,
-        translateX: 0,
-      },
-      "<"
-    );
-    tl.fromTo(
-      right,
-      {
-        opacity: 0,
-        translateX: "2rem",
-      },
-      {
-        opacity: 1,
-        translateX: 0,
-      },
-      "<"
-    );
-  }
-  items.forEach((i) => {
-    tl.fromTo(
-      i,
-      {
-        opacity: 0,
-        translateY: "-1rem",
-      },
-      {
-        opacity: 1,
-        translateY: 0,
-      },
-      "<"
-    );
-  });
-};
-const animatePic = (tl) => {
-  const pic = document.getElementById("headline-pic");
-  const bg = pic.querySelector(".pic__bg");
-  const img = pic.querySelector(".pic__img");
-
-  tl.fromTo(
-    bg,
-    {
-      scale: 0,
-    },
-    {
-      scale: 1,
-      duration: 0.6,
-    },
-    "-=.2"
-  ).fromTo(
-    img,
-    {
-      opacity: 0,
-      translateY: "50%",
-    },
-    {
-      opacity: 1,
-      translateY: 0,
-      duration: 1,
-    },
-    "-=.2"
-  );
-};
-const animateSocial = (tl) => {
-  const social = document.getElementById("social");
-  const items = social?.querySelectorAll(".social-item") || [];
-  items.forEach((i) => {
-    tl.fromTo(
-      i,
-      {
-        opacity: 0,
-        translateY: "-1rem",
-      },
-      {
-        opacity: 1,
-        translateY: 0,
-        duration: 0.4,
-      },
-      "-=.3"
-    );
-  });
-};
-const animateFoot = (tl) => {
-  const foot = document.getElementById("headline-foot");
-  const items = foot?.querySelectorAll(".info-item") || [];
-  items.forEach((i) => {
-    tl.fromTo(
-      i,
-      {
-        opacity: 0,
-        translateY: "1rem",
-      },
-      {
-        opacity: 1,
-        translateY: 0,
-        duration: 0.5,
-      },
-      "-=.3"
-    );
-  });
-};
-
-const onLoad = () => {
-  document.getElementById("app")?.classList.remove("hidden");
-  //window.scrollTo({ top: 0, behavior: "instant" });
-  const tl = gsap.timeline();
+const animateHome = () => {
+  console.log("animate home");
+  const main = document.querySelector("main");
   const title = document.getElementById("headline-title");
   const subtitle = document.getElementById("headline-text");
-
-  // Prevent scroll from appearing between animations
-  const main = document.querySelector("main");
+  const tl = gsap.timeline();
   main.style.overflow = "hidden";
   tl.eventCallback("onComplete", () => {
     main.style.overflow = "";
-    onInitialAnimationEnd(title);
+    onHomeAnimationEnd();
   });
 
   // Setup animation timeline
@@ -264,10 +154,180 @@ const onLoad = () => {
     },
     "-=2"
   );
+
+  const animateMenu = (tl) => {
+    const nav = document.getElementById("header-nav");
+    const items = Array.from(nav?.children || []);
+    if (items.length >= 2) {
+      const left = items[0];
+      const right = items[items.length - 1];
+      items.pop();
+      items.shift();
+      tl.fromTo(
+        left,
+        {
+          opacity: 0,
+          translateX: "-2rem",
+        },
+        {
+          opacity: 1,
+          translateX: 0,
+        },
+        "<"
+      );
+      tl.fromTo(
+        right,
+        {
+          opacity: 0,
+          translateX: "2rem",
+        },
+        {
+          opacity: 1,
+          translateX: 0,
+        },
+        "<"
+      );
+    }
+    items.forEach((i) => {
+      tl.fromTo(
+        i,
+        {
+          opacity: 0,
+          translateY: "-1rem",
+        },
+        {
+          opacity: 1,
+          translateY: 0,
+        },
+        "<"
+      );
+    });
+  };
+  const animatePic = (tl) => {
+    const pic = document.getElementById("headline-pic");
+    const bg = pic.querySelector(".pic__bg");
+    const img = pic.querySelector(".pic__img");
+
+    tl.fromTo(
+      bg,
+      {
+        scale: 0,
+      },
+      {
+        scale: 1,
+        duration: 0.6,
+      },
+      "-=.2"
+    ).fromTo(
+      img,
+      {
+        opacity: 0,
+        translateY: "50%",
+      },
+      {
+        opacity: 1,
+        translateY: 0,
+        duration: 1,
+      },
+      "-=.2"
+    );
+  };
+  const animateSocial = (tl) => {
+    const social = document.getElementById("social");
+    const items = social?.querySelectorAll(".social-item") || [];
+    items.forEach((i) => {
+      tl.fromTo(
+        i,
+        {
+          opacity: 0,
+          translateY: "-1rem",
+        },
+        {
+          opacity: 1,
+          translateY: 0,
+          duration: 0.4,
+        },
+        "-=.3"
+      );
+    });
+  };
+  const animateFoot = (tl) => {
+    const foot = document.getElementById("headline-foot");
+    const items = foot?.querySelectorAll(".info-item") || [];
+    items.forEach((i) => {
+      tl.fromTo(
+        i,
+        {
+          opacity: 0,
+          translateY: "1rem",
+        },
+        {
+          opacity: 1,
+          translateY: 0,
+          duration: 0.5,
+        },
+        "-=.3"
+      );
+    });
+  };
+
   animatePic(tl);
   animateSocial(tl);
   animateFoot(tl);
   animateMenu(tl);
+};
+const setupPorfolio = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo(
+    "#portfolio",
+    { autoAlpha: 0, translateY: "150px" }, // Initial state: hidden (opacity 0, visibility hidden)
+    {
+      autoAlpha: 1, // Final state: visible (opacity 1)
+      translateY: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#portfolio",
+        start: "top 50%", // When the top of #portfolio reaches 50% of the viewport
+        end: "top top", // When #portfolio reaches the top of the viewport
+        toggleActions: "play none reverse none",
+        // "play" when entering, "reverse" when leaving
+        scrub: true,
+      },
+    }
+  );
+  setupProjectPagination();
+};
+const setupProjectPagination = () => {
+  const portfolio = document.getElementById("portfolio");
+  const projectsPerPage = 2;
+  const sections = {};
+  const collapseSections = portfolio.querySelectorAll(".collapse-section");
+};
+
+const setupSections = () => {
+  const main = document.querySelector("main");
+  const portfolio = document.getElementById("portfolio");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const intersectingSection = entries.find((entry) => entry.isIntersecting);
+      if (intersectingSection.target === main) {
+        animateHome();
+      } else {
+        onHomeAnimationEnd();
+      }
+      observer.disconnect();
+    },
+    { threshold: 0.5 }
+  );
+  observer.observe(main);
+  observer.observe(portfolio);
+};
+
+const onLoad = async () => {
+  // make content visible
+  document.getElementById("app")?.classList.remove("hidden");
+  setupSections();
 };
 
 document.addEventListener("DOMContentLoaded", onLoad);
