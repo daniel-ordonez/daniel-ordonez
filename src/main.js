@@ -293,16 +293,15 @@ const setupPorfolio = () => {
         toggleActions: "play none reverse none",
         // "play" when entering, "reverse" when leaving
         scrub: true,
+        onLeaveBack: () => {
+          // Scroll back to the header section when #portfolio fades out
+          document.querySelector("header")?.scrollIntoView({
+            behavior: "smooth",
+          });
+        },
       },
     }
   );
-  setupProjectPagination();
-};
-const setupProjectPagination = () => {
-  const portfolio = document.getElementById("portfolio");
-  const projectsPerPage = 2;
-  const sections = {};
-  const collapseSections = portfolio.querySelectorAll(".collapse-section");
 };
 
 const setupSections = () => {
