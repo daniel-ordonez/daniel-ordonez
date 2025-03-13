@@ -276,9 +276,7 @@ const setupPorfolio = () => {
   const cachedProjectData = new Map();
   const prefetchProjectData = async (projectName) => {
     try {
-      const request = await fetch(
-        `/public/static/projects/${projectName}.json`
-      );
+      const request = await fetch(`/static/projects/${projectName}.json`);
       const data = await request.json();
       return data;
     } catch (error) {
