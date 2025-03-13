@@ -67,32 +67,7 @@ a, a:hover, a:active {
 }
 
 
-/*    DIALOG
-*/
-dialog {
-  border: none;
-  position: relative;
-  padding: 0;
-}
-.dialog-container {
-  position: fixed;
-  inset: 0 0 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
-}
-.dialog-wrapper {
-  background-color: white;
-}
-.dialog-card {
-  padding: 2rem;
-  padding-top: 0;
-}
-.dialog__controls {
-  display: flex;
-  justify-content: end;
-}
+
 
 
 
@@ -101,20 +76,7 @@ dialog {
 button:hover {
   cursor: pointer;
 }
-button.close-dialog {
-  --btn-size: 4rem;
-  height: var(--btn-size);
-  width:var(--btn-size);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  outline: none;
-  appearance: none;
-  background-color: transparent;
-  padding: .5rem;
-  color: inherit;
-}
+
 button>svg {
   fill: currentColor;
   height: 100%;
@@ -211,6 +173,9 @@ textarea {
 */
 .flex {
   display: flex;
+}
+.gap--md {
+  gap: 2rem;
 }
 .jc--between {
   justify-content: space-between;
@@ -428,6 +393,8 @@ main {
   border-radius: 4px;
   overflow: hidden;
   background-color: #f9f9f9;
+  display: block;
+
 }
 .project__img img {
   object-fit: cover;
@@ -463,13 +430,9 @@ main {
 
 
 @media (min-width: 700px) {
-
-
   .portfolio__project.hidden {
     opacity: 0;
   }
-
-  
 }
 
 @media (max-aspect-ratio: 1) {
@@ -477,7 +440,11 @@ main {
     aspect-ratio: 4/3;
   }
 }
-
+.card__body {
+  padding: 2rem;
+  padding-top: 0;
+  padding-bottom: 4rem;
+}
 
 
 

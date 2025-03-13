@@ -1,0 +1,91 @@
+<dialog class="modal-dialog">
+  <div class="dialog-wrapper">
+    <div class="dialog-container">
+      <div class="dialog__controls">
+        <button class="close-dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="current-color">
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </button>
+      </div>
+      <div class="dialog__content">
+        <slot></slot>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  ::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+dialog {
+  border: none;
+  position: relative;
+  padding: 0;
+}
+.dialog-wrapper {
+  position: fixed;
+  inset: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.dialog-container {
+  box-shadow: 0px 2px 4px -2px rgba(0,0,0,0.2);
+  background-color: white;
+  width: 500px;
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100vh - 2rem);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+  border-radius: 4px;
+}
+.dialog__controls {
+  grid-row: 1;
+  display: flex;
+  justify-content: end;
+}
+.dialog__content {
+  grid-row: 2;
+  padding: 0;
+  overflow-y: auto;
+}
+button.close-dialog {
+  --btn-size: 4rem;
+  height: var(--btn-size);
+  width:var(--btn-size);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  padding: .5rem;
+  color: inherit;
+  cursor: pointer;
+}
+button>svg {
+  fill: currentColor;
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .dialog-container {
+    width: 100svw;
+    max-width: none;
+    border-radius: 0;
+  }
+  .dialog-container {
+    max-height: 100vh;
+  }
+
+}
+</style>

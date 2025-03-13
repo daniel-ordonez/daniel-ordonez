@@ -1,0 +1,25 @@
+{
+  "title": "F2M",
+  "type": "Web App",
+  "year": 2025,
+  "timeline": "WIP",
+  "link": {
+    "label": "Github",
+    "URL": ""
+  },
+  "about": [
+    {
+      "content": "Food & Macros Monitor (F2M) is an app for keeping a record of your daily foods and track macros (calories, carbs, protein, and fat) to have a better control over your nutrition and weight goals."
+    }
+  ],
+  "details": [
+    {
+      "title": "Tech stack",
+      "content": [
+        "Sveltekit",
+        "Vite",
+        "GSAP"
+      ]
+    }
+  ]
+}

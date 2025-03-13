@@ -1,0 +1,40 @@
+{
+  "title": "Fotecap",
+  "type": "website",
+  "year": 2025,
+  "timeline": "3 Weeks",
+  "link": {
+    "label": "Visit site",
+    "URL": "https://fotecap.com"
+  },
+  "about": [
+    {
+      "content": "Fotecap (Formación Técnica y Capacitación Profesional) is an institution dedicated to bringing education in technical and hire-able skills to youth and young adults."
+    },
+    {
+      "title": "Value provided",
+      "content": "The business now has a website that provides information about the business services and means of contact. It quickly ranked top on local searches according to Google Search Console."
+    }
+  ],
+  "details": [
+    {
+      "title": "Deliverables",
+      "content": [
+        "Single page website",
+        "Domain registration",
+        "Custom email",
+        "Local SEO"
+      ]
+    },
+    {
+      "title": "Technical",
+      "content": [
+        "Static website",
+        "Netlify hosting",
+        "Vite",
+        "JS (vanilla)",
+        "GSAP"
+      ]
+    }
+  ]
+}

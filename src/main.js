@@ -6,28 +6,8 @@ const setupContactDialog = () => {
   // Add functionality to buttons
   const contactBtn = document.getElementById("contact-btn");
   const dialog = document.getElementById("contact-dialog");
-  const closeBtn = document.querySelector(".close-dialog");
-  const card = dialog.querySelector(".dialog-wrapper");
   const form = dialog.querySelector("form");
-
-  const closeDialog = () => {
-    gsap.fromTo(
-      card,
-      {
-        opacity: 1,
-        translateY: 0,
-      },
-      {
-        opacity: 0,
-        translateY: "100px",
-        onComplete: () => {
-          dialog.close();
-        },
-      }
-    );
-  };
-
-  form.addEventListener("submit", async (e) => {
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     // Validate form
     const isValid = form.checkValidity();
@@ -43,25 +23,9 @@ const setupContactDialog = () => {
       closeDialog();
     }
   });
-
   contactBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    dialog.showModal();
-    gsap.fromTo(
-      card,
-      {
-        opacity: 0,
-        translateY: "100px",
-      },
-      {
-        opacity: 1,
-        translateY: 0,
-      }
-    );
-  });
-  closeBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    closeDialog();
+    dialog.show();
   });
 };
 
@@ -103,20 +67,12 @@ const onHomeAnimationEnd = () => {
       item.appendChild(child);
     });
   }
+
   setupContactDialog();
-  const anchorToPortfolio = document.getElementById("anchor-to-porfolio");
-  const portfolio = document.getElementById("portfolio");
-  anchorToPortfolio.addEventListener("click", (e) => {
-    e.preventDefault();
-    portfolio.scrollIntoView({
-      behavior: "smooth",
-    });
-  });
   setupPorfolio();
 };
 
 const animateHome = () => {
-  console.log("animate home");
   const main = document.querySelector("main");
   const title = document.getElementById("headline-title");
   const subtitle = document.getElementById("headline-text");
@@ -276,7 +232,17 @@ const animateHome = () => {
   animateFoot(tl);
   animateMenu(tl);
 };
+
 const setupPorfolio = () => {
+  // Take over menu option - to prevent URL changing (/#portfolio)
+  const anchorToPortfolio = document.getElementById("anchor-to-porfolio");
+  anchorToPortfolio.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.getElementById("portfolio")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+  // Setup animation
   gsap.registerPlugin(ScrollTrigger);
   gsap.fromTo(
     "#portfolio",
@@ -288,11 +254,16 @@ const setupPorfolio = () => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: "#portfolio",
-        start: "top 50%", // When the top of #portfolio reaches 50% of the viewport
-        end: "top top", // When #portfolio reaches the top of the viewport
+        start: "top 80%", // When the top of #portfolio reaches 50% of the viewport
+        end: "top 20%", // When #portfolio reaches the top of the viewport
         toggleActions: "play none reverse none",
         // "play" when entering, "reverse" when leaving
         scrub: true,
+        onEnter: () => {
+          document.getElementById("portfolio")?.scrollIntoView({
+            behavior: "smooth",
+          });
+        },
         onLeaveBack: () => {
           // Scroll back to the header section when #portfolio fades out
           document.querySelector("header")?.scrollIntoView({
@@ -302,8 +273,63 @@ const setupPorfolio = () => {
       },
     }
   );
+  const cachedProjectData = new Map();
+  const prefetchProjectData = async (projectName) => {
+    try {
+      const request = await fetch(
+        `/public/static/projects/${projectName}.json`
+      );
+      const data = await request.json();
+      return data;
+    } catch (error) {
+      console.log("error fetching", projectName);
+      console.log(error.message);
+    }
+  };
+  const showProjectDialog = async (projectName) => {
+    const dialog = document.getElementById("project-dialog");
+    const projectData =
+      cachedProjectData.get(projectName) instanceof Promise
+        ? await cachedProjectData.get(projectName)
+        : cachedProjectData.get(projectName);
+    const projectCard = dialog.querySelector("project-card");
+    projectCard?.loadProject(projectData);
+    dialog?.show();
+  };
+  const preloadDataOnHover = (e) => {
+    // get project element
+    const project = e.target.classList.contains("portfolio__project")
+      ? e.target
+      : e.target.closest(".portfolio__project");
+    // get project name to fetch data
+    const projectName = project.dataset?.name;
+    if (!projectName) return;
+    // prefetch project data
+    const dataLoaded = prefetchProjectData(projectName);
+    const thumbURL = project.querySelector("img").src;
+    const placeholder = new Promise(async (resolve) => {
+      const loadedData = await dataLoaded;
+      const data = { ...loadedData, thumbURL };
+      cachedProjectData.set(projectName, data);
+      resolve(data);
+    });
+    cachedProjectData.set(projectName, placeholder);
+    // show project dialog when clicked
+    project.addEventListener("click", async (e) => {
+      e.preventDefault();
+      showProjectDialog(projectName);
+    });
+  };
+  const portfolioProjects = document.querySelectorAll(".portfolio__project");
+
+  portfolioProjects.forEach((project) => {
+    project.addEventListener("mouseover", preloadDataOnHover, {
+      once: true,
+    });
+  });
 };
 
+// Observes which sections is shown first and sets up animation accordingly
 const setupSections = () => {
   const main = document.querySelector("main");
   const portfolio = document.getElementById("portfolio");

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="canonical" href="https://daniordonez.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#d9d9d9"/>
+    <meta name="theme-color" content="#ffffff"/>
     <meta name="description" content="I'm Dani Ordonez, freelance graphic designer and developer."/>
     <meta name="robots" content="all, index, follow"/>
     <title>Dani Ordonez</title>
@@ -151,10 +151,10 @@
             <collapse-section label="Web">
               <div class="collapse-section__content">
                 <projects-pagination>
-                    <div class="portfolio__project">
-                      <div class="project__img">
+                    <div class="portfolio__project" data-name="fotecap">
+                      <a class="project__img" href="#!" rel="noreferrer" target="_blank" >
                         <img src="/public/imgs/projects/fotecap-thumb.png" alt="" width="637" height="auto">
-                      </div>
+                      </a>
                       <div class="project__info">
                         <div class="project__name">Fotecap <small>(website)</small></div>
                         <div class="project__year">2025</div>
@@ -170,10 +170,10 @@
               <div class="collapse-section__content">
                 <projects-pagination>
 
-                  <div class="portfolio__project">
-                    <div class="project__img">
+                  <div class="portfolio__project" data-name="itza">
+                    <a class="project__img" href="#!" rel="noreferrer" target="_blank">
                       <img src="/imgs/projects/itza-thumb.png" alt="" width="637" height="auto">
-                    </div>
+                    </a>
                     <div class="project__info">
                       <div class="project__name">Itzá <small>(Visual identity)</small></div>
                       <div class="project__year">2025</div>
@@ -181,15 +181,16 @@
                   </div>
     
     
-                  <div class="portfolio__project">
-                    <div class="project__img">
+                  <div class="portfolio__project" data-name="rabi">
+                    <a class="project__img" href="#!" rel="noreferrer" target="_blank">
                       <img src="/imgs/projects/rabi-thumb.png" alt="" width="637" height="auto">
-                    </div>
+                    </a>
                     <div class="project__info">
                       <div class="project__name">Rabí <small>(Visual identity)</small></div>
                       <div class="project__year">2024</div>
                     </div>
                   </div>
+
               </projects-pagination>
 
               </div>
@@ -198,10 +199,10 @@
             <collapse-section label="Side projects">
               <div class="collapse-section__content">
                 <projects-pagination>
-                <div class="portfolio__project">
-                  <div class="project__img">
+                <div class="portfolio__project" data-name="f2m">
+                  <a class="project__img" href="#!" rel="noreferrer" target="_blank">
                     <img src="/imgs/projects/f2m-thumb.png" alt="" width="637" height="auto">
-                  </div>
+                  </a>
                   <div class="project__info">
                     <div class="project__name">F2M <small>(Web app)</small></div>
                     <div class="project__year">2025</div>
@@ -217,45 +218,43 @@
 
 
 
-      <dialog id="contact-dialog">
-        <div class="dialog-container">
-          <div class="dialog-wrapper">
-            <div class="dialog__controls">
-              <button class="close-dialog">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="current-color">
-                  <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-                  </svg>
-              </button>
-            </div>
-            <div class="dialog-card">
-              <h3>Let's work</h3>
-              <form name="contact" data-netlify="true">
-                <label for="contact-form-name">
-                  <small>Name</small>
-                  <input type="text" name="name" id="contact-form-name" autocomplete="off" required>
-                </label>
-                <label for="contact-form-name">
-                  <small>Contact email</small>
-                  <input type="email" name="email" id="contact-form-email" autocomplete="off" required>
-                </label>
-                <label for="contact-form-subject">
-                  <small>Subject</small>
-                  <input type="text" name="text" id="contact-form-subject" autocomplete="off">
-                </label>
-                <label for="contact-form-name">
-                  <small>Message</small>
-                <textarea name="message" id="contact-form-message" required></textarea>
+      <modal-dialog id="contact-dialog">
+        <dialog>
+          <div class="card__body">
+            <h3>Let's work</h3>
+            <form name="contact" data-netlify="true">
+              <label for="contact-form-name">
+                <small>Name</small>
+                <input type="text" name="name" id="contact-form-name" autocomplete="off" required>
               </label>
-              <div>
-                <button class="btn btn--cta">Send message</button>
-              </div>
-              </form>
+              <label for="contact-form-name">
+                <small>Contact email</small>
+                <input type="email" name="email" id="contact-form-email" autocomplete="off" required>
+              </label>
+              <label for="contact-form-subject">
+                <small>Subject</small>
+                <input type="text" name="text" id="contact-form-subject" autocomplete="off">
+              </label>
+              <label for="contact-form-name">
+                <small>Message</small>
+              <textarea name="message" id="contact-form-message" required></textarea>
+            </label>
+            <div>
+              <button class="btn btn--cta">Send message</button>
             </div>
+            </form>
           </div>
-        </div>
-      </dialog>
+        </dialog>
+      </modal-dialog>
+      <modal-dialog id="project-dialog">
+        <dialog>
+          <project-card></project-card>
+        </dialog>
+      </modal-dialog>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/components/modal-dialog/modal-dialog.mjs" defer></script>
+    <script type="module" src="/src/components/project-card/project-card.mjs" defer></script>
     <script type="module" src="/src/components/collapse-section/collapse-section.mjs" defer></script>
     <script type="module" src="/src/components/projects-pagination/projects-pagination.mjs" defer></script>
   </body>

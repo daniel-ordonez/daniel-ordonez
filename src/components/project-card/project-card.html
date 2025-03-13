@@ -1,0 +1,129 @@
+<div class="project-card">
+  <div class="project__thumb">
+    <img src="" alt="">
+  </div>
+  <div class="project__info">
+    <div class="info-tag tag--project">
+      <strong>Project</strong>
+      <small>Website</small>
+    </div>
+    <div class="info-tag tag--year">
+      <strong>Year</strong>
+      <small>Website</small>
+    </div>
+    <div class="info-tag tag--timeline">
+      <strong>Timeline</strong>
+      <small>Website</small>
+    </div>
+    <div class="info-tag tag--link">
+      <strong>Link</strong>
+      <a href="" rel="noopener noreferrer" target="_blank">
+        <small>Website</small>
+      </a>
+    </div>
+  </div>
+  <div class="card__body">
+    <div class="project__title"></div>
+    <div class="project__about"></div>
+    <div class="project__details"></div>
+  </div>
+</div>
+
+<style>
+
+.project__thumb {
+  aspect-ratio: 2;
+  width: 100%;
+  height: auto;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, black, black 50%, transparent);
+}
+.project__thumb img {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  transform-origin: center;
+  transform: scale(1.35) translateY(5%);
+}
+.project__info {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.project__info small {
+  text-transform: capitalize;
+}
+.info-tag {
+  display: flex;
+  flex-direction: column;
+}
+.tag--link a {
+  color: inherit;
+  text-decoration: none;
+  display: contents;
+}
+.tag--link strong {
+  position: relative;
+  margin-right: auto;
+}
+.tag--link strong::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  
+  background-color: currentColor; /* Makes SVG inherit text color */
+  -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/></svg>');
+  mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/></svg>');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.project__about {
+  display: flex;
+  flex-direction: column;
+}
+strong {
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: inherit;
+  margin-bottom: .25rem;
+}
+p {
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+small {
+  font-weight: 400;
+  font-size: .75rem;
+  font-family: inherit;
+}
+.card__body {
+  padding: 2rem;
+  padding-top: 0;
+  padding-bottom: 4rem;
+}
+.project__title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: .25em 0 .5em 0;
+}
+.project__details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+@media (max-width: 500px) {
+  .card__body {
+    padding: 0 1rem 4rem 1rem;
+  }
+  .project__info {
+    padding: 1rem 1rem;
+  }
+}
+</style>

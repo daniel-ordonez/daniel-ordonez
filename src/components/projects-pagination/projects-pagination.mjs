@@ -21,7 +21,8 @@ export class ProjectsPagination extends HTMLElement {
 
     const assignedNodes = content
       .querySelector("slot")
-      .assignedNodes({ flatten: true });
+      .assignedNodes({ flatten: true })
+      .filter((node) => node instanceof HTMLElement);
 
     const pagination = root.querySelector(".pagination");
     const btnPrev = pagination.children[0];
@@ -30,11 +31,9 @@ export class ProjectsPagination extends HTMLElement {
       ".pagination-index--current"
     );
 
-    const projects = assignedNodes.filter((node) => {
-      return (
-        node instanceof HTMLElement && node.classList.contains(projectClass)
-      );
-    });
+    const projects = assignedNodes.filter((node) =>
+      node.classList.contains(projectClass)
+    );
 
     const projectCount =
       Math.ceil(projects.length / projectsPerPage) * projectsPerPage;
