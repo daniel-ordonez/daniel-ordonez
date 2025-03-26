@@ -67,9 +67,7 @@ const onHomeAnimationEnd = () => {
       item.appendChild(child);
     });
   }
-
   setupContactDialog();
-  setupPorfolio();
 };
 
 const animateHome = () => {
@@ -231,6 +229,7 @@ const animateHome = () => {
   animateSocial(tl);
   animateFoot(tl);
   animateMenu(tl);
+  setupPorfolio();
 };
 
 const setupPorfolio = () => {
@@ -244,21 +243,23 @@ const setupPorfolio = () => {
   });
   // Setup animation
   gsap.registerPlugin(ScrollTrigger);
+
   gsap.fromTo(
     "#portfolio",
     { autoAlpha: 0, translateY: "150px" }, // Initial state: hidden (opacity 0, visibility hidden)
     {
       autoAlpha: 1, // Final state: visible (opacity 1)
       translateY: 0,
-      duration: 1,
+      duration: 1.5,
       ease: "power2.out",
       scrollTrigger: {
         trigger: "#portfolio",
-        start: "top 80%", // When the top of #portfolio reaches 50% of the viewport
-        end: "top 20%", // When #portfolio reaches the top of the viewport
-        toggleActions: "play none reverse none",
+        start: "top 50%", // When the top of #portfolio reaches 50% of the viewport
+        end: "top top", // When #portfolio reaches the top of the viewport
+        //toggleActions: "play none reverse none",
         // "play" when entering, "reverse" when leaving
-        scrub: true,
+        scrub: false,
+        /*
         onEnter: () => {
           document.getElementById("portfolio")?.scrollIntoView({
             behavior: "smooth",
@@ -270,9 +271,11 @@ const setupPorfolio = () => {
             behavior: "smooth",
           });
         },
+        */
       },
     }
   );
+
   const cachedProjectData = new Map();
   const prefetchProjectData = async (projectName) => {
     try {
